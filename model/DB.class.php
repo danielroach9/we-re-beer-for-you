@@ -57,4 +57,22 @@ class DB
 		}
 		return $data;
 	}
+
+	function getBeerByID($_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM beers where id = :id");
+			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getAllBeers - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
 }

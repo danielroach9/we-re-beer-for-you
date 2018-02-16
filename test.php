@@ -8,3 +8,11 @@ $user = $db->getAllUsers();
 echo "<pre>";
 print_r($user);
 echo "</pre>";
+
+echo "=========================================";
+
+$beer = $db->getBeerByID(90);
+
+echo "<pre>";
+print_r($beer);
+echo "</pre>";
