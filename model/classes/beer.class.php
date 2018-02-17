@@ -6,21 +6,58 @@
 class Beer
 {
 
-  private $uid, $fName, $lName, $email;
+  private $id, $name, $description, $abv, $ibu, $srm, $upc, $brewery_id, $filepath, $cat_id, $style_id;
 
   public function getId()
   {
-    return
+    return $this->id;
   }
 
-  public function getFirstName()
+  public function getName()
   {
-    return
+    return $this->name;
   }
 
-  public function getLastName()
+  public function getDescription()
   {
-    return
+    return $this->description;
   }
+
+  public function getAbv()
+  {
+    return $this->abv;
+  }
+
+  public function getIbu()
+  {
+    return $this->ibu;
+  }
+
+  public function getSrm()
+  {
+    return $this->srm;
+  }
+
+  public function getUpc()
+  {
+    return $this->upc;
+  }
+
+  public function getBrewery_()
+  {
+    return $this->upc;
+  }
+
+  public function getUpc()
+  {
+    return $this->upc;
+  }
+
+  public function getUpc()
+  {
+    return $this->upc;
+  }
+
+
 
 }
