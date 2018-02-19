@@ -1,8 +1,23 @@
 <?php
 require_once("../model/DB.class.php");
 $db = new DB();
+$beer = NULL;
 $id = $_GET['id'];
-$beer = $db->getBeerInfoByID($id);
+
+if ($id == 'random') {
+
+  while($beer == NULL) {
+
+    $rand_num = mt_rand(1, 5901);
+    $val = $db->getBeerInfoByID($rand_num);
+    if(!empty($val)) { $beer = $val; }
+  }
+
+}
+
+else {
+  $beer = $db->getBeerInfoByID($id);
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +55,16 @@ $beer = $db->getBeerInfoByID($id);
         <h4><?php echo $beer['brewery_name'] ?></h4>
         <h4>Category: <?php echo $beer['cat_name'] ?></h4>
         <h4>Style: <?php echo $beer['style_name'] ?></h4>
-        <p><?php echo $beer['descript'] ?></p>
+        <p>
+          <?php
+            if(empty($beer['descript'])) {
+              echo "No description given";
+            }
+            else {
+              echo $beer['descript']
+            } 
+          ?>
+        </p>
           <div style="text-align: center">
             <div class="col s2">
               <p style="margin: 0;">ABV</p>
