@@ -1,5 +1,5 @@
 <?php
-require_once("../model/DB.class.php")
+require_once("../model/DB.class.php");
 
 $db = new DB();
 
@@ -39,7 +39,7 @@ $beer = $db->getBeerInfoByID($id);
   <div class=row>
     <div class="col s9">
       <div class="col s6">
-         
+
         <h4><?php $beer['name'] ?></h4>
         <h4>John A. Huber Brewing Company</h4>
         <h4>Style: Golden or Blonde Ale</h4>
