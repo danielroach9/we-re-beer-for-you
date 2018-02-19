@@ -61,8 +61,8 @@ else {
               echo "No description given";
             }
             else {
-              echo $beer['descript']
-            } 
+              echo $beer['descript'];
+            }
           ?>
         </p>
           <div style="text-align: center">
