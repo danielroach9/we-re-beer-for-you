@@ -1,9 +1,5 @@
 <?php
-session_start();
 
-/**
-* 
-*/
 class DB 
 {
 	
@@ -79,10 +75,11 @@ class DB
 	function getBeerInfoByID($_id){
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT b.name, c.cat_name, s.style_name, b.abv, b.descript
+			$stmt = $this->db->prepare("SELECT b.name, bs.name AS 'brewery_name', c.cat_name, s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c on c.id = b.cat_id
 										JOIN styles s on s.id = b.style_id
+										JOIN breweries bs ON bs.id = b.brewery_id;
 										where b.id = :id");
 			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
 			$stmt->execute();
