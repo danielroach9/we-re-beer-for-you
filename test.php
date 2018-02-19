@@ -1,5 +1,5 @@
 <?php
-require_once("DB.class.php");
+require_once("model/DB.class.php");
 
 $db = new DB();
 

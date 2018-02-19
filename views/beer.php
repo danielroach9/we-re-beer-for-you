@@ -8,7 +8,6 @@ $id = $_GET['id'];
 $beer = $db->getBeerInfoByID($id);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
