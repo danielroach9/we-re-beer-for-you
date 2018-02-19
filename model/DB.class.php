@@ -75,4 +75,49 @@ class DB
 		}
 		return $data;
 	}
+
+	function getBeerInfoByID($_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT b.name, c.cat_name, s.style_name, b.abv, b.descript
+										FROM beers b
+										JOIN categories c on c.id = b.cat_id
+										JOIN styles s on s.id = b.style_id
+										where b.id = :id");
+			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getAllBeers - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getBeerInfoByName($_name){
+		try{
+			$data = array();
+			$name = "%".$_name."%";
+			$stmt = $this->db->prepare("SELECT b.name, c.cat_name, s.style_name, b.abv, b.descript
+										FROM beers b
+										JOIN categories c ON c.id = b.cat_id
+										JOIN styles s ON s.id = b.style_id
+										WHERE b.name LIKE :name");
+			$stmt->bindParam(":name",$name,PDO::PARAM_STR);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getAllBeers - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
 }

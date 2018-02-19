@@ -16,3 +16,20 @@ $beer = $db->getBeerByID(90);
 echo "<pre>";
 print_r($beer);
 echo "</pre>";
+
+
+echo "=========================================";
+
+$beerInfo = $db->getBeerInfoByID(90);
+
+echo "<pre>";
+print_r($beerInfo);
+echo "</pre>";
+
+echo "=========================================";
+
+$beerName = $db->getBeerInfoByName("%corona%");
+
+echo "<pre>";
+print_r($beerName);
+echo "</pre>";
