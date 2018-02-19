@@ -41,8 +41,6 @@ else {
 
   <div class=row>
     <div class="col s9">
-      <div class="col s6">
-
         <h4><?php echo $beer['name'] ?></h4>
         <h4><?php echo $beer['brewery_name'] ?></h4>
         <h4>Category: <?php echo $beer['cat_name'] ?></h4>
@@ -65,11 +63,8 @@ else {
               <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
             </div>
         </div>
-      </div>
-      <div class="col s3">
-
-      </div>
     </div>
+
     <div class="col s3">
       <p class=""style="font-style: light-italic; text-align: center">Recent Activity</p>
     </div>
