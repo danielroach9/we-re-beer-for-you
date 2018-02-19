@@ -40,19 +40,15 @@ $beer = $db->getBeerInfoByID($id);
       <div class="col s6">
 
         <h4><?php echo $beer['name'] ?></h4>
-        <h4>John A. Huber Brewing Company</h4>
-        <h4>Style: Golden or Blonde Ale</h4>
-        <p>
-          This golden colored ale is smooth, light in flavor, crisp and very
-          similar to a European-style pilsner. Our Golden ale is delicately
-          hopped with traditional pilsner style Czech Saaz hops.
-          It is one of our most popular beers and considered our gateway beer
-        </p>
+        <h4><?php echo $beer['brewery_name'] ?></h4>
+        <h4>Category: <?php echo $beer['cat_name'] ?></h4>
+        <h4>Style: <?php echo $beer['style_name'] ?></h4>
+        <p><?php echo $beer['descript'] ?></p>
           <div style="text-align: center">
             <div class="col s2">
               <p style="margin: 0;">ABV</p>
               <i class="fa fa-question-circle"></i>
-              <p style="margin: 0;">5%</p>
+              <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
             </div>
             <div class="col s2">
               <p style="margin: 0;">IBU</p>
