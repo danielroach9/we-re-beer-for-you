@@ -1,10 +1,7 @@
 <?php
 require_once("../model/DB.class.php");
-
 $db = new DB();
-
 $id = $_GET['id'];
-
 $beer = $db->getBeerInfoByID($id);
 ?>
 

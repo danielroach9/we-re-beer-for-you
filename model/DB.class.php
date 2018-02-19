@@ -79,8 +79,8 @@ class DB
 										FROM beers b
 										JOIN categories c on c.id = b.cat_id
 										JOIN styles s on s.id = b.style_id
-										JOIN breweries bs ON bs.id = b.brewery_id;
-										where b.id = :id");
+										JOIN breweries bs ON bs.id = b.brewery_id
+										WHERE b.id = :id");
 			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
 			$stmt->execute();
 
