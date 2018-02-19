@@ -36,16 +36,7 @@ else {
 
   <div class="container-fluid">
     <!-- Navbar-->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">We're Beer For You</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="file1.php"></a>File 1</li>
-          <li><a href="file2.php"></a>File 2</li>
-          <li><a href="file3.php"></a>File 3</li>
-        </ul>
-      </div>
-    </nav>
+    <?php include 'inc/nav.php'?>
   </div>
 
   <div class=row>
