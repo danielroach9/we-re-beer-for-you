@@ -1,5 +1,5 @@
 <?php
-require_once("DB.class.php");
+require_once("model/DB.class.php");
 
 $db = new DB();
 
@@ -15,4 +15,21 @@ $beer = $db->getBeerByID(90);
 
 echo "<pre>";
 print_r($beer);
+echo "</pre>";
+
+
+echo "=========================================";
+
+$beerInfo = $db->getBeerInfoByID(90);
+
+echo "<pre>";
+print_r($beerInfo);
+echo "</pre>";
+
+echo "=========================================";
+
+$beerName = $db->getBeerInfoByName("%corona%");
+
+echo "<pre>";
+print_r($beerName);
 echo "</pre>";
