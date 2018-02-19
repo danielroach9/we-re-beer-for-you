@@ -40,33 +40,33 @@ else {
   </div>
 
   <div class=row>
-    <div class="col s9">
-        <h4><?php echo $beer['name'] ?></h4>
-        <h4><?php echo $beer['brewery_name'] ?></h4>
-        <h4>Category: <?php echo $beer['cat_name'] ?></h4>
-        <h4>Style: <?php echo $beer['style_name'] ?></h4>
-        <p>
-          <?php
-            if(empty($beer['descript'])) {
-              echo "No description given";
-            }
-            else {
-              echo $beer['descript'];
-            }
-          ?>
-        </p>
-          <div style="text-align: center">
-            <div class="col s2">
-              <p style="margin: 0;">ABV</p>
-              <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="Alcohol By Volume">
-              </i>
-              <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
-            </div>
+    <div id=beer-info>
+      <h4><?php echo $beer['name'] ?></h4>
+      <h4><?php echo $beer['brewery_name'] ?></h4>
+      <h4>Category: <?php echo $beer['cat_name'] ?></h4>
+      <h4>Style: <?php echo $beer['style_name'] ?></h4>
+      <p>
+        <?php
+        if(empty($beer['descript'])) {
+          echo "No description given";
+        }
+        else {
+          echo $beer['descript'];
+        }
+        ?>
+      </p>
+      <div style="text-align: center">
+        <div class="col s2">
+          <p style="margin: 0;">ABV</p>
+          <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="Alcohol By Volume">
+          </i>
+          <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
         </div>
+      </div>
     </div>
 
-    <div class="col s3">
-      <p class=""style="font-style: light-italic; text-align: center">Recent Activity</p>
+    <div id="recent-reviews">
+      <p class=""style="font-style: light-italic;">Recent Activity</p>
     </div>
   </div>
 
