@@ -1,5 +1,11 @@
 <?php
 require_once("../model/DB.class.php");
+
+define("ABV_def", "ABV or Alcohol by volume is a standard measure of
+  how much alcohol is containted in a given volume of an alcoholic
+  beverage. It is defined as the number of millilitres (mL) of pure ethanol present
+  in 100 mL.");
+
 $db = new DB();
 $beer = NULL;
 $id = $_GET['id'];
@@ -68,13 +74,8 @@ else {
           <div style="text-align: center">
             <div class="col s2">
               <p style="margin: 0;">ABV</p>
-              <a class="tooltipped fa fa-question-circle"
-                data-position="right" data-delay="50"
-                data-tooltip="ABV or Alcohol by volume is a standard measure of
-                how much alcohol is containted in a given volume of an alcoholic
-                beverage. It is defined as the number of millilitres (mL) of pure ethanol present
-                in 100 mL.">
-              </a>
+              <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="<?php echo ABV_def?>">
+              </i>
               <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
             </div>
         </div>
