@@ -1,3 +1,14 @@
+<?php
+require_once("../model/DB.class.php")
+
+$db = new DB();
+
+$id = $_GET['id'];
+
+$beer = $db->getBeerInfoByID($id);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +39,8 @@
   <div class=row>
     <div class="col s9">
       <div class="col s6">
-        <h4>Hubrew Blonde Ale</h4>
+         
+        <h4><?php $beer['name'] ?></h4>
         <h4>John A. Huber Brewing Company</h4>
         <h4>Style: Golden or Blonde Ale</h4>
         <p>
