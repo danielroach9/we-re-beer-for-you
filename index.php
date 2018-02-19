@@ -1,50 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>We're beer for you!</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <!-- <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
-</head>
-<body>
-  <nav>
-  <div class="nav-wrapper">
-    <i class="fa fa-beer fa-3x" aria-hidden="true"></i><a href="#!" class="brand-logo">We're beer for you!</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-    <ul class="side-nav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-  </div>
-</nav>
+<?php include ("views/inc/header.php"); ?>
+<title>We're beer for you!</title>
+<?php include ("views/inc/nav.php"); ?>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-      <br><br>
-      <h1 class="header center red-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light red">Get Started</a>
-      </div>
-      <br><br>
+      <div class="row"><!-- Beggining of Container Row -->
+      <div class="col s8"><!-- Beer info column -->
+        <div class="row"><!-- Beer content -->0
+          <div class="col s8">
+          </div>
+          <div class="col s4">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+          </div>
+        </div>
 
+      </div>
+      <div class="col s4">
+      </div>
+    </div>
     </div>
   </div>
-
 
   <div class="container">
     <div class="section">
@@ -83,7 +61,7 @@
     <br><br>
   </div>
 
-  <footer class="page-footer red">
+  <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
