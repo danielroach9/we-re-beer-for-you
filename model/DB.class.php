@@ -66,7 +66,7 @@ class DB
 			return $data;
 		}
 		catch(PDOException $e){
-			echo "getAllBeers - ".$e->getMessage();
+			echo "getBeerByID - ".$e->getMessage();
 			die();
 		}
 		return $data;
@@ -99,11 +99,13 @@ class DB
 		try{
 			$data = array();
 			$name = "%".$_name."%";
-			$stmt = $this->db->prepare("SELECT b.name, c.cat_name, s.style_name, b.abv, b.descript
+			$stmt = $this->db->prepare("SELECT b.name, c.cat_name,
+			 s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c ON c.id = b.cat_id
 										JOIN styles s ON s.id = b.style_id
-										WHERE b.name LIKE :name");
+										WHERE b.name LIKE :name
+										AND b.descript NOT LIKE ''");
 			$stmt->bindParam(":name",$name,PDO::PARAM_STR);
 			$stmt->execute();
 
@@ -112,7 +114,49 @@ class DB
 			return $data;
 		}
 		catch(PDOException $e){
-			echo "getAllBeers - ".$e->getMessage();
+			echo "getBeerInfoByName - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getBeersByBrewery($_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name
+										FROM beers b
+										JOIN categories c on c.id = b.cat_id
+										JOIN styles s on s.id = b.style_id
+										WHERE b.brewery_id = :id");
+			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getBeersByBrewery - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getBreweryInfoByID($_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT name, address1, address2, city, state, code, country, phone, website, descript
+										FROM breweries
+										WHERE id = :id");
+			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getBreweryInfoByID - ".$e->getMessage();
 			die();
 		}
 		return $data;

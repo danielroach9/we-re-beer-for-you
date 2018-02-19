@@ -35,7 +35,6 @@ $beer = $db->getBeerInfoByID($id);
   <div class=row>
     <div class="col s9">
       <div class="col s6">
-
         <h4><?php echo $beer['name'] ?></h4>
         <h4><?php echo $beer['brewery_name'] ?></h4>
         <h4>Category: <?php echo $beer['cat_name'] ?></h4>
