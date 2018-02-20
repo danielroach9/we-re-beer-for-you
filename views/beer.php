@@ -1,15 +1,31 @@
 <?php
 require_once("../model/DB.class.php");
+
 $db = new DB();
+$beer = NULL;
 $id = $_GET['id'];
-$beer = $db->getBeerInfoByID($id);
+
+if ($id == 'random') {
+
+  while($beer == NULL) {
+
+    $rand_num = mt_rand(1, 5901);
+    $val = $db->getBeerInfoByID($rand_num);
+    if(!empty($val)) { $beer = $val; }
+  }
+
+}
+
+else {
+  $beer = $db->getBeerInfoByID($id);
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>WB4U | Beer</title>
+  <title>WB4U | <?php echo $beer['name']?></title>
 
   <!-- CSS -->
   <link href="../css/materialize.min.css" type="text/css" rel="stylesheet"/>
@@ -20,59 +36,41 @@ $beer = $db->getBeerInfoByID($id);
 
   <div class="container-fluid">
     <!-- Navbar-->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">We're Beer For You</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="file1.php"></a>File 1</li>
-          <li><a href="file2.php"></a>File 2</li>
-          <li><a href="file3.php"></a>File 3</li>
-        </ul>
-      </div>
-    </nav>
+    <?php include 'inc/nav.php'?>
   </div>
 
-  <div class=row>
-    <div class="col s9">
-      <div class="col s6">
-
-        <h4><?php echo $beer['name'] ?></h4>
-        <h4><?php echo $beer['brewery_name'] ?></h4>
-        <h4>Category: <?php echo $beer['cat_name'] ?></h4>
-        <h4>Style: <?php echo $beer['style_name'] ?></h4>
-        <p><?php echo $beer['descript'] ?></p>
-          <div style="text-align: center">
-            <div class="col s2">
-              <p style="margin: 0;">ABV</p>
-              <i class="fa fa-question-circle"></i>
-              <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
-            </div>
-            <div class="col s2">
-              <p style="margin: 0;">IBU</p>
-              <i class="fa fa-question-circle"></i>
-              <p style="margin: 0;">5%</p>
-            </div>
-            <div class="col s2">
-              <p style="margin: 0;">SRM</p>
-              <i class="fa fa-question-circle"></i>
-              <p style="margin: 0;">5%</p>
-            </div>
-            <div class="col s2">
-              <p style="margin: 0;">OG</p>
-              <i class="fa fa-question-circle"></i>
-              <p style="margin: 0;">5%</p>
-            </div>
+  <div class="row">
+    <div id="beer-info">
+      <h4><?php echo $beer['name'] ?></h4>
+      <h4><?php echo $beer['brewery_name'] ?></h4>
+      <h4>Category: <?php echo $beer['cat_name'] ?></h4>
+      <h4>Style: <?php echo $beer['style_name'] ?></h4>
+      <p>
+        <?php
+        if(empty($beer['descript'])) {
+          echo "No description given";
+        }
+        else {
+          echo $beer['descript'];
+        }
+        ?>
+      </p>
+      <div style="text-align: center">
+        <div class="col s2">
+          <p style="margin: 0;">ABV</p>
+          <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="Alcohol By Volume">
+          </i>
+          <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
         </div>
       </div>
-      <div class="col s3">
-
-      </div>
     </div>
-    <div class="col s3">
-      <p class=""style="font-style: light-italic; text-align: center">Recent Activity</p>
+
+    <div id="recent-reviews">
+      <p class=""style="font-style: light-italic;">Recent Activity</p>
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../js/materialize.min.js"></script>
 
 </body>
