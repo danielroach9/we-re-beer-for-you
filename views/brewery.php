@@ -5,6 +5,7 @@ $db = new DB();
 $id = $_GET['id'];
 
 $brewery = $db->getBreweryInfoByID($id);
+$brewery_beers = $db->getBeersByBrewery($id);
  ?>
 
  <!DOCTYPE html>
@@ -30,9 +31,21 @@ $brewery = $db->getBreweryInfoByID($id);
       <h4><?php echo $brewery['address1'] ?></h4>
       <h4><?php echo $brewery['city']?>, <?php echo $brewery['state']?> <?php echo $brewery['code']?></h4>
       <h4><?php echo $brewery['phone'] ?></h4>
-      <h4><?php echo $brewery['address1'] ?></h4>
-
-
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s9" id="beers-listing">
+      <?php
+      foreach ($brewery_beers as $value) {
+        <div class="card small">
+          <div class="card-content white-text">
+          <span class="card-title">echo $value['name']</span>
+          <p>Category: echo "$value['cat_name']"</p>
+          <p>Style: echo "$value['style_name']"</p>
+          </div>
+        </div>
+      }
+      ?>
     </div>
   </div>
 </div>
