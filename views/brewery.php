@@ -26,7 +26,13 @@ $brewery = $db->getBreweryInfoByID($id);
   <div class="row">
     <div id="brewery-info">
       <h4><?php echo $brewery['name']?></h4>
-      <a target="_blank"><?php echo $brewery['website']?></a>
+      <h4><a target="_blank"><?php echo $brewery['website']?></a></h4>
+      <h4><?php echo $brewery['address1'] ?></h4>
+      <h4><?php echo $brewery['city']?>, <?php echo $brewery['state']?> <?php echo $brewery['code']?></h4>
+      <h4><?php echo $brewery['phone'] ?></h4>
+      <h4><?php echo $brewery['address1'] ?></h4>
+
+
     </div>
   </div>
 </div>
