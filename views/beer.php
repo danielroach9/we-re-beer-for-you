@@ -21,25 +21,13 @@ else {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<?php include 'inc/header.php'?>
   <title>WB4U | <?php echo $beer['name']?></title>
 
-  <!-- CSS -->
-  <link href="../css/materialize.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-</head>
-<body>
-
+<?php include 'inc/nav.php'?>
   <div class="container-fluid">
-    <!-- Navbar-->
-    <?php include 'inc/nav.php'?>
-  </div>
-
-  <div class="row">
+    <div class="row">
     <div id="beer-info">
       <h4><?php echo $beer['name'] ?></h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
@@ -55,8 +43,7 @@ else {
         }
         ?>
       </p>
-      <div style="text-align: center">
-        <div class="col s2">
+        <div class="col s2 center-align">
           <p style="margin: 0;">ABV</p>
           <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="Alcohol By Volume">
           </i>
@@ -70,8 +57,4 @@ else {
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../js/materialize.min.js"></script>
-
-</body>
-</html>
+  <?php include 'inc/footer.php'?>

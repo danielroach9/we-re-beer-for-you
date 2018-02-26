@@ -1,7 +1,7 @@
 </head>
 <body>
   <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper brown">
     <a href="#!" class="brand-logo">We're beer for you!</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Menu</i></a>
     <ul class="right hide-on-med-and-down">

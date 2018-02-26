@@ -7,42 +7,9 @@ $rating = NULL;
 $rating = $db->getRecentRatings();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<style>
-.btn-group button {
-    background-color: #1d64c5; /* Green background */
-    border: 1px solid blue; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-    background-color: #3e8e41;
-}
-</style>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<?php include 'inc/header.php'?>
   <title>WB4U | Beer Ratings</title>
-</head>
-
-	<body>
+<?php include 'inc/nav.php'?>
 
 	<h1>Beer Ratings: Recent</h1>
 
@@ -89,5 +56,4 @@ $rating = $db->getRecentRatings();
 		</table>
 
 	  
-	</body>
-</html>
+<?php include 'inc/footer.php'?>

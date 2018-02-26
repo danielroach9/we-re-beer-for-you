@@ -8,21 +8,12 @@ $brewery = $db->getBreweryInfoByID($id);
 $brewery_beers = $db->getBeersByBrewery($id);
  ?>
 
- <!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>WB4U | <?php echo $brewery['name']?></title>
+<?php include 'inc/header.php'?>
 
-  <!-- CSS -->
-  <link href="../css/materialize.css" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
-<body>
-
+<title> WB4U | <?php echo $brewery['name']?></title>
+<?php include 'inc/nav.php'?>
 <div class="container-fluid">
   <!-- Navbar-->
-  <?php include 'inc/nav.php'?>
 
   <div class="row">
     <div id="brewery-info">
