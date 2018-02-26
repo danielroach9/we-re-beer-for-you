@@ -5,7 +5,9 @@ class DB
 
 	function __construct()
 	{
-		require_once("dbInfo.php");
+		require_once("classes/user.class.php");
+
+		require("dbInfo.php");
 
 		try{
 			$this->db = new PDO("mysql:host=$host;dbname=$db",$user,$pass);
@@ -26,7 +28,7 @@ class DB
 			$stmt = $this->db->prepare("SELECT * FROM user");
 			$stmt->execute();
 
-			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'user');
 
 			return $data;
 		}
@@ -35,6 +37,57 @@ class DB
 			die();
 		}
 		return $data;
+	}
+
+	function getUserByID($_uuid){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM user
+										WHERE uuid = :uuid");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'user');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getUserByID - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	/**
+	 * 	insertNewUser - will insert a new record to the user table with the 
+	 * provided information.
+	 *
+	 * @param string $_firstName - firstName of the user to add.
+	 * @param string $_lastName - lastName of the user to add.
+	 * @param integer $_roleID - roleid of the user to add.
+	 * @param string $_email - email of the user to add.
+	 * @param string $_password - pasword of the user to add.
+	 * @return integer containing the id of the newest user added.
+	 **/
+	function insertNewUser($_firstName, $_lastName,$_email,$_password, $_roleID){
+		$password = password_hash($_password, PASSWORD_DEFAULT);
+		try{
+			$stmt = $this->db->prepare("INSERT INTO user 
+								(first_name,last_name,email,password,role)
+				VALUES (:first_name,:last_name,:email,:password,:role)");
+			$stmt->bindParam(":first_name",$_firstName,PDO::PARAM_STR);
+			$stmt->bindParam(":last_name",$_lastName,PDO::PARAM_STR);
+			$stmt->bindParam(":email",$_email,PDO::PARAM_STR);
+			$stmt->bindParam(":password",$password,PDO::PARAM_STR);
+			$stmt->bindParam(":role",$_roleID,PDO::PARAM_INT);
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+			die();
+		}
 	}
 
 	function getAllBeers(){
