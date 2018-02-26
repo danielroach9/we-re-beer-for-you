@@ -36,10 +36,10 @@ $brewery_beers = $db->getBeersByBrewery($id);
   <div class="row">
     <div class="col s9" id="beers-listing">
       <?php
-      echo "<pre>".print_r($brewery_beers)."</pre>";
+      // echo "<pre>".print_r($brewery_beers)."</pre>";
       foreach ($brewery_beers as $value) {
         echo "<div class='card small'>
-          <div class='card-content white-text'>
+          <div class='card-content'>
           <span class='card-title'>$value[name]</span>
           <p>Category: $value[cat_name]</p>
           <p>Style:  $value[style_name]</p>
