@@ -12,28 +12,7 @@
 
 <?php include ("views/inc/header.php"); ?>
 <title>We're beer for you!</title>
-<style>
-  html,
-  body,
-  .login-box {
-    height: 100%;
-  }
-  .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #f5f5f5;
-}
-  .card{
-    width: 600px;
-  }
-  .card-action{
-    margin-bottom: 20px;
-  }
 
-
-</style>
 </head>
 <body>
   <div class="section no-pad-bot" id="index-banner">

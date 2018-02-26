@@ -1,0 +1,32 @@
+html,
+body,
+.login-box {
+  height: 100%;
+  background-color: #2d1111;
+  animation: fadeIn 1s;
+
+}
+.card{
+  width: 600px;
+  height: 100%;
+}
+.card-action{
+  margin-bottom: 20px;
+}
+
+footer{
+    position: relative;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+}
+
+#register{
+    display: none;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
