@@ -36,8 +36,8 @@ $brewery_beers = $db->getBeersByBrewery($id);
   <div class="row">
     <div class="col s9" id="beers-listing">
       <?php
-      foreach ($brewery_beers as $value) {
-        var_dump($value);
+      foreach ($brewery_beers as $k => $value) {
+        var_dump($k);
         // echo "<div class='card small'>
         //   <div class='card-content white-text'>
         //   <span class='card-title'>$value[name]</span>
