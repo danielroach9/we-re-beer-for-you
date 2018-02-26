@@ -41,7 +41,7 @@ else {
 
   <div class="row">
     <div id="beer-info">
-      <h4><?php echo $beer['name'] ?></h4>
+      <h4><?php echo $beer['name'] ?><a class="waves-effect waves-light btn"><i class="fa fa-share-square"></i>Recommend</a></h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
       <h4>Style: <?php echo $beer['style_name'] ?></h4>
