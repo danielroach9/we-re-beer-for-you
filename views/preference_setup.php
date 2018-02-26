@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <!-- <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
 
-<?php include ("views/inc/header.php"); ?>
+<?php include "views/inc/header.php"; ?>
 <title>We're beer for you!</title>
 
 </head>
@@ -26,6 +26,9 @@
                 <div class="input-field col s12">
                   <label for="preferred_abv_range">ABV Range</label>
                   <input type="text" class="preferences" name="preferred_abv_range" id="preferred_abv_range" >
+                  <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                  </div>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
