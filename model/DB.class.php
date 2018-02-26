@@ -1,8 +1,8 @@
 <?php
 
-class DB 
+class DB
 {
-	
+
 	function __construct()
 	{
 		require_once("classes/user.class.php");
