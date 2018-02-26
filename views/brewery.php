@@ -37,16 +37,15 @@ $brewery_beers = $db->getBeersByBrewery($id);
     <div class="col s9" id="beers-listing">
       <?php
       echo "<pre>".print_r($brewery_beers)."</pre>";
-      // foreach ($brewery_beers as $k => $value) {
-      //   var_dump($k);
-      //   // echo "<div class='card small'>
-      //   //   <div class='card-content white-text'>
-      //   //   <span class='card-title'>$value[name]</span>
-      //   //   <p>Category: $value[cat_name]</p>
-      //   //   <p>Style:  $value[style_name]</p>
-      //   //   </div>
-      //   // </div>";
-      // }
+      foreach ($brewery_beers as $value) {
+        echo "<div class='card small'>
+          <div class='card-content white-text'>
+          <span class='card-title'>$value[name]</span>
+          <p>Category: $value[cat_name]</p>
+          <p>Style:  $value[style_name]</p>
+          </div>
+        </div>";
+      }
       ?>
     </div>
   </div>
