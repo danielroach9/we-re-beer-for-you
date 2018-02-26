@@ -184,7 +184,7 @@ class DB
 			$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
 			$stmt->execute();
 
-			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			return $data;
 		}
