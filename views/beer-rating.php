@@ -1,10 +1,10 @@
 <?php
 require_once("../model/DB.class.php");
 $db = new DB();
-$beer = NULL;
-$id = $_GET['id'];
+$rating = NULL;
 
-$beer = $db->getBeerInfoByID($id);
+
+$rating = $db->getRecentRatings();
 ?>
 
 <!DOCTYPE html>
@@ -61,13 +61,13 @@ $beer = $db->getBeerInfoByID($id);
 		      <!-- This is for image of beer -->
 		    </td>
 		    <td>
-		      <a style="font-size:20px; font-weight:bold;">beer_name</a>
-		      <span class="rating">rating</span> &nbsp;
+		      <a style="font-size:20px; font-weight:bold;"><?php echo$rating['beerID'] ?></a>
+		      <span class="rating"><?php echo$rating['rating'] ?></span> &nbsp;
 		      <div><a>brewery_name</a>
 		      <span style="color:#8b8b8b;" class="location/origin">brewery_location</span></div>
-		      <div style="color:#666;">descript
+		      <div style="color:#666;"><?php echo$rating['comments'] ?>
 		      </div>
-		      <span style="color:#8b8b8b;">userID</span><br><hr>
+		      <span style="color:#8b8b8b;"><?php echo$rating['UUID'] ?></span><br><hr>
 		    </td>
 		  </tr>
 

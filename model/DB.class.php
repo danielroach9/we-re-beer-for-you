@@ -214,4 +214,23 @@ class DB
 		}
 		return $data;
 	}
+
+	function getRecentRatings(){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM rating 
+							ORDER BY purchase_id DESC 
+							LIMIT 5 ");
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'rating');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getRecentRatings - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
 }
