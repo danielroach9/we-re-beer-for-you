@@ -3,6 +3,8 @@ require_once("model/DB.class.php");
 
 $db = new DB();
 
+echo "=========================================";
+echo "\n All Users";
 $user = $db->getAllUsers();
 
 echo "<pre>";
@@ -10,7 +12,31 @@ print_r($user);
 echo "</pre>";
 
 echo "=========================================";
+echo "\n User ID";
+$userID = $db->getUserByID(1);
 
+echo "<pre>";
+print_r($userID);
+echo "</pre>";
+
+echo "=========================================";
+echo "\n Insert new User ";
+$userInsert = $db->insertNewUser("Test", "Tester","test@test.com","test", 1);
+
+echo "<pre>";
+print_r($userInsert);
+echo "</pre>";
+
+echo "=========================================";
+echo "\n All Users";
+$user = $db->getAllUsers();
+
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+
+echo "=========================================";
+echo "\nBeer by ID";
 $beer = $db->getBeerByID(90);
 
 echo "<pre>";
