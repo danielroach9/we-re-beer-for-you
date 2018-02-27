@@ -53,7 +53,9 @@ $countries = $db->getCountries();
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
                   <?php
                     foreach ($countries as $value) {
-                      echo '<option>'.$value[country].'</option>';
+                      $count = 0;
+                      echo '<option value='.$count.'>'.$value[country].'</option>';
+                      $count++;
                     }
                     ?>
                 </div>
