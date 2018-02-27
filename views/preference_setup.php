@@ -1,3 +1,9 @@
+<?php
+require_once("../model/DB.class.php");
+
+$db = new DB();
+$categories = $db->getCategories();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +39,15 @@
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
                   <input type="email" class="preferences" name="preferred_category" id="preferred_category" >
+                  <select name="select">
+                  <?php
+
+
+                    foreach ($categories as $value) {
+                      echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
+                      }
+                    ?>
+                    </select>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>

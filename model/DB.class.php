@@ -60,7 +60,7 @@ class DB
 	}
 
 	/**
-	 * 	insertNewUser - will insert a new record to the user table with the 
+	 * 	insertNewUser - will insert a new record to the user table with the
 	 * provided information.
 	 *
 	 * @param string $_firstName - firstName of the user to add.
@@ -73,7 +73,7 @@ class DB
 	function insertNewUser($_firstName, $_lastName,$_email,$_password, $_roleID){
 		$password = password_hash($_password, PASSWORD_DEFAULT);
 		try{
-			$stmt = $this->db->prepare("INSERT INTO user 
+			$stmt = $this->db->prepare("INSERT INTO user
 								(first_name,last_name,email,password,role)
 				VALUES (:first_name,:last_name,:email,:password,:role)");
 			$stmt->bindParam(":first_name",$_firstName,PDO::PARAM_STR);
@@ -219,8 +219,8 @@ class DB
 	function getRecentRatings(){
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT * FROM rating 
-							ORDER BY purchase_id DESC 
+			$stmt = $this->db->prepare("SELECT * FROM rating
+							ORDER BY purchase_id DESC
 							LIMIT 5 ");
 			$stmt->execute();
 
@@ -234,4 +234,21 @@ class DB
 		}
 		return $data;
 	}
+	function getCategories(){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT id, cat_name FROM categories");
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getRecentRatings - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
 }
