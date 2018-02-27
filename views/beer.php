@@ -29,7 +29,9 @@ else {
   <div class="container-fluid">
     <div class="row">
     <div id="beer-info">
-      <h4><?php echo $beer['name'] ?></h4>
+      <h4><?php echo $beer['name'] ?>
+        <a class="waves-effect waves-light btn" href="#recommend-modal"><i class="fa fa-share-square left"></i>Recommend</a>
+      </h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
       <h4>Style: <?php echo $beer['style_name'] ?></h4>
@@ -56,5 +58,16 @@ else {
       <p class=""style="font-style: light-italic;">Recent Activity</p>
     </div>
   </div>
+
+  <div id="recommend-modal" class="modal">
+  <div class="modal-content">
+    <h4>'Beer Name here' Recommendation</h4>
+      <p>blah blah blah</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Cancel</a>
+    <a href="#!" class="modal-aciton modal-close btn-flat">Send</a>
+  </div>
+</div>
 
   <?php include 'inc/footer.php'?>

@@ -1,9 +1,6 @@
 <?php
 require_once("../model/DB.class.php");
 $db = new DB();
-$rating = NULL;
-
-
 $rating = $db->getRecentRatings();
 ?>
 
