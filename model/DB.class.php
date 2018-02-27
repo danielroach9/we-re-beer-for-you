@@ -258,10 +258,12 @@ class DB
 
 			$data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-			catch(PDOException $e){
-				echo "getCountries - ".$e->getMessage();
-				die();
-			}
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getCountries - ".$e->getMessage();
+			die();
+		}
 
 			return $data;
 		}
