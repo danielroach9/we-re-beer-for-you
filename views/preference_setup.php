@@ -3,6 +3,7 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 $categories = $db->getCategories();
+$countries = $db->getCountries();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,17 +42,20 @@ $categories = $db->getCategories();
                   <input type="email" class="preferences" name="preferred_category" id="preferred_category" >
                   <select name="select">
                   <?php
-
-
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
-                      }
+                    }
                     ?>
                     </select>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
+                  <?php
+                    foreach ($brewery as $value) {
+                      echo '<option value='.$value[id].'>'.$value[country].'</option>';
+                    }
+                    ?>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_country">Preferred Counrty</label>

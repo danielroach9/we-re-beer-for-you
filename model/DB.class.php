@@ -245,10 +245,25 @@ class DB
 			return $data;
 		}
 		catch(PDOException $e){
-			echo "getRecentRatings - ".$e->getMessage();
+			echo "getCategories - ".$e->getMessage();
 			die();
 		}
 		return $data;
 	}
+	function getCountries(){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT country FROM breweries");
+			$stmt->execute();
+
+			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			catch(PDOException $e){
+				echo "getCountries - ".$e->getMessage();
+				die();
+			}
+
+			return $data;
+		}
 
 }
