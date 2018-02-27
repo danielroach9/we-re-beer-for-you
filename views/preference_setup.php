@@ -54,7 +54,7 @@ $countries = $db->getCountries();
                   <?php
                     foreach ($countries as $value) {
                       $count = 1;
-                      echo '<option value='.$count.'>'.$value[country].'</option>';
+                      echo '<option value='.$count.'>'.$count.'</option>';
                       $count++;
                     }
                     ?>
