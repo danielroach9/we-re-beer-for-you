@@ -1,12 +1,45 @@
 <?php
 require_once("../model/DB.class.php");
 $db = new DB();
-$rating = $db->getRecentRatings();
+$ratings = $db->getRecentRatings();
 ?>
 
-<?php include 'inc/header.php'?>
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+.btn-group button {
+    background-color: #1d64c5; /* Green background */
+    border: 1px solid blue; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+</style>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title>WB4U | Beer Ratings</title>
-<?php include 'inc/nav.php'?>
+</head>
+
+	<body>
 
 	<h1>Beer Ratings: Recent</h1>
 
@@ -24,7 +57,18 @@ $rating = $db->getRecentRatings();
 		    <td valign="top" align="center">
 		      <!-- This is for image of beer -->
 		    </td>
-		    <td>
+		    <?php
+		      foreach( $ratings as $rating ){
+			echo
+		      	"<td>" . $rating->getID . "</td>";
+		    	"<td>" . $rating->getLocation . "</td>";
+			"<td>" . $rating->getRating . "</td>";
+			"<td>" . $rating->getComments . "</td>";
+			"<td>" . $rating->getBeerID . "</td>";
+			"<td>" . $rating->getPurchaseID . "</td>";
+		      }
+		    ?>
+		    <!--<td>
 		      <a style="font-size:20px; font-weight:bold;"><?php echo$rating['beerID'] ?></a>
 		      <span class="rating"><?php echo$rating['rating'] ?></span> &nbsp;
 		      <div><a>brewery_name</a>
@@ -32,7 +76,7 @@ $rating = $db->getRecentRatings();
 		      <div style="color:#666;"><?php echo$rating['comments'] ?>
 		      </div>
 		      <span style="color:#8b8b8b;"><?php echo$rating['UUID'] ?></span><br><hr>
-		    </td>
+		    </td>-->
 		  </tr>
 
 		  <tr>
@@ -53,4 +97,5 @@ $rating = $db->getRecentRatings();
 		</table>
 
 	  
-<?php include 'inc/footer.php'?>
+	</body>
+</html>
