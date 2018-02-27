@@ -51,6 +51,11 @@ $countries = $db->getCountries();
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
+                </div>
+                <div class="input-field col s12">
+                  <label for="preferred_country">Preferred Counrty</label>
+                  <input type="preferred_country" class="preferences" name="preferred_country" id="preferred_country">
+                  <select name="select">
                   <?php
                     foreach ($countries as $value) {
                       $count = 1;
@@ -58,10 +63,7 @@ $countries = $db->getCountries();
                       $count++;
                     }
                     ?>
-                </div>
-                <div class="input-field col s12">
-                  <label for="preferred_country">Preferred Counrty</label>
-                  <input type="preferred_country" class="preferences" name="preferred_country" id="preferred_country">
+                    </select>
                 </div>
               </div>
             </div>
