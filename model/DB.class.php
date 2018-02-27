@@ -256,7 +256,7 @@ class DB
 			$stmt = $this->db->prepare("SELECT DISTINCT country FROM breweries");
 			$stmt->execute();
 
-			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			return $data;
 		}
