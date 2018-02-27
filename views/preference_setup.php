@@ -52,7 +52,7 @@ $countries = $db->getCountries();
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
                   <?php
-                    foreach ($brewery as $value) {
+                    foreach ($countries as $value) {
                       echo '<option value='.$value[id].'>'.$value[country].'</option>';
                     }
                     ?>
