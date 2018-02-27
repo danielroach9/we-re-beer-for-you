@@ -253,7 +253,7 @@ class DB
 	function getCountries(){
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT id, country FROM breweries");
+			$stmt = $this->db->prepare("SELECT DISTINCT country FROM breweries");
 			$stmt->execute();
 
 			$data = $stmt->fetch(PDO::FETCH_ASSOC);
