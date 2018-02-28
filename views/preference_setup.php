@@ -106,9 +106,16 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     $( document ).ready(function(){
         $('#selectedCategory').on('change',function(){
           var cat_id = $(this).val();
-          var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
-          console.log(phpstyles);
-          //console.log(phpstyles);
+          var styles = [];
+          $.ajax({
+            type: 'GET',
+            url: '../model/DB.class.php',
+            dataType: 'array',
+            data: {functionname: 'getStylesByCategory', arguments: cat_id},
+            success: function (obj, textstatus){
+              styles = obj.result;
+            }
+          });
 
         });
     });
