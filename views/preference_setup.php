@@ -107,7 +107,7 @@ $styles = $db->getStylesByCategory(1); //could pass in parameter
         $(".button-collapse").sideNav();
     });
     function updateStyles(){
-      int cat_id = $("#selectStyle").val();
+      var cat_id = $("#selectStyle").val();
       var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
       console.log(phpstyles);
 
