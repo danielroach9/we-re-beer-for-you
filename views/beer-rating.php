@@ -70,9 +70,9 @@ $ratings = $db->getRecentRatings();
 			echo
 			     "<td>
 			      <a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a>
-			      <span class='rating'>" . $rating->getID() . "</span> &nbsp;
+			      <span class='rating'>" . $rating->getRating() . "</span> &nbsp;
 			      <div><a>brewery_name</a>
-			      <span style='color:#8b8b8b;' class='location/origin'>brewery_location</span></div>
+			      <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span></div>
 			      <div style='color:#666;'>" . $rating->getComments() . "
 			      </div>
 			      <span style='color:#8b8b8b;'>" . $rating->getID() . "</span><br><hr>

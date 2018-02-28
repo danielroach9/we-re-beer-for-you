@@ -6,6 +6,9 @@
   Beer name:<br>
   <input type="text" name="beername" value="Blue Moon">
   <br><br>
+  Location:<br>
+  <input type="text" name="location">
+  <br><br>
   Rating:<br>
   <input type="radio" name="rating" value="one" checked> 1<br>
   <input type="radio" name="rating" value="two"> 2<br>
@@ -16,8 +19,8 @@
 </form> 
 
 <br><br>
-<textarea rows="4" cols="50" name="comment" form="usrform">
-Enter comment here...</textarea>
+<textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" form="usrform">
+</textarea>
 
 
 </body>
