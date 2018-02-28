@@ -4,7 +4,7 @@ require_once("../model/DB.class.php");
 $db = new DB();
 $categories = $db->getCategories();
 $countries = $db->getCountries();
-$styles = $db->getStylesByCategory(); //could pass in parameter
+$styles = $db->getStylesByCategory(1); //could pass in parameter
 
 
 ?>
@@ -54,7 +54,7 @@ $styles = $db->getStylesByCategory(); //could pass in parameter
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
-                  <select name="select">
+                  <select name="select" id="selectStyle" onchange="updateStyles()">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
@@ -106,6 +106,12 @@ $styles = $db->getStylesByCategory(); //could pass in parameter
     $( document ).ready(function(){
         $(".button-collapse").sideNav();
     });
+    function updateStyles(){
+      int cat_id = $("#selectStyle").val();
+      var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
+      console.log(phpstyles);
+
+    }
   </script>
 
   </body>
