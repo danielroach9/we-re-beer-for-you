@@ -4,7 +4,7 @@ require_once("../model/DB.class.php");
 $db = new DB();
 $categories = $db->getCategories();
 $countries = $db->getCountries();
-$styles = $db->getStylesByCategory(1); //could pass in parameter
+$styles = $db->getStylesByCategory(1); //hardcoded parameter to start
 
 
 ?>
@@ -109,6 +109,7 @@ $styles = $db->getStylesByCategory(1); //could pass in parameter
     function updateStyles(){
       var cat_id = $("#selectStyle").val();
       var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
+      console.log("sup ladies");
       console.log(phpstyles);
 
     }
