@@ -268,13 +268,13 @@ class DB
 			return $data;
 		}
 
-		function getStylesByCategory(cat_id){
+		function getStylesByCategory($cat_id){
 			try{
 				$data = array();
-				$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".cat_id);
+				$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
 				$stmt->execute();
 
-				$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above
 
 				return $data;
 			}
