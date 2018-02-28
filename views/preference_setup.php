@@ -106,7 +106,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     $( document ).ready(function(){
         $(".button-collapse").sideNav();
 
-        $('#selectedCategory').change(function(){
+        $('#selectedCategory').on('change',function(){
           //var cat_id = $(this).val();
           // var phpstyles =
           console.log("sup ladies");
