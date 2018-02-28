@@ -116,6 +116,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
               styles = obj.result;
             }
           });
+          console.log(styles);
 
         });
     });
