@@ -105,9 +105,9 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
   <script>
     $( document ).ready(function(){
         $('#selectedCategory').on('change',function(){
-          //var cat_id = $(this).val();
+          var optionSelected = $(this).find("option:selected");
           // var phpstyles =
-          console.log("sup ladies");
+          console.log(optionSelected);
           //console.log(phpstyles);
 
         });
