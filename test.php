@@ -19,13 +19,13 @@ echo "<pre>";
 print_r($userID);
 echo "</pre>";
 
-echo "=========================================";
+/*echo "=========================================";
 echo "\n Insert new User ";
 $userInsert = $db->insertNewUser("Test", "Tester","test@test.com","test", 1);
 
 echo "<pre>";
 print_r($userInsert);
-echo "</pre>";
+echo "</pre>";*/
 
 echo "=========================================";
 echo "\n All Users";
