@@ -105,14 +105,16 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
   <script>
     $( document ).ready(function(){
         $(".button-collapse").sideNav();
-    });
-    function updateStyles(){
-      var cat_id = $("#selectedCategory").val();
-      var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
-      console.log("sup ladies");
-      console.log(phpstyles);
 
-    }
+
+        function updateStyles(){
+          var cat_id = $("#selectedCategory").val();
+          var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
+          console.log("sup ladies");
+          console.log(phpstyles);
+
+        }
+    });
   </script>
 
   </body>
