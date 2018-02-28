@@ -110,10 +110,9 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
           $.ajax({
             type: 'GET',
             url: '../model/DB.class.php',
-            dataType: 'array',
             data: {functionname: 'getStylesByCategory', arguments: cat_id},
             success: function (obj, textstatus){
-              styles = obj.result;
+              styles = obj;
             }
           });
           console.log(styles);
