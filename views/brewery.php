@@ -16,7 +16,7 @@ $brewery_beers = $db->getBeersByBrewery($id);
   <!-- Navbar-->
 
   <div class="row">
-    <div id="brewery-info">
+    <div class="card-panel grey lighten-2 jumbotron center-align" id="brewery-info">
       <h4><?php echo $brewery['name']?></h4>
       <h4><a target="_blank"><?php echo $brewery['website']?></a></h4>
       <h4><?php echo $brewery['address1'] ?></h4>
@@ -24,17 +24,20 @@ $brewery_beers = $db->getBeersByBrewery($id);
       <h4><?php echo $brewery['phone'] ?></h4>
     </div>
   </div>
-  <div class="row">
-    <div class="col s9" id="beers-listing">
+  <div class="row" id="beers-listing">
       <?php
       // echo "<pre>".print_r($brewery_beers)."</pre>";
+
       foreach ($brewery_beers as $value) {
-        echo "<div class='card small'>
+        echo "
+          <div class='col s2'>
+          <div class='card small'>
           <div class='card-content'>
           <span class='card-title'>$value[name]</span>
           <p>Category: $value[cat_name]</p>
           <p>Style:  $value[style_name]</p>
           </div>
+        </div>
         </div>";
       }
       ?>
@@ -42,7 +45,4 @@ $brewery_beers = $db->getBeersByBrewery($id);
   </div>
 </div>
 
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../js/materialize.min.js"></script>
-</body>
-</html>
+<?php include 'inc/footer.php'?>

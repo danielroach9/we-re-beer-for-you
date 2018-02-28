@@ -4270,7 +4270,8 @@ nav .brand-logo {
   color: #fff;
   display: inline-block;
   font-size: 2.1rem;
-  padding: 0;
+  padding-left: 1em;
+
 }
 
 nav .brand-logo.center {

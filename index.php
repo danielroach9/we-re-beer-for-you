@@ -1,4 +1,4 @@
-<?php include ("views/inc/header.php"); ?>
+<?php include ("views/inc/headeri.php"); ?>
 <title>We're beer for you!</title>
 </head>
 <body>
@@ -41,7 +41,7 @@
 
   <div class="section no-pad-bot" id="register">
     <div class="container">
-      
+
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
           <form>
@@ -76,5 +76,3 @@
     </div>
   </div>
 <?php include ("views/inc/footer.php"); ?>
-
-  
