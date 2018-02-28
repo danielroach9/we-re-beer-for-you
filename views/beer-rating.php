@@ -59,13 +59,24 @@ $ratings = $db->getRecentRatings();
 		    </td>
 		    <?php
 		      foreach( $ratings as $rating ){
+			/*echo
+		      	"<td>getID" . $rating->getID() . "</td>
+		    	<td>getLocation" . $rating->getLocation() . "</td>
+			<td>getRating" . $rating->getRating() . "</td>
+			<td>getComments" . $rating->getComments() . "</td>
+			<td>getBeerID" . $rating->getBeerID() . "</td>
+			<td>getPurchaseID" . $rating->getPurchaseID() . "</td>";*/
+			
 			echo
-		      	"<td>getID" . $rating->getID() . "</td><br>
-		    	<td>getLocation" . $rating->getLocation() . "</td><br>
-			<td>getRating" . $rating->getRating() . "</td><br>
-			<td>getComments" . $rating->getComments() . "</td><br>
-			<td>getBeerID" . $rating->getBeerID() . "</td><br>
-			<td>getPurchaseID" . $rating->getPurchaseID() . "</td><br>";
+			     "<td>
+			      <a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a>
+			      <span class='rating'>" . $rating->getID() . "</span> &nbsp;
+			      <div><a>brewery_name</a>
+			      <span style='color:#8b8b8b;' class='location/origin'>brewery_location</span></div>
+			      <div style='color:#666;'>" . $rating->getComments() . "
+			      </div>
+			      <span style='color:#8b8b8b;'>" . $rating->getID() . "</span><br><hr>
+			    </td>";
 		      }
 		    ?>
 		    <!--<td>
