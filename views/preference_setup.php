@@ -43,7 +43,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
                   <input type="email" class="preferences" name="preferred_category" id="preferred_category" >
-                  <select name="select">
+                  <select name="select" id="selectedCategory" onchange="updateStyles()">
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
@@ -54,7 +54,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
-                  <select name="select" id="selectStyle" onchange="updateStyles()">
+                  <select name="select">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
@@ -107,7 +107,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
         $(".button-collapse").sideNav();
     });
     function updateStyles(){
-      var cat_id = $("#selectStyle").val();
+      var cat_id = $("#selectedCategory").val();
       var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
       console.log("sup ladies");
       console.log(phpstyles);
