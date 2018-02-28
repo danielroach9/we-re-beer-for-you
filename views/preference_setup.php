@@ -107,10 +107,10 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
         $(".button-collapse").sideNav();
 
         $('#selectedCategory').change(function(){
-          var cat_id = $(this).val();
-          var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
+          //var cat_id = $(this).val();
+          //var phpstyles = <?php echo $db->getStylesByCategory(cat_id);?>
           console.log("sup ladies");
-          console.log(phpstyles);
+          //console.log(phpstyles);
 
         });
     });
