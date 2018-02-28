@@ -106,12 +106,13 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     $( document ).ready(function(){
         $('#selectedCategory').on('change',function(){
           var cat_id = $(this).val();
+          var styles;
           $.ajax({
             type: 'GET',
             url: '../model/DB.class.php',
             data: {functionname: 'getStylesByCategory', arguments: cat_id},
             success: function (obj, textstatus){
-              var styles = obj;
+              styles = obj;
             }
           });
           console.log(styles);
