@@ -268,4 +268,22 @@ class DB
 			return $data;
 		}
 
+		function getStylesByCategory(){
+			try{
+				$data = array();
+				$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = 1");
+				$stmt->execute();
+
+				$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+				return $data;
+			}
+			catch(PDOException $e){
+				echo "getStylesByCategory - ".$e->getMessage();
+				die();
+			}
+
+				return $data;
+			}
+
 }

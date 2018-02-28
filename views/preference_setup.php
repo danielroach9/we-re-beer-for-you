@@ -4,6 +4,9 @@ require_once("../model/DB.class.php");
 $db = new DB();
 $categories = $db->getCategories();
 $countries = $db->getCountries();
+$styles = $db->getStylesByCategory(); //could pass in parameter
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +54,13 @@ $countries = $db->getCountries();
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
+                  <select name="select">
+                  <?php
+                    foreach ($styles as $value) {
+                      echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
+                    }
+                    ?>
+                    </select>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_country">Preferred Counrty</label>
