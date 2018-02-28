@@ -5,7 +5,7 @@
  */
 class Rating
 {
-  private $uuid, $location, $rating, $comments, $beerid, $purchase_id;
+  private $uuid, $location, $rating, $comments, $beerID, $purchase_id;
 
   	// Get the User's id in the system
 	public function getID(){return $this->uuid;}
@@ -16,7 +16,7 @@ class Rating
 	// Get the Rating's comments
 	public function getComments(){return $this->comments;}
 	// Get the Rating's beer ID
-	public function getBeerID(){return $this->beerid;}
+	public function getBeerID(){return $this->beerID;}
 	// Get the Rating's purchase ID
 	public function getPurchaseID(){return $this->purchase_id;}
 
