@@ -78,3 +78,21 @@ $breweryBeers = $db->getBeersByBrewery(3);
 echo "<pre>";
 print_r($breweryBeers);
 echo "</pre>";
+
+echo "=========================================";
+echo "\n Insert new Rating ";
+$ratingInsert = $db->insertNewRating(90, "This is another comment",5,"RIT", 1);
+
+echo "<pre>";
+print_r($ratingInsert);
+echo "</pre>";
+
+echo "=========================================";
+echo "\Get Recent Ratings";
+
+$beerRatings = $db->getRecentRatings();
+
+echo "<pre>";
+print_r($beerRatings);
+echo "</pre>";
+
