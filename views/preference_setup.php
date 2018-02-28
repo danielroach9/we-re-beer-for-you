@@ -104,8 +104,6 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
   <script src="js/materialize.min.js"></script>
   <script>
     $( document ).ready(function(){
-        $(".button-collapse").sideNav();
-
         $('#selectedCategory').on('change',function(){
           //var cat_id = $(this).val();
           // var phpstyles =
