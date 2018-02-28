@@ -60,12 +60,12 @@ $ratings = $db->getRecentRatings();
 		    <?php
 		      foreach( $ratings as $rating ){
 			echo
-		      	"<td>getID" . $rating->getID() . "</td>
-		    	<td>getLocation" . $rating->getLocation() . "</td>
-			<td>getRating" . $rating->getRating() . "</td>
-			<td>getComments" . $rating->getComments() . "</td>
-			<td>getBeerID" . $rating->getBeerID() . "</td>
-			<td>getPurchaseID" . $rating->getPurchaseID() . "</td>";
+		      	"<td>getID" . $rating->getID() . "</td><br>
+		    	<td>getLocation" . $rating->getLocation() . "</td><br>
+			<td>getRating" . $rating->getRating() . "</td><br>
+			<td>getComments" . $rating->getComments() . "</td><br>
+			<td>getBeerID" . $rating->getBeerID() . "</td><br>
+			<td>getPurchaseID" . $rating->getPurchaseID() . "</td><br>";
 		      }
 		    ?>
 		    <!--<td>
