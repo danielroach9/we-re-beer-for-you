@@ -121,3 +121,7 @@ footer{
 .beer-card {
   width: 100%;
 }
+
+#listing-divider {
+  padding: 0;
+}
