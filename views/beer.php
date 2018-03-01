@@ -30,7 +30,7 @@ else {
     <div class="row">
     <div id="beer-info">
       <h4><?php echo $beer['name'] ?>
-        <a class="waves-effect waves-light btn" href="#recommend-modal"><i class="fa fa-share-square left"></i>Recommend</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="#recommend-modal"><i class="fa fa-share-square left"></i>Recommend</a>
       </h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
@@ -66,7 +66,7 @@ else {
               <i class="fa fa-star-o"></i>
               4
             </div>
-            <span class="datetime-and-location">Finnegan's Pub / 03/01/2018 3:30 PM</span>
+            <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
             <span class="comment">
               <p>
                 12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
