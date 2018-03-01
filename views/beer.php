@@ -54,8 +54,27 @@ else {
       </div>
     </div>
 
-    <div id="recent-reviews">
+    <div class="row" id="recent-reviews">
+      <div class="card-panel grey lighten-2">
+        <div id="review1">
+          <div id=rating>
+            <span>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              4
+            </span>
+          </div>
+        </div>
+        <hr />
+        <div id="review2">
+
+        </div>
+      </div>
       <p class=""style="font-style: light-italic;">Recent Activity</p>
+
     </div>
   </div>
 
