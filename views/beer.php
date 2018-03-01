@@ -57,20 +57,25 @@ else {
     <div class="row" id="recent-reviews">
       <div class="card-panel grey lighten-2">
         <div id="review1">
-          <div id=rating>
+          <div class=rating>
             <span>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
               4
+            </div>
+            <span class="datetime-and-location">Finnegan's Pub / 03/01/2018 3:30 PM</span>
+            <span class="comment">
+              <p>
+                12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
+                Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
+              </p>
             </span>
+            <span class="username">dxr5716</span>
           </div>
-        </div>
-        <hr />
-        <div id="review2">
-
+          <hr>
         </div>
       </div>
       <p class=""style="font-style: light-italic;">Recent Activity</p>
