@@ -116,3 +116,8 @@ footer{
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
+
+/* For cards displaying beer information on a brewery page */
+.beer-card {
+  width: 100%;
+}

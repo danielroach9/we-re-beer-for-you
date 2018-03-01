@@ -18,7 +18,7 @@ $brewery_beers = $db->getBeersByBrewery($id);
   <div class="row">
     <div class="card-panel grey lighten-2 jumbotron center-align" id="brewery-info">
       <h4><?php echo $brewery['name']?></h4>
-      <h4><a target="_blank"><?php echo $brewery['website']?></a></h4>
+      <h4><a target="_blank" href="<?php echo $brewery['website']?>"><?php echo $brewery['website']?></a></h4>
       <h4><?php echo $brewery['address1'] ?></h4>
       <h4><?php echo $brewery['city']?>, <?php echo $brewery['state']?> <?php echo $brewery['code']?></h4>
       <h4><?php echo $brewery['phone'] ?></h4>
@@ -26,14 +26,13 @@ $brewery_beers = $db->getBeersByBrewery($id);
   </div>
   <div class="row" id="beers-listing">
       <?php
-      // echo "<pre>".print_r($brewery_beers)."</pre>";
 
       foreach ($brewery_beers as $value) {
         echo "
-          <div class='col s2'>
-          <div class='card small'>
-          <div class='card-content'>
-          <span class='card-title'>$value[name]</span>
+          <div class='col s4'>
+          <div class='card small beer-card'>
+          <div class='card-content center-align'>
+          <a href="beer.php?id=$value[id]"><span class='card-title'>$value[name]</span></a>
           <p>Category: $value[cat_name]</p>
           <p>Style:  $value[style_name]</p>
           </div>
