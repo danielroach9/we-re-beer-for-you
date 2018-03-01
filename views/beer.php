@@ -30,7 +30,7 @@ else {
     <div class="row">
     <div id="beer-info">
       <h4><?php echo $beer['name'] ?>
-        <a class="waves-effect waves-light btn modal-trigger" href="#recommend-modal"><i class="fa fa-share-square left"></i>Recommend</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="#recommend"><i class="fa fa-share-square left"></i>Recommend</a>
       </h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
@@ -100,7 +100,7 @@ else {
     </div>
   </div>
 
-  <div id="recommend-modal" class="modal">
+  <div id="recommend" class="modal">
   <div class="modal-content">
     <h4>'Beer Name here' Recommendation</h4>
       <p>blah blah blah</p>
@@ -111,4 +111,5 @@ else {
   </div>
 </div>
 
+<script src="../js/materialize.min.js"></script>
   <?php include 'inc/footer.php'?>
