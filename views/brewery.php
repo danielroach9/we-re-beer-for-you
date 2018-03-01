@@ -24,6 +24,15 @@ $brewery_beers = $db->getBeersByBrewery($id);
       <h4><?php echo $brewery['phone'] ?></h4>
     </div>
   </div>
+
+  <div class="row" id="listing-divider">
+    <div class="center-align">
+      <hr />
+        <h5 class="brand-logo">Made by <?php echo $brewery['name']?></h5>
+      <hr />
+    </div>
+  </div>
+
   <div class="row" id="beers-listing">
       <?php
 
