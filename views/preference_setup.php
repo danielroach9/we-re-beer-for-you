@@ -43,13 +43,15 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
                   <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
-                  <select name="select" id="selectedCategory">
+                  <form>
+                  <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
                     }
                     ?>
                     </select>
+                  </form>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
@@ -98,27 +100,17 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
 
 
   <!--  Scripts-->
+  <?php
+   if(isset($_GET[""])){
+       $category=$_GET["select1"];
+       echo "select category is => ".$category;
+   }
+?>
 
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script>
-    $( document ).ready(function(){
-        $('#selectedCategory').on('change',function(){
-          var cat_id = $(this).val();
-          var styles;
-          $.ajax({
-            type: 'GET',
-            url: '../model/DB.class.php',
-            data: {functionname: 'getStylesByCategory', arguments: cat_id},
-            success: function (obj, textstatus){
-              styles = obj;
-            }
-          });
-          console.log(styles);
-
-        });
-    });
   </script>
 
   </body>
