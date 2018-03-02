@@ -100,18 +100,21 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
 
 
   <!--  Scripts-->
-  <?php
-   if(isset($_GET["select1"])){
-       $category = $_GET["select1"];
-       $result = $db->getStylesByCategory($category);
-       print_r ($result);
-   }
-?>
-
-
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script>
+    $( document ).ready(function(){
+      $('#selectedCategory').change(function(){
+        var cat_id = $(this).val();
+        alert("value in js "+cat_id);
+        console.log(cat_id);
+        var styles;
+        $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
+          alert('ajax completed. Response:  '+data);
+          //do after submission operation in DOM
+        });
+      });
+    });
   </script>
 
   </body>
