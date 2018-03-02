@@ -120,7 +120,7 @@ else {
         <div class="row modal-row">
           <div class="input-field" id="message">
             <i class="fa fa-pencil-square-o prefix"></i>
-            <textarea id="message-area" class="materialize-textarea"></textarea>
+            <textarea id="message-area" class="materialize-textarea" value='I like this beer and think that you will like it too! &#13;&#10;It is called <?php echo $beer['name']?>.'></textarea>
             <label for="message-area">Message</label>
           </div>
         </div>
