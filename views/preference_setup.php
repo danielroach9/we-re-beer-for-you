@@ -54,6 +54,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
+                  <p>yo</p>
                   <select name="select" class="preferences">
                     <option value=1>test</option>
                   <?php
