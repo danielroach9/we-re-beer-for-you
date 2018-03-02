@@ -57,11 +57,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <p>yo</p>
                   <select name="select" class="preferences">
                     <option value=1>test</option>
-                  <?php
-                    foreach ($styles as $value) {
-                      echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
-                    }
-                    ?>
+
                     </select>
                 </div>
                 <div class="input-field col s12">
