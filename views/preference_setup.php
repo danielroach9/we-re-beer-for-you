@@ -55,6 +55,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
                   <select name="select" class="preferences">
+                    <option value=1>test</option>
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
