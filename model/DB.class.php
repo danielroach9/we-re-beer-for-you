@@ -316,6 +316,11 @@ class DB
 			}
 
 				return $data;
-			}
+		}
+
+		if ($_POST['dropdownValue']){
+    	//call the function or execute the code
+    	getStylesByCategory($_POST['dropdownValue']);
+		}
 
 }

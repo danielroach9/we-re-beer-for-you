@@ -44,7 +44,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <label for="preferred_category">Prefered Category</label>
                   <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
                   <form>
-                  <select name="select1" id="selectedCategory" onchange="this.form.submit()">
+                  <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
