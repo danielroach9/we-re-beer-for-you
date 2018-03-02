@@ -101,15 +101,37 @@ else {
   </div>
 
   <div id="recommend" class="modal">
-  <div class="modal-content">
-    <h4>'Beer Name here' Recommendation</h4>
+    <div class="modal-content">
+      <form>
+        <div class="row">
+          <div class="input-field" id="send-to">
+            <i class="fa fa-user-circle-o prefix"></i>
+            <input id="send-to-input" type="text"/>
+            <label for="send-to-input">Send to</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field" id="subject">
+            <i class="fa fa-envelope prefix"></i>
+            <input id="subject-input" type="text"/>
+            <label for="subject-input">Subject</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field" id="message">
+            <textarea id="message-area" class="materialize-textarea"></textarea>
+            <label for="message-area">Message</label>
+          </div>
+        </div>
+      </form>
+      <h4>'Beer Name here' Recommendation</h4>
       <p>blah blah blah</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close btn-flat">Cancel</a>
+      <a href="#!" class="modal-aciton modal-close btn-flat">Send</a>
+    </div>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close btn-flat">Cancel</a>
-    <a href="#!" class="modal-aciton modal-close btn-flat">Send</a>
-  </div>
-</div>
 
 <script src="../js/materialize.min.js"></script>
   <?php include 'inc/footer.php'?>
