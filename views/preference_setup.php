@@ -103,7 +103,8 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
   <?php
    if(isset($_GET["select1"])){
        $category = $_GET["select1"];
-       echo $styles = $db->getStylesByCategory(2);
+       echo $result = $db->getStylesByCategory(2);
+       echo $result;
    }
 ?>
 
