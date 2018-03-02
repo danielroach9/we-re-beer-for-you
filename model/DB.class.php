@@ -290,5 +290,5 @@ class DB
 }
 if ($_POST['dropdownValue']){
     //call the function or execute the code
-    processDrpdown($_POST['dropdownValue']);
+    getStylesByCategory($_POST['dropdownValue']);
 }
