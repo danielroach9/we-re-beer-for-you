@@ -132,5 +132,4 @@ else {
     </div>
   </div>
 
-<script src="../js/materialize.min.js"></script>
   <?php include 'inc/footer.php'?>
