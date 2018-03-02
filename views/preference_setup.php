@@ -43,7 +43,6 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
                   <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
-                  <form>
                   <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
@@ -51,7 +50,6 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     }
                     ?>
                     </select>
-                  </form>
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
