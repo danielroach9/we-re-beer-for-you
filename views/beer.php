@@ -104,6 +104,13 @@ else {
     <div class="modal-content">
       <form>
         <div class="row modal-row">
+          <div class="input-field" id="subject">
+            <i class="fa fa-envelope prefix"></i>
+            <input disabled id="subject-input" type="text" value="Try <?php echo $beer['name']?>!"/>
+            <label for="subject-input">Subject</label>
+          </div>
+        </div>
+        <div class="row modal-row">
           <div class="input-field" id="send-to">
             <i class="fa fa-user-circle-o prefix"></i>
             <input id="send-to-input" type="text"/>
@@ -111,15 +118,8 @@ else {
           </div>
         </div>
         <div class="row modal-row">
-          <div class="input-field" id="subject">
-            <i class="fa fa-envelope prefix"></i>
-            <input id="subject-input" type="text"/>
-            <label for="subject-input">Subject</label>
-          </div>
-        </div>
-        <div class="row modal-row">
           <div class="input-field" id="message">
-            <i class="fa fa-pencil-square-o"></i>
+            <i class="fa fa-pencil-square-o prefix"></i>
             <textarea id="message-area" class="materialize-textarea"></textarea>
             <label for="message-area">Message</label>
           </div>
