@@ -42,7 +42,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_category">Prefered Category</label>
-                  <input type="email" class="preferences" name="preferred_category" id="preferred_category" >
+                  <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
                   <select name="select" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
@@ -54,7 +54,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 <div class="input-field col s12">
                   <label for="preferred_style">Prefered Style</label>
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
-                  <select name="select">
+                  <select name="select" class="preferences">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
@@ -64,7 +64,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <label for="preferred_country">Preferred Counrty</label>
-                  <input type="preferred_country" class="preferences" name="preferred_country" id="preferred_country">
+                  <input type="text" class="preferences" name="preferred_country" id="preferred_country">
                   <select name="select">
                   <?php
                     foreach ($countries as $value) {
