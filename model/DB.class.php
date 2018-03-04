@@ -216,6 +216,38 @@ class DB
 		return $data;
 	}
 
+	/**
+	 * 	insertNewRating - will insert a new record to the user table with the
+	 * provided information.
+	 *
+	 * @param string $_beerID - firstName of the user to add.
+	 * @param string $_comment - lastName of the user to add.
+	 * @param integer $_rating - roleid of the user to add.
+	 * @param string $_location - email of the user to add.
+	 * @param string $_uuid - pasword of the user to add.
+	 * @return integer containing the id of the newest user added.
+	 **/
+	/*function insertNewRating($_beerID,$_comment,$_rating, $_location, $_uuid){
+
+		try{
+			$stmt = $this->db->prepare("INSERT INTO rating
+								(beerID, comment, rating, location, uuid)
+				VALUES (:beerID,:comment,:rating,:location,:uuid)");
+			$stmt->bindParam(":beerID",$_beerID,PDO::PARAM_INT);
+			$stmt->bindParam(":comment",$_comment,PDO::PARAM_STR);
+			$stmt->bindParam(":rating",$_rating,PDO::PARAM_INT);
+			$stmt->bindParam(":location",$_location,PDO::PARAM_STR);
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+			die();
+		}
+	}*/
+
 	function getRecentRatings(){
 		try{
 			$data = array();
