@@ -42,18 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return data;
+function test_input($){
+    return insertNewRating($beer_id,$comment,3, $location, 1);
 }
     
 ?>
 
 <h2>Submit Beer Review</h2>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="/action_page.php">
+<form method="post" action="test_input()">
   Beer name:<br>
   <input type="text" name="beername" value="<?php echo $beer_id;?>">
   <span class="error">* <?php echo $beerErr;?></span>
