@@ -15,9 +15,9 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
   <!-- <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
 
 <?php include "inc/headeri.php"; ?>
@@ -96,24 +96,8 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     </div>
   </footer>
 
-
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
-  <script>
-    $( document ).ready(function(){
-      $('#selectedCategory').change(function(){
-        var cat_id = $(this).val();
-        alert("value in js "+cat_id);
-        console.log(cat_id);
-        var styles;
-        $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
-          alert('ajax completed. Response:  '+data);
-          //do after submission operation in DOM
-        });
-      });
-    });
-  </script>
-
   </body>
 </html>

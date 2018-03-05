@@ -390,23 +390,52 @@ class DB{
 		return $data;
 	}
 
-	function getMessageByID(){
+	function getMessageByID($_message_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM message
+										WHERE message_id = :message_id");
+			$stmt->bindParam(":message_id",$_message_id,PDO::PARAM_INT);
+			$stmt->execute();
 
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'message');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getMessageByID - ".$e->getMessage();
+			die();
+		}
+		return $data;
 	}
 
-	function getMessagesForUser(){
+	function getMessagesForUser($_uuid){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM message
+										WHERE recipient_uuid = :uuid");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->execute();
 
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'message');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getMessagesForUser - ".$e->getMessage();
+			die();
+		}
+		return $data;
 	}
 
 	/**
-	 * 	insertNewUser - will insert a new record to the user table with the
+	 * 	insertNewMessage - will insert a new record to the message table with the
 	 * provided information.
 	 *
-	 * @param string $_firstName - firstName of the user to add.
-	 * @param string $_lastName - lastName of the user to add.
-	 * @param integer $_roleID - roleid of the user to add.
-	 * @param string $_email - email of the user to add.
-	 * @param string $_password - pasword of the user to add.
+	 * @param string $_recipientUUID - uuid of the user who is the message recipient.
+	 * @param string $_senderUUID - uuid of the user who is sending the message.
+	 * @param integer $_title - title of the message to send.
+	 * @param string $_content - content of the message to send.
 	 * @return integer containing the id of the newest user added.
 	 **/
 	function insertNewMessage($_recipientUUID, $_senderUUID,$_title,$_content){
