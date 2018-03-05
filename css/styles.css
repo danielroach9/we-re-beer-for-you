@@ -33,7 +33,6 @@ footer{
 
 #register{
     display: none;
-    animation: fadeIn 1s;
 }
 
 #preferences{
@@ -44,10 +43,9 @@ footer{
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
-<<<<<<< HEAD
  }
 
- .input-field input[type=text]:focus,.input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
+ .input-field input[type=text]:focus,.input-field input[type=email]:focus,.input-field input[type=password]:focus, .materialize-textarea:focus:not([readonly]) {
      border-bottom: 1px solid #2d1111 !important;
      box-shadow: 0 1px 0 0 #2d1111 !important;
   }

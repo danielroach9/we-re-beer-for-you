@@ -280,11 +280,11 @@ class DB{
 	 * @param string $_uuid - pasword of the user to add.
 	 * @return integer containing the id of the newest user added.
 	 **/
-	/*function insertNewRating($_beerID,$_comment,$_rating, $_location, $_uuid){
+	function insertNewRating($_beerID,$_comment,$_rating, $_location, $_uuid){
 
 		try{
 			$stmt = $this->db->prepare("INSERT INTO rating
-								(beerID, comment, rating, location, uuid)
+								(beer_id, comment, rating, location, uuid)
 				VALUES (:beerID,:comment,:rating,:location,:uuid)");
 			$stmt->bindParam(":beerID",$_beerID,PDO::PARAM_INT);
 			$stmt->bindParam(":comment",$_comment,PDO::PARAM_STR);
@@ -299,7 +299,7 @@ class DB{
 			echo $e->getMessage();
 			die();
 		}
-	}*/
+	}
 
 	function getRecentRatings(){
 		try{
