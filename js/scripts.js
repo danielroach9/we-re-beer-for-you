@@ -32,7 +32,7 @@ $( document ).ready(function(){
 	        var $cat_id = $(this).val();
 
 	        var $data = {
-	        	category: $cat_id
+	        	category: $cat_id,
 	        	action: 'getStylesByCategory'
 	        };
 
