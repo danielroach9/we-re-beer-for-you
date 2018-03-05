@@ -280,7 +280,7 @@ class DB{
 	 * @param string $_uuid - pasword of the user to add.
 	 * @return integer containing the id of the newest user added.
 	 **/
-	/*function insertNewRating($_beerID,$_comment,$_rating, $_location, $_uuid){
+	function insertNewRating($_beerID,$_comment,$_rating, $_location, $_uuid){
 
 		try{
 			$stmt = $this->db->prepare("INSERT INTO rating
@@ -299,7 +299,7 @@ class DB{
 			echo $e->getMessage();
 			die();
 		}
-	}*/
+	}
 
 	function getRecentRatings(){
 		try{
