@@ -31,7 +31,7 @@
             </div>
             <div class="card-action center-align">
               <h5>Try out a new beer today!!</h5>
-              <input type="submit" class="btn brown waves-effect waves-light" value="Search">
+              <button class="btn brown waves-effect waves-light" value="Search"/>
             </div>
           </form>
         </div>
