@@ -2,6 +2,8 @@
 //session_start();
 require_once ("../model/DB.class.php");
 
+var_dump($_SESSION);
+
 $db = new DB();
 $messages = $db->getMessagesForUser($_SESSION['accountID']);
 ?>

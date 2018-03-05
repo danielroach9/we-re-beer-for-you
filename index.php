@@ -15,7 +15,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <label for="first_name">Email</label>
-                  <input type="text" name="login_email" id="login_email" />
+                  <input type="email" name="login_email" id="login_email" />
                 </div>
                 <div class="input-field col s12">
                   <label for="password">Password</label>
