@@ -11,15 +11,15 @@
 <?php
 // define variables and set to empty values
 $beerErr = $locationErr = "";
-$berID = $location = $comment = "";
+$beer_id = $location = $comment = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["beerID"])) {
+  if (empty($_POST["beer_id"])) {
     $beerErr = "Beer Name is required";
   } else {
-    $beerID = test_input($_POST["beerID"]);
+    $beer_id = test_input($_POST["beer_id"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$beerID)) {
+    if (!preg_match("/^[a-zA-Z ]*$/",$beer_id)) {
       $beerErr = "Only letters and white space allowed";
     }
   }
@@ -42,23 +42,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+function test_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return data;
 }
+    
 ?>
 
 <h2>Submit Beer Review</h2>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="/action_page.php">
   Beer name:<br>
-  <input type="text" name="beername" value="<?php echo $beerID;?>">
+  <input type="text" name="beername" value="<?php echo $beer_id;?>">
   <span class="error">* <?php echo $beerErr;?></span>
   <br><br>
   Location:<br>
-  <input type="text" name="location" value="<?php echo $locationID;?>">
+  <input type="text" name="location" value="<?php echo $location;?>">
   <span class="error">* <?php echo $locationErr;?></span>
   <br><br>
   Rating:<br>
@@ -74,6 +75,14 @@ function test_input($data) {
 <textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" value="<?php echo $comment;?>" form="usrform">
 </textarea>
 
+<?php
+    echo "<h2> Test Input <?h>";
+    echo $beer_id;
+    echo "<br>";
+    echo $location;
+    echo "<br>";
+    echo $comment;
+?>
 
 </body>
 </html>

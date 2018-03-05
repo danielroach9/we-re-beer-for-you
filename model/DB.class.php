@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['action'])){
 	$action = $_POST['action'];
 	$db = new DB();
@@ -8,6 +9,11 @@ if(isset($_POST['action'])){
 			$user = isset($_POST['user']) ? $_POST['user'] : null;
 			$pass = isset($_POST['pass']) ? $_POST['pass'] : null;
 			$value = $db->performLogin($user, $pass);
+			return $value;
+			break;
+		case 'getStylesByCategory':
+			$cat_id = isset($_POST['cat_id']) ? $_POST['cat_id'] : null;
+			$value = $db->getStylesByCategory($cat_id);
 			return $value;
 			break;
 	}
@@ -41,9 +47,9 @@ class DB{
 			if(password_verify($_pass, $user[0]->getPassword())){
 				$_SESSION['loggedIn'] = true;
 				$_SESSION['accountID'] = $user[0]->getID();
-				$_SESSION['accountFirstName'] = $user[0]->getFirstName(); 
-				$_SESSION['accountLastName'] = $user[0]->getLastName(); 
-				$_SESSION['accountEmail'] = $user[0]->getEmail(); 
+				$_SESSION['accountFirstName'] = $user[0]->getFirstName();
+				$_SESSION['accountLastName'] = $user[0]->getLastName();
+				$_SESSION['accountEmail'] = $user[0]->getEmail();
 				echo "true";
 				return true;
 			}

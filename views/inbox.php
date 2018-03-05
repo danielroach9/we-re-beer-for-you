@@ -1,9 +1,10 @@
 <?php
-session_start();
+//session_start();
 require_once ("../model/DB.class.php");
 
 $db = new DB();
 $messages = $db->getMessagesForUser($_SESSION['accountID']);
+var_dump($messages);
 ?>
 
 <?php include 'inc/header.php'?>

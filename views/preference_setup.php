@@ -1,10 +1,10 @@
 <?php
 require_once("../model/DB.class.php");
 
-$db = new DB();
-$categories = $db->getCategories();
-$countries = $db->getCountries();
-$styles = $db->getStylesByCategory(1); //hardcoded parameter to start
+// $db = new DB();
+// $categories = $db->getCategories();
+// $countries = $db->getCountries();
+// $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
 
 
 ?>
@@ -44,35 +44,35 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <!-- <input type="text" class="preferences" name="preferred_category" id="preferred_category" > -->
 
                   <select name="select1" id="selectedCategory">
-                  <?php
-                    foreach ($categories as $value) {
-                      echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
-                    }
-                    ?>
+                  <!-- <?php
+                    //foreach ($categories as $value) {
+                      //echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
+                    //}
+                    ?> -->
                     </select>
                     <label for="preferred_category">Prefered Category</label>
                 </div>
                 <div class="input-field col s12">
                   <!--<input type="text" class="preferences" name="preferred_style" id="preferred_style">-->
                   <select name="select">
-                  <?php
-                    foreach ($styles as $value) {
-                      echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
-                    }
-                    ?>
+                  <!-- <?php
+                    //foreach ($styles as $value) {
+                      //echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
+                    //}
+                    ?> -->
                     </select>
                     <label for="preferred_style">Prefered Style</label>
                 </div>
                 <div class="input-field col s12">
                   <!--<input type="text" class="preferences" name="preferred_country" id="preferred_country">-->
                   <select name="select">
-                  <?php
-                    foreach ($countries as $value) {
+                 <!--  <?php
+                    //foreach ($countries as $value) {
                       $count = 1;
-                      echo '<option value='.$count.'>'.$value[country].'</option>';
+                      //echo '<option value='.$count.'>'.$value[country].'</option>';
                       $count++;
-                    }
-                    ?>
+                    //}
+                    ?> -->
                     </select>
                     <label for="preferred_country">Preferred Country</label>
                 </div>
