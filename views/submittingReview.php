@@ -9,6 +9,7 @@
 
 
 <?php
+require_once("../model/DB.class.php");
 // define variables and set to empty values
 $beerErr = $locationErr = "";
 $beer_id = $location = $comment = "";
@@ -46,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>Submit Beer Review</h2>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="test_input()">
+<form method="post" action="DB.class.php">
   Beer name:<br>
   <input type="text" name="beername" value="<?php echo $beer_id;?>">
   <span class="error">* <?php echo $beerErr;?></span>
@@ -71,6 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
     function test_input(){
         return insertNewRating($beer_id,$comment,3, $location, 1);
+    }
+    if(isset($_POST['submit']){
+	test_input();
     }
 ?>
 
