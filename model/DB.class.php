@@ -44,11 +44,11 @@ class DB{
 				$_SESSION['accountFirstName'] = $user[0]->getFirstName(); 
 				$_SESSION['accountLastName'] = $user[0]->getLastName(); 
 				$_SESSION['accountEmail'] = $user[0]->getEmail(); 
-				print "true";
+				//print "true";
 				return true;
 			}
 		}
-		print "false";
+		//print "false";
 		return false;
 	}
 
