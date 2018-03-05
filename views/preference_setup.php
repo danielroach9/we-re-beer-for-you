@@ -86,18 +86,4 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
       </div>
     </div>
   </div>
-
-  <footer class="page-footer brown">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="https://github.com/danielroach9/we-re-beer-for-you">We're beer for you</a>
-      - &copy; Copyright <?php echo date("Y"); ?>
-      </div>
-    </div>
-  </footer>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  </body>
-</html>
+<?php include "inc/header.php"; ?>
