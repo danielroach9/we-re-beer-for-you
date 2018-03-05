@@ -57,5 +57,6 @@ $( document ).ready(function(){
 
 function showRegister(){
   $("#register").show();
+  $('#register').addClass('animated flipInY');
   $("#login").hide();
 }

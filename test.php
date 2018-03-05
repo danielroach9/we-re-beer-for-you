@@ -96,6 +96,7 @@ echo "<pre>";
 print_r($beerRatings);
 echo "</pre>";
 
+// (receiver, sender, "title", "message")
 //$messages = $db->insertNewMessage(1,1,"test message","This is a test system message.");
 echo "=========================================";
 echo "\Get all messages";
