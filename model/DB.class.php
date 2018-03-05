@@ -35,20 +35,25 @@ class DB{
 	}
 
 	function performLogin($_email,$_pass){
-		$userExists = $this->getUserByEmail($_email);
+		$user = $this->getUserByEmail($_email);
 
-		if($userExists){
-			if(password_verify($_pass, $userExists[0]->getPassword())){
-				// $_SESSION['loggedIn'] = true;
-				// $_SESSION['accountFirstName'] = $user->getFirstName(); 
-				// $_SESSION['accountLastName'] = $user->getLastName(); 
-				// $_SESSION['accountEmail'] = $user->getEmail(); 
-				// $_SESSION['accountType'] = $user->getRole();
-				// var_dump($_SESSION);
-				return "You have successsfully logged in!\n";
+		if($user){
+			if(password_verify($_pass, $user[0]->getPassword())){
+				$_SESSION['loggedIn'] = true;
+				$_SESSION['accountID'] = $user[0]->getID();
+				$_SESSION['accountFirstName'] = $user[0]->getFirstName(); 
+				$_SESSION['accountLastName'] = $user[0]->getLastName(); 
+				$_SESSION['accountEmail'] = $user[0]->getEmail(); 
+				var_dump($_SESSION);
+				return true;
 			}
 		}
 		return false;
+	}
+
+	function performLogOut(){
+		session_unset();
+		session_destroy();
 	}
 
 	function getAllUsers(){
