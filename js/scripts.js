@@ -15,7 +15,7 @@ $( document ).ready(function(){
 
 		$.ajax({
 			  type: "POST",
-			  url: 'DB.class.php',
+			  url: 'model/DB.class.php',
 			  data: $data
 		}).done(function(msg) {
               console.log(msg);
