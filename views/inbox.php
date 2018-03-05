@@ -33,6 +33,7 @@ var_dump($messages);
 									<td>".$message->getTitle()."</td>
 									<td>".$from[0]->getWholeName()."></td>
 									<td>".$message->getContent()."</td>
+									<td>".$message->getDate()."</td>
 								</tr>
 							";
 						}
