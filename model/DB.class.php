@@ -45,10 +45,10 @@ class DB{
 				$_SESSION['accountLastName'] = $user[0]->getLastName(); 
 				$_SESSION['accountEmail'] = $user[0]->getEmail(); 
 				var_dump($_SESSION);
-				return true;
+				print "true";
 			}
 		}
-		return false;
+		print "false";
 	}
 
 	function performLogOut(){

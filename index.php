@@ -23,7 +23,7 @@
                 </div>
               </div>
               <div class="row center-align">
-                <button class="btn brown waves-effect waves-light" value="Login"></button>
+                <button class="btn brown waves-effect waves-light">Login</button>
               </div>
             </div>
             <div class="card-action center-align">
