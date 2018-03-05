@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     function test_input(){
         return insertNewRating($beer_id,$comment,3, $location, 1);
     }
-    if(isset($_POST['submit']){
+    if(isset($_POST['submit'])){
 	test_input();
     }
 ?>
