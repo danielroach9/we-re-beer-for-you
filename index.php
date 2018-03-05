@@ -1,4 +1,4 @@
-<?php include ("views/inc/headeri.php"); ?>
+<?php session_start(); include ("views/inc/headeri.php"); ?>
 <title>We're beer for you!</title>
 </head>
 <body>

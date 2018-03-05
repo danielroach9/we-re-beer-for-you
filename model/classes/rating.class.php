@@ -5,7 +5,7 @@
  */
 class Rating
 {
-  private $purchase_id, $beerID, $comment, $rating, $location, $uuid;
+  private $purchase_id, $beer_id, $comment, $rating, $location, $uuid;
 
 	// Get the Rating's purchase ID
 	public function getPurchaseID(){return $this->purchase_id;}
