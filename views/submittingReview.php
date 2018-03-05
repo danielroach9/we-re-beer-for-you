@@ -55,7 +55,7 @@ function test_input($data){
 <p><span class="error">* required field.</span></p>
 <form method="post" action="/action_page.php">
   Beer name:<br>
-  <input type="text" name="beername" value="<?php echo $beer_ID;?>">
+  <input type="text" name="beername" value="<?php echo $beer_id;?>">
   <span class="error">* <?php echo $beerErr;?></span>
   <br><br>
   Location:<br>
