@@ -77,7 +77,7 @@ function test_input($data){
 
 <?php
     echo "<h2> Test Input <?h>";
-    echo $beer_ID;
+    echo $beer_id;
     echo "<br>";
     echo $location;
     echo "<br>";
