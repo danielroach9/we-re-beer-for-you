@@ -19,7 +19,7 @@ $( document ).ready(function(){
 			  data: $data
 		}).done(function(msg) {
               console.log(msg);
-			  if(msg == true){
+			  if(msg){
 			  	window.location.href = 'home.php';
 			  }
 			  else{
