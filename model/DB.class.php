@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['action'])){
 	$action = $_POST['action'];
 	$db = new DB();
@@ -10,6 +11,7 @@ if(isset($_POST['action'])){
 			$value = $db->performLogin($user, $pass);
 			return $value;
 			break;
+
 	}
 }
 class DB{

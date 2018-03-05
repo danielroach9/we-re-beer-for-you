@@ -20,7 +20,7 @@ $( document ).ready(function(){
 			}).done(function(msg) {
 	              console.log(msg);
 				  if(msg){
-				  	window.location.href = 'home.php';
+				  	window.location.href = 'views/inbox.php';
 				  }
 				  else{
 				  	alert("User/password incorrect!");
@@ -29,9 +29,25 @@ $( document ).ready(function(){
     	});
 
     	$('#selectedCategory').change(function(){
-	        var cat_id = $(this).val();
-	        console.log(cat_id);
-	        var styles;
+	        var $cat_id = $(this).val();
+
+	        var $data = {
+	        	category: $cat_id
+	        	action: 'getStylesByCategory'
+	        };
+
+	        $.ajax({
+				  type: "POST",
+				  url: 'model/DB.class.php',
+				  data: $data
+			}).done(function(data) {
+				if(data){
+
+				}else{
+					//nothing..
+				}
+			});
+
 	        $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
 	          alert('ajax completed. Response:  '+data);
 	          //do after submission operation in DOM
