@@ -55,6 +55,7 @@ CREATE TABLE message(
 	`sender_uuid` INT(11) NOT NULL,
 	`title` VARCHAR(30) NOT NULL,
 	`content` TEXT NOT NULL,
+	`date` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`message_id`),
 	key `fk_message_user_recipient` (`recipient_uuid`),
 	key `fk_message_user_sender` (`sender_uuid`),
