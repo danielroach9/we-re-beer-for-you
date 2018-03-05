@@ -38,15 +38,16 @@ class DB{
 		$userExists = $this->getUserByEmail($_email);
 
 		if($userExists){
-			if(password_verify($_pass, $userExists->getPassword())){
-				// $_SESSION['loggedIn'] = true;
-				// $_SESSION['accountFirstName'] = $user->getFirstName(); 
-				// $_SESSION['accountLastName'] = $user->getLastName(); 
-				// $_SESSION['accountEmail'] = $user->getEmail(); 
-				// $_SESSION['accountType'] = $user->getRole();
-				// var_dump($_SESSION);
-				return "You have successsfully logged in!\n";
-			}
+			// if(password_verify($_pass, $userExists->getPassword())){
+			// 	// $_SESSION['loggedIn'] = true;
+			// 	// $_SESSION['accountFirstName'] = $user->getFirstName(); 
+			// 	// $_SESSION['accountLastName'] = $user->getLastName(); 
+			// 	// $_SESSION['accountEmail'] = $user->getEmail(); 
+			// 	// $_SESSION['accountType'] = $user->getRole();
+			// 	// var_dump($_SESSION);
+			// 	return "You have successsfully logged in!\n";
+			// }
+			return $userExists;
 		}
 		return false;
 	}
