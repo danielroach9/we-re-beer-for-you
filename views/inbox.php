@@ -30,9 +30,9 @@ var_dump($messages);
 							$from[0]->getWholeName();
 								echo "
 								<tr>
-									<td>$message->getTitle()</td>
-									<td>$from[0]->getWholeName()></td>
-									<td>$message->getContent()</td>
+									<td>".$message->getTitle()."</td>
+									<td>".$from[0]->getWholeName()."></td>
+									<td>".$message->getContent()."</td>
 								</tr>
 							";
 						}
