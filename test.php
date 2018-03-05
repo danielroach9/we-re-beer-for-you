@@ -80,8 +80,8 @@ print_r($breweryBeers);
 echo "</pre>";
 
  echo "=========================================";
- echo "\n Insert new Rating ";
- $ratingInsert = $db->insertNewRating(90, "This is another comment",5,"RIT", 1);
+ // echo "\n Insert new Rating ";
+ // $ratingInsert = $db->insertNewRating(90, "This is another comment",5,"RIT", 1);
 
  echo "<pre>";
  print_r($ratingInsert);
@@ -97,7 +97,7 @@ print_r($beerRatings);
 echo "</pre>";
 
 // (receiver, sender, "title", "message")
-//$messages = $db->insertNewMessage(1,1,"test message","This is a test system message.");
+$messages = $db->insertNewMessage(3,1,"test message","This is a test system message.");
 echo "=========================================";
 echo "\Get all messages";
 $messages = $db->getAllMessages();

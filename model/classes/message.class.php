@@ -5,7 +5,7 @@
  */
 class Message
 {
-  private $message_id, $recipient_uuid, $sender_uuid, $title, $content;
+  private $message_id, $recipient_uuid, $sender_uuid, $title, $content, $date;
 
 	// Get the Message's ID
 	public function getMessageID(){return $this->message_id;}
@@ -17,4 +17,6 @@ class Message
 	public function getTitle(){return $this->title;}
 	// Get the Message's content
 	public function getContent(){return $this->content;}
+	// Get the Message's datetime sent
+	public function getDate(){return $this->date;}
 }
