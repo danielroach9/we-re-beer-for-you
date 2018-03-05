@@ -41,8 +41,8 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   </div>
                 </div>
                 <div class="input-field col s12">
-                  <label for="preferred_category">Prefered Category</label>
-                  <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
+                  <!-- <input type="text" class="preferences" name="preferred_category" id="preferred_category" > -->
+
                   <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
@@ -50,10 +50,10 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     }
                     ?>
                     </select>
+                    <label for="preferred_category">Prefered Category</label>
                 </div>
                 <div class="input-field col s12">
-                  <label for="preferred_style">Prefered Style</label>
-                  <input type="text" class="preferences" name="preferred_style" id="preferred_style">
+                  <!--<input type="text" class="preferences" name="preferred_style" id="preferred_style">-->
                   <select name="select">
                   <?php
                     foreach ($styles as $value) {
@@ -61,10 +61,10 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     }
                     ?>
                     </select>
+                    <label for="preferred_style">Prefered Style</label>
                 </div>
                 <div class="input-field col s12">
-                  <label for="preferred_country">Preferred Counrty</label>
-                  <input type="text" class="preferences" name="preferred_country" id="preferred_country">
+                  <!--<input type="text" class="preferences" name="preferred_country" id="preferred_country">-->
                   <select name="select">
                   <?php
                     foreach ($countries as $value) {
@@ -74,6 +74,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     }
                     ?>
                     </select>
+                    <label for="preferred_country">Preferred Country</label>
                 </div>
               </div>
             </div>
