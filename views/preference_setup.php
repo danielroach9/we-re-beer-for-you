@@ -12,8 +12,7 @@ require_once("../model/DB.class.php");
 <?php include "inc/header.php"; ?>
 <title>We're beer for you!</title>
 <?php include "inc/nav.php"; ?>
-</head>
-<body>
+
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <div class="valign-wrapper row login-box">
