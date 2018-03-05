@@ -96,11 +96,20 @@ echo "<pre>";
 print_r($beerRatings);
 echo "</pre>";
 
-$messages = $db->insertNewMessage(1,1,"test message","This is a test system message.");
+//$messages = $db->insertNewMessage(1,1,"test message","This is a test system message.");
 echo "=========================================";
 echo "\Get all messages";
 $messages = $db->getAllMessages();
 
 echo "<pre>";
 print_r($messages);
+echo "</pre>";
+
+
+echo "=========================================";
+echo "\Perform login";
+$login = $db->performLogin("test@test.com","test");
+
+echo "<pre>";
+print_r($login);
 echo "</pre>";
