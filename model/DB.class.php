@@ -44,11 +44,12 @@ class DB{
 				$_SESSION['accountFirstName'] = $user[0]->getFirstName(); 
 				$_SESSION['accountLastName'] = $user[0]->getLastName(); 
 				$_SESSION['accountEmail'] = $user[0]->getEmail(); 
-				var_dump($_SESSION);
 				print "true";
+				return true;
 			}
 		}
 		print "false";
+		return false;
 	}
 
 	function performLogOut(){
