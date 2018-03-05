@@ -284,7 +284,7 @@ class DB{
 
 		try{
 			$stmt = $this->db->prepare("INSERT INTO rating
-								(beerID, comment, rating, location, uuid)
+								(beer_id, comment, rating, location, uuid)
 				VALUES (:beerID,:comment,:rating,:location,:uuid)");
 			$stmt->bindParam(":beerID",$_beerID,PDO::PARAM_INT);
 			$stmt->bindParam(":comment",$_comment,PDO::PARAM_STR);
