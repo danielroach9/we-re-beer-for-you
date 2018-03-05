@@ -41,10 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 }
-
-function test_input(){
-    return insertNewRating($beer_id,$comment,3, $location, 1);
-}
     
 ?>
 
@@ -73,12 +69,9 @@ function test_input(){
 </textarea>
 
 <?php
-    echo "<h2> Test Input <?h>";
-    echo $beer_id;
-    echo "<br>";
-    echo $location;
-    echo "<br>";
-    echo $comment;
+    function test_input(){
+        return insertNewRating($beer_id,$comment,3, $location, 1);
+    }
 ?>
 
 </body>
