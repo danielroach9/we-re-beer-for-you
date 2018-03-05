@@ -38,7 +38,7 @@ class DB{
 		$userExists = $this->getUserByEmail($_email);
 
 		if($userExists){
-			if(password_verify($_pass, $userExists->getPassword())){
+			if(password_verify($_pass, $userExists[0]->getPassword())){
 				// $_SESSION['loggedIn'] = true;
 				// $_SESSION['accountFirstName'] = $user->getFirstName(); 
 				// $_SESSION['accountLastName'] = $user->getLastName(); 
