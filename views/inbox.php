@@ -3,7 +3,7 @@ session_start();
 require_once ("../model/DB.class.php");
 
 $db = new DB();
-$messages = $db->getMessagesForUser($SESSION['accountID']);
+$messages = $db->getMessagesForUser($_SESSION['accountID']);
 ?>
 
 <?php include 'inc/header.php'?>
