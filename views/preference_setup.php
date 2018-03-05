@@ -47,7 +47,7 @@ require_once("../model/DB.class.php");
                   <!-- <?php
                     //foreach ($categories as $value) {
                       //echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
-                    }
+                    //}
                     ?> -->
                     </select>
                     <label for="preferred_category">Prefered Category</label>
@@ -58,7 +58,7 @@ require_once("../model/DB.class.php");
                   <!-- <?php
                     //foreach ($styles as $value) {
                       //echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
-                    }
+                    //}
                     ?> -->
                     </select>
                     <label for="preferred_style">Prefered Style</label>
@@ -71,7 +71,7 @@ require_once("../model/DB.class.php");
                       $count = 1;
                       //echo '<option value='.$count.'>'.$value[country].'</option>';
                       $count++;
-                    }
+                    //}
                     ?> -->
                     </select>
                     <label for="preferred_country">Preferred Country</label>
