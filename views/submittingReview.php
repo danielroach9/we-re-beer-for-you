@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-function test_input($){
+function test_input(){
     return insertNewRating($beer_id,$comment,3, $location, 1);
 }
     
