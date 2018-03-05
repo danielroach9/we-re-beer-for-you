@@ -14,12 +14,12 @@
               <span class="card-title center-align"><h4>Log in</h4></span>
               <div class="row">
                 <div class="input-field col s12">
-                  <label for="first_name">First Name</label>
-                  <input type="text" class="validate" name="first_name" id="first_name" />
+                  <label for="first_name">Email</label>
+                  <input type="text" name="login_email" id="login_email" />
                 </div>
                 <div class="input-field col s12">
-                  <label for="password">Password </label>
-                  <input type="password" class="validate" name="password" id="password" />
+                  <label for="password">Password</label>
+                  <input type="password" name="login_password" id="login_password" />
                 </div>
               </div>
               <div class="row center-align">
