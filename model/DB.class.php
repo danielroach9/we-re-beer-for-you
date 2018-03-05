@@ -34,7 +34,7 @@ class DB{
 		}
 	}
 
-	function performLogin($_user,$_pass){
+	function performLogin($_email,$_pass){
 		$userExists = $this->getUserByEmail($_email);
 
 		if($userExists){
