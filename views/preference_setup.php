@@ -47,7 +47,7 @@ require_once("../model/DB.class.php");
                   <!-- <?php
                     //foreach ($categories as $value) {
                       //echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
-                    }
+                    //}
                     ?> -->
                     </select>
                     <label for="preferred_category">Prefered Category</label>
@@ -58,7 +58,7 @@ require_once("../model/DB.class.php");
                   <!-- <?php
                     //foreach ($styles as $value) {
                       //echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
-                    }
+                    //}
                     ?> -->
                     </select>
                     <label for="preferred_style">Prefered Style</label>
@@ -71,9 +71,18 @@ require_once("../model/DB.class.php");
                       $count = 1;
                       //echo '<option value='.$count.'>'.$value[country].'</option>';
                       $count++;
-                    }
+                    //}
                     ?> -->
                     </select>
+                    <div class="input-field col s12">
+   <select>
+     <option value="" disabled selected>Choose your option</option>
+     <option value="1">Option 1</option>
+     <option value="2">Option 2</option>
+     <option value="3">Option 3</option>
+   </select>
+   <label>Materialize Select</label>
+ </div>
                     <label for="preferred_country">Preferred Country</label>
                 </div>
               </div>

@@ -2,10 +2,9 @@
 //session_start();
 require_once ("../model/DB.class.php");
 
-var_dump($_SESSION);
-
 $db = new DB();
 $messages = $db->getMessagesForUser($_SESSION['accountID']);
+var_dump($messages);
 ?>
 
 <?php include 'inc/header.php'?>
@@ -31,9 +30,9 @@ $messages = $db->getMessagesForUser($_SESSION['accountID']);
 							$from[0]->getWholeName();
 								echo "
 								<tr>
-									<td>$message->getTitle()</td>
-									<td>$from[0]->getWholeName()></td>
-									<td>$message->getContent()</td>
+									<td>".$message->getTitle()."</td>
+									<td>".$from[0]->getWholeName()."></td>
+									<td>".$message->getContent()."</td>
 								</tr>
 							";
 						}
