@@ -79,13 +79,13 @@ echo "<pre>";
 print_r($breweryBeers);
 echo "</pre>";
 
-echo "=========================================";
-echo "\n Insert new Rating ";
-$ratingInsert = $db->insertNewRating(90, "This is another comment",5,"RIT", 1);
+// echo "=========================================";
+// echo "\n Insert new Rating ";
+// $ratingInsert = $db->insertNewRating(90, "This is another comment",5,"RIT", 1);
 
-echo "<pre>";
-print_r($ratingInsert);
-echo "</pre>";
+// echo "<pre>";
+// print_r($ratingInsert);
+// echo "</pre>";
 
 echo "=========================================";
 echo "\Get Recent Ratings";
@@ -96,3 +96,11 @@ echo "<pre>";
 print_r($beerRatings);
 echo "</pre>";
 
+$messages = $db->insertNewMessage(1,1,"test message","This is a test system message.");
+echo "=========================================";
+echo "\Get all messages";
+$messages = $db->getAllMessages();
+
+echo "<pre>";
+print_r($messages);
+echo "</pre>";

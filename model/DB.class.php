@@ -1,11 +1,22 @@
 <?php
+if(isset($_POST['action'])){
+	$action = $_POST['action'];
+	$db = new DB();
 
-class DB
-{
+	switch ($action){
+		case 'performLogin':
+			$user = isset($_POST['user']) ? $_POST['user'] : null;
+			$pass = isset($_POST['pass']) ? $_POST['pass'] : null;
+			$value = $db->performLogin($user, $pass);
+			return $value;
+			break;
+	}
+}
+class DB{
 
-	function __construct()
-	{
+	function __construct(){
 		require_once("classes/user.class.php");
+		require_once("classes/message.class.php");
 		require_once("classes/rating.class.php");
 
 		require("dbInfo.php");
@@ -21,6 +32,23 @@ class DB
 			echo $e->getMessage();
 			die();
 		}
+	}
+
+	function performLogin($_user,$_pass){
+		$userExists = $this->getUserByEmail($_email);
+
+		if($userExists){
+			if(password_verify($_pass, )){
+				$_SESSION['loggedIn'] = true;
+				$_SESSION['accountFirstName'] = $user->getFirstName(); 
+				$_SESSION['accountLastName'] = $user->getLastName(); 
+				$_SESSION['accountEmail'] = $user->getEmail(); 
+				$_SESSION['accountType'] = $user->getRole();
+				var_dump($_SESSION);
+				return "You have successsfully logged in!\n";
+			}
+		}
+		return false;
 	}
 
 	function getAllUsers(){
@@ -46,6 +74,25 @@ class DB
 			$stmt = $this->db->prepare("SELECT * FROM user
 										WHERE uuid = :uuid");
 			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'user');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getUserByID - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getUserByEmail($_email){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM user
+										WHERE email = :email");
+			$stmt->bindParam(":email",$_email,PDO::PARAM_STR);
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'user');
@@ -298,31 +345,89 @@ class DB
 		}
 
 			return $data;
+	}
+
+	function getStylesByCategory($cat_id){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getStylesByCategory - ".$e->getMessage();
+			die();
 		}
 
-		function getStylesByCategory($cat_id){
-			try{
-				$data = array();
-				$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
-				$stmt->execute();
+		return $data;
+	}
 
-				$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
+//============================================================
 
-				return $data;
-			}
-			catch(PDOException $e){
-				echo "getStylesByCategory - ".$e->getMessage();
-				die();
-			}
+	function getAllMessages(){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM message");
+			$stmt->execute();
 
-				return $data;
-			}
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'message');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getAllMessages - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getMessageByID(){
+
+	}
+
+	function getMessagesForUser(){
+
+	}
+
+	/**
+	 * 	insertNewUser - will insert a new record to the user table with the
+	 * provided information.
+	 *
+	 * @param string $_firstName - firstName of the user to add.
+	 * @param string $_lastName - lastName of the user to add.
+	 * @param integer $_roleID - roleid of the user to add.
+	 * @param string $_email - email of the user to add.
+	 * @param string $_password - pasword of the user to add.
+	 * @return integer containing the id of the newest user added.
+	 **/
+	function insertNewMessage($_recipientUUID, $_senderUUID,$_title,$_content){
+		try{
+			$stmt = $this->db->prepare("INSERT INTO message
+								(recipient_uuid,sender_uuid,title,content)
+				VALUES (:recipient_uuid,:sender_uuid,:title,:content)");
+			$stmt->bindParam(":recipient_uuid",$_recipientUUID,PDO::PARAM_INT);
+			$stmt->bindParam(":sender_uuid",$_senderUUID,PDO::PARAM_INT);
+			$stmt->bindParam(":title",$_title,PDO::PARAM_STR);
+			$stmt->bindParam(":content",$_content,PDO::PARAM_STR);
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo "insertNewMessage - ".$e->getMessage();
+			die();
+		}
+	}
+
 }
-$db = new DB();
-if ($_POST["dropdownValue"]){
-	echo "this happened";
-    //call the function or execute the code
-    $data = $db->getStylesByCategory($_POST["dropdownValue"]);//do i need to call DB->getStylesByCategory
-		$test = 'che boi';
-		return $test;
-}
+// $db = new DB();
+// if ($_POST["dropdownValue"]){
+// 	echo "this happened";
+//     //call the function or execute the code
+//     $data = $db->getStylesByCategory($_POST["dropdownValue"]);//do i need to call DB->getStylesByCategory
+// 		$test = 'che boi';
+// 		return $test;
+// }

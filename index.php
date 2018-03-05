@@ -9,7 +9,7 @@
     <div class="container">
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
-          <form>
+          <form id="loginForm">
             <div class="card-content ">
               <span class="card-title center-align"><h4>Log in</h4></span>
               <div class="row">
