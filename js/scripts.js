@@ -4,8 +4,8 @@ $( document ).ready(function(){
 
 		$("#loginForm").submit(function(e){
 		e.preventDefault();
-        var $userName = $('#loginForm').find('#first_name').val();
-		var $password = $('#loginForm').find('#password').val();
+        var $userName = $('#loginForm').find('#login_email').val();
+		var $password = $('#loginForm').find('#login_password').val();
 
 		var $data = {
 			user: $userName,
