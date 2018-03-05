@@ -23,7 +23,7 @@
                 </div>
               </div>
               <div class="row center-align">
-                <input type="submit" class="btn brown waves-effect waves-light" value="Login">
+                <button class="btn brown waves-effect waves-light" value="Login"></button>
               </div>
             </div>
             <div class="card-action center-align">
@@ -31,7 +31,7 @@
             </div>
             <div class="card-action center-align">
               <h5>Try out a new beer today!!</h5>
-              <button class="btn brown waves-effect waves-light" value="Search"/>
+              <input type="submit" class="btn brown waves-effect waves-light" value="Search">
             </div>
           </form>
         </div>
