@@ -57,7 +57,8 @@ $( document ).ready(function(){
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();
-			var $recipient = $('#send-to-input').val();
+			var $recipientID = $('#send-to-input').val();
+			var $recipientName = $('#send-to-input :selected').text();
 			var $content = $('#message-area').val();
 
 			console.log("subject: "+$subject);
