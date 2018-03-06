@@ -46,11 +46,7 @@
         <div class="card hoverable col s6 offset-s3">
           <form>
             <div class="card-content">
-            <div class="row">
-              <div class="col s4"><button onclick="" class="btn brown waves-effect waves-light"> Back </button></div>
-              <div class="col s4"> <h4 class="card-title center-align">Register</h4> </div>
-              <div class="col s4"></div>
-            </div>
+              <span ><h4 class="card-title center-align">Register</h4></span>
               <div class="row">
                 <div class="input-field col s12">
                   <label for="first_name">First Name</label>
@@ -71,7 +67,7 @@
               </div>
             </div>
             <div class="card-action center-align">
-              <input type="submit" class="btn brown waves-effect waves-light" value="Register">
+              < type="submit" class="btn brown waves-effect waves-light" value="Register">
             </div>
             </form>
 
@@ -79,4 +75,4 @@
       </div>
     </div>
   </div>
-<?php include ("views/inc/footer.php"); ?>
+<?php include ("views/inc/footeri.php"); ?>

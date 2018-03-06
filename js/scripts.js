@@ -53,7 +53,24 @@ $( document ).ready(function(){
 	          alert('ajax completed. Response:  '+data);
 	          //do after submission operation in DOM
 	        });
-      });
+	    });
+
+		$('#msg_send').click(function(){
+			var $subject = $('#subject-input').val();
+			var $recipientID = $('#send-to-input').val();
+			var $recipientName = $('#send-to-input :selected').text();
+			var $content = $('#message-area').val();
+
+			console.log("subject: "+$subject);
+			console.log("recipient: "+$recipient);
+			console.log("content: "+$content);
+
+			// $.ajax({
+
+			// }).done(function(data){
+
+			// })
+		});
 });
 
 function showRegister(){

@@ -9,6 +9,7 @@
 
 
 <?php
+require_once("../model/DB.class.php");
 // define variables and set to empty values
 $beerErr = $locationErr = "";
 $beer_id = $location = $comment = "";
@@ -16,37 +17,44 @@ $beer_id = $location = $comment = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["beer_id"])) {
     $beerErr = "Beer Name is required";
-  } else {
+  }/* else {
     $beer_id = test_input($_POST["beer_id"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$beer_id)) {
       $beerErr = "Only letters and white space allowed";
     }
-  }
+  }*/
   
   if (empty($_POST["location"])) {
     $locationErr = "Location is required";
-  } else {
+  } /*else {
     $location = test_input($_POST["location"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$location)) {
       $locationErr = "Only letters and white space allowed";
     }
-  }
+  }*/
 
   if (empty($_POST["comment"])) {
     $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
+  } //else {
+   //$comment = test_input($_POST["comment"]);
+  //}
 
 }
-    
+   
+
+    function test_input(){
+        return insertNewRating($beer_id,$comment,3, $location, 1);
+    }
+    if(isset($_POST['submit'])){
+	test_input();
+    } 
 ?>
 
 <h2>Submit Beer Review</h2>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="test_input()">
+<form method="post" action="submittingReview.php">
   Beer name:<br>
   <input type="text" name="beername" value="<?php echo $beer_id;?>">
   <span class="error">* <?php echo $beerErr;?></span>
@@ -67,12 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br><br>
 <textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" value="<?php echo $comment;?>" form="usrform">
 </textarea>
-
-<?php
-    function test_input(){
-        return insertNewRating($beer_id,$comment,3, $location, 1);
-    }
-?>
 
 </body>
 </html>
