@@ -48,7 +48,7 @@ $( document ).ready(function(){
 				if(data){
 					console.log(data);
 				}else{
-					console.log("this happened");
+					console.log("data"+data);
 					//nothing..
 				}
 			});
