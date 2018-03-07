@@ -47,6 +47,7 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
+					data = JSON.parse(data);
 					$("#stylesDropdown").html(data.reduce((prev,curr)=>{
 						return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
 					},"")
