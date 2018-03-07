@@ -19,6 +19,8 @@ if ($id == 'random') {
 else {
   $beer = $db->getBeerInfoByID($id);
 }
+
+$users = $db->getAllUsers();
 ?>
 
 
@@ -113,7 +115,15 @@ else {
         <div class="row modal-row">
           <div class="input-field" id="send-to">
             <i class="fa fa-user-circle-o prefix"></i>
-            <input id="send-to-input" type="text"/>
+            <!-- <input id="send-to-input" type="text"/> -->
+            <select id="send-to-input">
+              <option value="" disabled selected>Choose a user to send the message!</option>
+              <?php 
+                foreach ($users as $user) {
+                  echo "<option value='".$user->getID()."''>".$user->getWholeName()."<option>";
+                }
+              ?>
+            </select>
             <label for="send-to-input">Send to</label>
           </div>
         </div>
@@ -127,8 +137,8 @@ else {
       </form>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close btn-flat">Cancel</a>
-      <a href="#!" class="modal-aciton modal-close btn-flat">Send</a>
+      <a id="msg_cancel" href="#" class="modal-action modal-close btn-flat">Cancel</a>
+      <a id="msg_send" href="#" class="modal-aciton modal-close btn-flat">Send</a>
     </div>
   </div>
 
