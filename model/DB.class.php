@@ -12,12 +12,10 @@ if(isset($_POST['action'])){
 			return $value;
 			break;
 		case 'getStylesByCategory':
-		echo "YOU ARE HERE";
-			$test = 'test';
-			//$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
-			//$value = $db->getStylesByCategory($cat_id);
-			//return $value;
-			return true;
+			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
+			$value = $db->getStylesByCategory($cat_id);
+			echo $value;
+			return $value;
 			break;
 	}
 }
