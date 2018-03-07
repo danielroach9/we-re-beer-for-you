@@ -31,6 +31,7 @@ $( document ).ready(function(){
 
     	$('#selectedCategory').change(function(){
 	        var $cat_id = $(this).val();
+					alert($cat_id);
 
 	        var $data = {
 	        	category: $cat_id,
@@ -39,7 +40,7 @@ $( document ).ready(function(){
 
 	        $.ajax({
 				  type: "POST",
-				  url: '/~ajp8707/we-re-beer-for-you/model/DB.class.php',
+				  url: 'model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
 				if(data){
