@@ -47,7 +47,10 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
-					$("#stylesDropdown").html("");
+					$("#stylesDropdown").html(data.reduce((prev,curr)=>{
+						return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
+					},"")
+				  );
 					$('#stylesDropdown').material_select();
 					//set $styles to data
 
