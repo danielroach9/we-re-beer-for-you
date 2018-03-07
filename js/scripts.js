@@ -43,16 +43,17 @@ $( document ).ready(function(){
 				  data: $data
 			}).done(function(data) {
 				if(data){
-					console.console.log(data);
+					console.log(data);
 				}else{
+					console.log("this happened");
 					//nothing..
 				}
 			});
 
-	        $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
-	          alert('ajax completed. Response:  '+data);
-	          //do after submission operation in DOM
-	        });
+	        // $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
+	        //   alert('ajax completed. Response:  '+data);
+	        //   //do after submission operation in DOM
+	        // });
 	    });
 
 		$('#msg_send').click(function(){
