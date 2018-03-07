@@ -29,7 +29,8 @@ $( document ).ready(function(){
 			});
     	});
 
-    	$('#selectedCategory').change(function(){
+    	$('#selectedCategory').change(function(e){
+				e.preventDefault();
 	        var $cat_id = $(this).val();
 					alert($cat_id);
 
