@@ -39,7 +39,7 @@ $( document ).ready(function(){
 
 	        $.ajax({
 				  type: "POST",
-				  url: '/model/DB.class.php',
+				  url: '/~ajp8707/we-re-beer-for-you/model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
 				if(data){
