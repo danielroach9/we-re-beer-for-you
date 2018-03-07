@@ -14,7 +14,7 @@ if(isset($_POST['action'])){
 		case 'getStylesByCategory':
 			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			$value = $db->getStylesByCategory($cat_id);
-			echo $value;
+			print_r $value;
 			return $value;
 			break;
 	}
