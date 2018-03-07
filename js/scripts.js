@@ -39,7 +39,7 @@ $( document ).ready(function(){
 
 	        $.ajax({
 				  type: "POST",
-				  url: 'model/DB.class.php',
+				  url: '/model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
 				if(data){
