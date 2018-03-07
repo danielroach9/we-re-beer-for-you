@@ -43,7 +43,7 @@ $( document ).ready(function(){
 				  data: $data
 			}).done(function(data) {
 				if(data){
-
+					console.console.log(data);
 				}else{
 					//nothing..
 				}
