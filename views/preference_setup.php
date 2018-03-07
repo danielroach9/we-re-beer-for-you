@@ -17,7 +17,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     <div class="container">
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
-          <form>
+          <form id="preferenceForm">
             <div class="card-content">
               <span class="card-title center-align">Preferences</span>
               <div class="row">
@@ -53,7 +53,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <input type="text" class="preferences" name="preferred_country" id="preferred_country">
-                  <select name="select">
+                  <select name="select" id="countryDropdown">
                  <?php
                     foreach ($countries as $value) {
                       $count = 1;

@@ -47,7 +47,6 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
-					$(this).hide();
 					//set $styles to data
 
 				}else{
@@ -61,6 +60,33 @@ $( document ).ready(function(){
 	        //   //do after submission operation in DOM
 	        // });
 	    });
+			// $("#preferenceForm").submit(function(e){
+			// 	e.preventDefault();
+		  //   var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
+			// 	var $style = $('#preferenceForm').find('#stylesDropdown').val();
+			// 	var $abv = 0;
+			// 	var $country_name = $('#preferenceForm').find('#countryDropdown').text();//need to get string, int value is meaningless
+			//
+			// 	var $data = {
+			// 		user: $userName,
+			// 		pass: $password,
+			// 		action: 'performLogin'
+			// 	};
+			//
+			// 	$.ajax({
+			// 		  type: "POST",
+			// 		  url: 'model/DB.class.php',
+			// 		  data: $data
+			// 	}).done(function(msg) {
+		  //             console.log(msg);
+			// 		  if(msg){
+			// 		  	window.location.href = 'views/inbox.php';
+			// 		  }
+			// 		  else{
+			// 		  	alert("User/password incorrect!");
+			// 		  }
+			// 	});
+	    // 	});
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();
