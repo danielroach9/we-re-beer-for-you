@@ -43,6 +43,7 @@ $( document ).ready(function(){
 				  url: 'model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
+				alert(data);
 				if(data){
 					console.log(data);
 				}else{

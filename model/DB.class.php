@@ -12,7 +12,7 @@ if(isset($_POST['action'])){
 			return $value;
 			break;
 		case 'getStylesByCategory':
-			$cat_id = isset($_POST['cat_id']) ? $_POST['cat_id'] : null;
+			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			$value = $db->getStylesByCategory($cat_id);
 			return $value;
 			break;
@@ -359,7 +359,7 @@ class DB{
 			return $data;
 	}
 
-	function getStylesByCategory($cat_id){
+	function getStylesByCategory($cat_id){ // sanitize var, check if int
 		try{
 			$data = array();
 			$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
