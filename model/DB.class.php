@@ -16,7 +16,7 @@ if(isset($_POST['action'])){
 			//$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			//$value = $db->getStylesByCategory($cat_id);
 			//return $value;
-			return $test;
+			return true;
 			break;
 	}
 }
