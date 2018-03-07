@@ -55,7 +55,7 @@ class DB{
 				return true;
 			}
 		}
-		echo "false";
+		//echo "false";
 		return false;
 	}
 
