@@ -62,7 +62,8 @@ $( document ).ready(function(){
 			var $content = $('#message-area').val();
 
 			console.log("subject: "+$subject);
-			console.log("recipient: "+$recipient);
+			console.log("recipient ID: "+$recipientID);
+			console.log("recipient Name: "+$recipientName);
 			console.log("content: "+$content);
 
 			// $.ajax({

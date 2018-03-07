@@ -120,7 +120,9 @@ $users = $db->getAllUsers();
               <option value="" disabled selected>Choose a user to send the message!</option>
               <?php 
                 foreach ($users as $user) {
-                  echo "<option value='".$user->getID()."''>".$user->getWholeName()."<option>";
+                  if(!empty($user)){
+                    echo "<option value='".$user->getID()."''>".$user->getWholeName()."<option>";
+                  }
                 }
               ?>
             </select>
