@@ -21,6 +21,7 @@ else {
 }
 
 $users = $db->getAllUsers();
+var_dump($users);
 ?>
 
 
