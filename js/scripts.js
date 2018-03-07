@@ -47,6 +47,7 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
+					$("#stylesDropdown").html("");
 					//set $styles to data
 
 				}else{
