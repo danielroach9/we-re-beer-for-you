@@ -48,6 +48,7 @@ $( document ).ready(function(){
 				if(data){
 					console.log(data);
 					$("#stylesDropdown").html("");
+					$('#stylesDropdown').material_select();
 					//set $styles to data
 
 				}else{
