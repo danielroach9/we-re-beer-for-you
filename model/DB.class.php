@@ -14,7 +14,7 @@ if(isset($_POST['action'])){
 		case 'getStylesByCategory':
 			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			$value = $db->getStylesByCategory($cat_id);
-			echo json_encode($data);
+			echo json_encode($value);
 			//print_r($value);
 			//return $value; //why does print_r do what return should???
 			break;
