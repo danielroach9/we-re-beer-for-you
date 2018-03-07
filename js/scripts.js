@@ -47,6 +47,7 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
+					$("#selectedCategory").hide();
 					$("#stylesDropdown").hide();
 
 				}else{
