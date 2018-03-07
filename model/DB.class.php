@@ -13,8 +13,8 @@ if(isset($_POST['action'])){
 			break;
 		case 'getStylesByCategory':
 			$test = 'test';
-			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
-			$value = $db->getStylesByCategory($cat_id);
+			//$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
+			//$value = $db->getStylesByCategory($cat_id);
 			//return $value;
 			return $test;
 			break;
