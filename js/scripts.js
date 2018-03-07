@@ -47,6 +47,7 @@ $( document ).ready(function(){
 				alert(data);
 				if(data){
 					console.log(data);
+					$("#stylesDropdown").hide();
 
 				}else{
 					console.log("error");

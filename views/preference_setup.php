@@ -42,7 +42,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <input type="text" class="preferences" name="preferred_style" id="preferred_style">
-                  <select name="select">
+                  <select name="select" id="stylesDropdown">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
