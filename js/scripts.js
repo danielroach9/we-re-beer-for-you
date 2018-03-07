@@ -43,12 +43,12 @@ $( document ).ready(function(){
 				  type: "POST",
 				  url: '../model/DB.class.php',
 				  data: $data
-			}).done(function(data) {
-				alert(data);
-				if(data){
-					console.log(data);
+			}).done(function(msg) {
+				alert(msg);
+				if(msg){
+					console.log(msg);
 				}else{
-					console.log("data"+data);
+					console.log("data"+msg);
 					//nothing..
 				}
 			});
