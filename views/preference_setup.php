@@ -25,7 +25,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <label for="preferred_abv_range">Preferred ABV</label>
                   <br>
                   <div class="slidecontainer">
-                    <input type="range" min="1" max="40" value="5" class="slider" id="abvRange">
+                    <input type="range" min="1" max="40" step="0.1" value="5" class="slider" id="abvRange">
                     <p>ABV: <span id="abvPrint"></span></p>
                   </div>
                 </div>
