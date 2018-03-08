@@ -74,7 +74,7 @@ $( document ).ready(function(){
 					country: $country_name,
 					action: 'insertNewPreference'
 				};
-
+				alert($data);
 				$.ajax({
 					  type: "POST",
 					  url: '../model/DB.class.php',
