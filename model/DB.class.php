@@ -19,7 +19,7 @@ if(isset($_POST['action'])){
 			//return $value; //why does print_r do what return should???
 			break;
 		case 'insertNewPreference':
-			return true;
+			echo true;
 			break;
 	}
 }
