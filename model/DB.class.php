@@ -431,7 +431,7 @@ class DB{
 																	FROM beers
 																	WHERE cat_id = ".$_category.
 																	" AND style_id = ".$_style.
-																	" AND country = ".$_country);
+																	" AND country = ".$_country."");
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
