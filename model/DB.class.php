@@ -19,7 +19,13 @@ if(isset($_POST['action'])){
 			//return $value; //why does print_r do what return should???
 			break;
 		case 'insertNewPreference':
-			echo true;
+			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
+			$category = isset($_POST['category']) ? $_POST['category'] : null;
+			$style = isset($_POST['style']) ? $_POST['style'] : null;
+			$country = isset($_POST['country']) ? $_POST['country'] : null;
+			$value = $db->insertNewPreference($uuid, $abv, $category, $style, $country);
+			echo $value;
 			break;
 	}
 }
@@ -395,8 +401,8 @@ class DB{
 			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
 			$stmt->execute();
 
-			// return $this->db->lastInsertId();
-			return "test boi";
+			return $this->db->lastInsertId();
+			// return "test boi";
 		}
 		catch(PDOException $e){
 			echo $e->getMessage();
