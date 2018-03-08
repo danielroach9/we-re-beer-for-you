@@ -22,16 +22,13 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
               <span class="card-title center-align">Preferences</span>
               <div class="row">
                 <div class="input-field col s12">
-                  <label for="preferred_abv_range">ABV Range</label>
-                  <input type="text" class="preferences" name="preferred_abv_range" id="preferred_abv_range" >
+                  <label for="preferred_abv_range">Preferred ABV</label>
                   <div class="slidecontainer">
                     <input type="range" min="1" max="40" value="5" class="slider" id="abvRange">
                     <p>ABV: <span id="abvPrint"></span></p>
                   </div>
                 </div>
                 <div class="input-field col s12">
-                  <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
-
                   <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
@@ -52,7 +49,6 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     <label for="preferred_style">Prefered Style</label>
                 </div>
                 <div class="input-field col s12">
-                  <input type="text" class="preferences" name="preferred_country" id="preferred_country">
                   <select name="select" id="countryDropdown">
                  <?php
                     foreach ($countries as $value) {
