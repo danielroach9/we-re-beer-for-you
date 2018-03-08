@@ -34,7 +34,8 @@ if(isset($_POST['action'])){
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
 			$country = isset($_POST['country']) ? $_POST['country'] : null;
 			$value = $db->getPreferredBeer($uuid, $abv, $category, $style, $country);
-			echo $value;
+			echo json_encode($value);
+			// echo $value;
 		break;
 
 			# code...
