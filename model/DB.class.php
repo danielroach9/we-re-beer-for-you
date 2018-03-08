@@ -435,9 +435,8 @@ class DB{
 																	JOIN styles s on s.id = b.style_id
 																	WHERE b.cat_id = ".$_category.
 																	" AND b.style_id = ".$_style.
-																	" AND br.country = '".$_country."'
-																	AND (b.abv - ".$_abv.") BETWEEN 2 AND .001");
-
+																	" AND (b.abv - 5.3 BETWEEN .999 AND .001)
+																	 AND br.country = '".$_country."'");
 
 
 			$stmt->execute();
