@@ -96,6 +96,9 @@ $( document ).ready(function(){
 							}).done(function(msg) {
 								//console.log(msg);
 								alert(msg);
+								msg.each( obj, function( key, value ) {
+  								alert( key + ": " + value );
+								}
 								$("#preferredBeers").html(msg);
 							});
 
