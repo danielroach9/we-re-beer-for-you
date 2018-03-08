@@ -430,6 +430,8 @@ class DB{
 			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name
 																	FROM beers b
 																	JOIN breweries br on br.id = b.brewery_id
+																	JOIN categories c on c.id = b.cat_id
+																	JOIN styles s on s.id = b.style_id
 																	WHERE b.cat_id = ".$_category.
 																	" AND b.style_id = ".$_style.
 																	" AND br.country = '".$_country."'");
