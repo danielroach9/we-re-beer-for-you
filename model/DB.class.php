@@ -436,7 +436,7 @@ class DB{
 																	WHERE b.cat_id = ".$_category.
 																	" AND b.style_id = ".$_style.
 																	" AND br.country = '".$_country."'
-																	AND (b.abv - ".$_abv.") BETWEEN .999 AND .001");
+																	AND (b.abv - ".$_abv.") BETWEEN 2 AND .001");
 
 
 
