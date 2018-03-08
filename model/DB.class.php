@@ -373,7 +373,9 @@ class DB{
 	function getStylesByCategory($cat_id){ // sanitize var, check if int
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
+			$stmt = $this->db->prepare("SELECT id, style_name
+																	FROM styles
+																	WHERE cat_id = ".$cat_id);
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
@@ -409,6 +411,29 @@ class DB{
 			die();
 		}
 	}
+
+	function getPreferredBeer($_abv,$_category,$_style, $_country){ // give uuid, get curated beers
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT name
+																	FROM beers
+																	WHERE cat_id = ".$_category.
+																	"AND style_id = ".$_style.
+																	"AND country = ".$_country);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getStylesByCategory - ".$e->getMessage();
+			die();
+		}
+
+		return false;
+	}
+
 
 //============================================================
 
