@@ -81,21 +81,21 @@ $( document ).ready(function(){
 		              console.log(msg);
 					  if(msg){
 							alert("success: you submitted preferences successfully");
-							var $data2 = {
-								uuid: $uuid,
-								category: $cat_id,
-								style: $style,
-								abv: $abv,
-								country: $country_name,
-								action: 'getPreferredBeer'
-							$.ajax({
-								  type: "POST",
-								  url: '../model/DB.class.php',
-									data: $data2
-							}).done(function(msg) {
-								console.log(msg);
-								alert(msg);
-							});
+							// var $data2 = {
+							// 	uuid: $uuid,
+							// 	category: $cat_id,
+							// 	style: $style,
+							// 	abv: $abv,
+							// 	country: $country_name,
+							// 	action: 'getPreferredBeer'
+							// $.ajax({
+							// 	  type: "POST",
+							// 	  url: '../model/DB.class.php',
+							// 		data: $data2
+							// }).done(function(msg) {
+							// 	console.log(msg);
+							// 	alert(msg);
+							// });
 
 					  	// window.location.href = 'views/inbox.php';
 					  }
