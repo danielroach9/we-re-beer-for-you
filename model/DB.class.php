@@ -380,7 +380,7 @@ class DB{
 	}
 
 	function insertNewPreference($_uuid,$_abv,$_category,$_style, $_country){
-		return "test here";
+		return true;
 
 		try{
 			$stmt = $this->db->prepare("INSERT INTO preferences

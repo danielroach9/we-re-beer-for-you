@@ -82,7 +82,7 @@ $( document ).ready(function(){
 				}).done(function(msg) {
 		              console.log(msg);
 					  if(msg){
-							console.console.log(("i did this"));
+							console.log(("i did this"));
 					  	// window.location.href = 'views/inbox.php';
 					  }
 					  else{
