@@ -62,7 +62,7 @@ $( document ).ready(function(){
 				e.preventDefault();
 		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
 				var $style = $('#preferenceForm').find('#stylesDropdown').val();
-				var $abv = 0;
+				var $abv = $('abvRange').slider("value");
 				var $uuid = 1;
 				var $country_name = $('#preferenceForm').find('#countryDropdown option:selected').text();//need to get string, int value is meaningless
 
