@@ -432,7 +432,17 @@ class DB{
 																	JOIN breweries br on br.id = b.brewery_id
 																	WHERE b.cat_id = ".$_category.
 																	" AND b.style_id = ".$_style.
-																	" AND br.country = ".$_country);
+																	" AND br.country = ''".$_country.'');
+
+
+
+																	SELECT b.id, b.name, c.cat_name, s.style_name
+																								FROM beers b
+																								JOIN categories c on c.id = b.cat_id
+																								JOIN styles s on s.id = b.style_id
+																								WHERE b.brewery_id = :id");
+																	$stmt->bindParam(":id",$_id,PDO::PARAM_INT);
+																	$stmt->execute();
 
 
 			$stmt->execute();
