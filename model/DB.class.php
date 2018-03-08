@@ -392,7 +392,8 @@ class DB{
 			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
 			$stmt->execute();
 
-			return $this->db->lastInsertId();
+			// return $this->db->lastInsertId();
+			return "test boi";
 		}
 		catch(PDOException $e){
 			echo $e->getMessage();
