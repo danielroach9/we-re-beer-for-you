@@ -73,7 +73,6 @@ $( document ).ready(function(){
 					country: $country_name,
 					action: 'insertNewPreference'
 				};
-				alert($data);
 				$.ajax({
 					  type: "POST",
 					  url: '../model/DB.class.php',
@@ -81,7 +80,7 @@ $( document ).ready(function(){
 				}).done(function(msg) {
 		              console.log(msg);
 					  if(msg){
-							console.log(("i did this"));
+							alert("success: you submitted preferences successfully");
 					  	// window.location.href = 'views/inbox.php';
 					  }
 					  else{
