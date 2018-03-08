@@ -96,10 +96,11 @@ $( document ).ready(function(){
 							}).done(function(msg) {
 								//console.log(msg);
 								alert(msg);
-								msg.each( obj, function( key, value ) {
-  								alert( key + ": " + value );
-								}
-								$("#preferredBeers").html(msg);
+								msg = JSON.parse(msg);
+								$("#preferredBeers").html(msg.reduce((prev,curr)=>{
+									return `${prev}<p> ${curr.id} ${curr.name}</p>`
+								},"")
+							  );
 							});
 
 					  	// window.location.href = 'views/inbox.php';
