@@ -435,7 +435,7 @@ class DB{
 																	JOIN styles s on s.id = b.style_id
 																	WHERE b.cat_id = ".$_category.
 																	" AND b.style_id = ".$_style.
-																	" AND br.country = '".$_country."' AND ABS(b.abv - 5.3) < 1");
+																	" AND br.country = '".$_country."' AND ABS(b.abv - ".$_abv.") < 1");
 
 																	//abv notes: cannot do exact comparison because abv is float in database
 																	//adjust the ofsetting value for a broader abv search
