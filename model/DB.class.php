@@ -33,7 +33,7 @@ if(isset($_POST['action'])){
 			$category = isset($_POST['category']) ? $_POST['category'] : null;
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
 			$country = isset($_POST['country']) ? $_POST['country'] : null;
-			$value = $db->insertNewPreference($uuid, $abv, $category, $style, $country);
+			$value = $db->getPreferredBeer($uuid, $abv, $category, $style, $country);
 			echo $value;
 		break;
 
