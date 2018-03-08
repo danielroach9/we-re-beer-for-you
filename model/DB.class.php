@@ -428,7 +428,7 @@ class DB{
 	function getPreferredBeer($_uuid,$_abv,$_category,$_style, $_country){ // give uuid, get curated beers
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name, b.abv
 																	FROM beers b
 																	JOIN breweries br on br.id = b.brewery_id
 																	JOIN categories c on c.id = b.cat_id
