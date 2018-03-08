@@ -18,6 +18,9 @@ if(isset($_POST['action'])){
 			//print_r($value);
 			//return $value; //why does print_r do what return should???
 			break;
+		case 'insertNewPreference':
+			return true;
+			break;
 	}
 }
 class DB{
