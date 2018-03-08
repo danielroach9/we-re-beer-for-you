@@ -94,7 +94,7 @@ $( document ).ready(function(){
 								  url: '../model/DB.class.php',
 									data: $data2
 							}).done(function(msg) {
-								console.log(msg);
+								//console.log(msg);
 								alert(msg);
 							});
 
