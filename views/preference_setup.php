@@ -25,7 +25,8 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                   <label for="preferred_abv_range">ABV Range</label>
                   <input type="text" class="preferences" name="preferred_abv_range" id="preferred_abv_range" >
                   <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="abvRange">
+                    <input type="range" min="1" max="40" value="5" class="slider" id="abvRange">
+                    <p>Value: <span id="abvPrint"></span></p>
                   </div>
                 </div>
                 <div class="input-field col s12">
@@ -74,4 +75,13 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
       </div>
     </div>
   </div>
+  <script>
+    var slider = document.getElementById("abvRange");
+    var output = document.getElementById("abvPrint");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+  </script>
 <?php include "inc/footer.php"; ?>
