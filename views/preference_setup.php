@@ -67,6 +67,8 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
               <input type="submit" class="btn brown waves-effect waves-light" value="Register">
             </div>
             </form>
+            <p>Preferred Beers</p>
+            <p id=#preferredBeers></p>
 
         </div>
       </div>

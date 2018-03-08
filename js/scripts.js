@@ -96,6 +96,7 @@ $( document ).ready(function(){
 							}).done(function(msg) {
 								//console.log(msg);
 								alert(msg);
+								$("#preferredBeers").html(msg);
 							});
 
 					  	// window.location.href = 'views/inbox.php';
