@@ -68,7 +68,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
             </div>
             </form>
             <p>Preferred Beers</p>
-            <p id=#preferredBeers></p>
+            <p id=#preferredBeers>test</p>
 
         </div>
       </div>
