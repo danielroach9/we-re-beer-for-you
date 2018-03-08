@@ -43,56 +43,52 @@ $( document ).ready(function(){
 				  type: "POST",
 				  url: '../model/DB.class.php',
 				  data: $data
-			}).done(function(data) {
-				alert(data);
-				if(data){
-					console.log(data);
-					data = JSON.parse(data);
-					$("#stylesDropdown").html(data.reduce((prev,curr)=>{
-						return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
-					},"")
-				  );
-					$('#stylesDropdown').material_select();
-					//set $styles to data
+					}).done(function(data) {
+						if(data){
+							data = JSON.parse(data);
+							$("#stylesDropdown").html(data.reduce((prev,curr)=>{
+								return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
+							},"")
+						  );
+							$('#stylesDropdown').material_select();//this re initializes the select because materialize hides the real thing
 
-				}else{
-					console.log("error");
-					//nothing..
-				}
-			});
-
-	        // $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
-	        //   alert('ajax completed. Response:  '+data);
-	        //   //do after submission operation in DOM
-	        // });
+						}else{
+							alert("something broke");
+							//nothing..
+						}
+					});
 	    });
-			// $("#preferenceForm").submit(function(e){
-			// 	e.preventDefault();
-		  //   var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
-			// 	var $style = $('#preferenceForm').find('#stylesDropdown').val();
-			// 	var $abv = 0;
-			// 	var $country_name = $('#preferenceForm').find('#countryDropdown').text();//need to get string, int value is meaningless
-			//
-			// 	var $data = {
-			// 		user: $userName,
-			// 		pass: $password,
-			// 		action: 'performLogin'
-			// 	};
-			//
-			// 	$.ajax({
-			// 		  type: "POST",
-			// 		  url: 'model/DB.class.php',
-			// 		  data: $data
-			// 	}).done(function(msg) {
-		  //             console.log(msg);
-			// 		  if(msg){
-			// 		  	window.location.href = 'views/inbox.php';
-			// 		  }
-			// 		  else{
-			// 		  	alert("User/password incorrect!");
-			// 		  }
-			// 	});
-	    // 	});
+			$("#preferenceForm").submit(function(e){
+				e.preventDefault();
+		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
+				var $style = $('#preferenceForm').find('#stylesDropdown').val();
+				var $abv = 0;
+				var $uuid = 1;
+				var $country_name = $('#preferenceForm').find('#countryDropdown').text();//need to get string, int value is meaningless
+
+				var $data = {
+					uuid: $uuid,
+					category: $cat_id,
+					style: $style,
+					abv: $abv,
+					country: $country_name,
+					action: 'insertNewPreference'
+				};
+
+				$.ajax({
+					  type: "POST",
+					  url: '../model/DB.class.php',
+					  data: $data
+				}).done(function(msg) {
+		              console.log(msg);
+					  if(msg){
+					  	window.location.href = 'views/inbox.php';
+					  }
+					  else{
+					  	alert("Something broke");
+					  }
+				});
+	    	});
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();

@@ -379,6 +379,27 @@ class DB{
 		return false;
 	}
 
+	function insertNewPreference($_uuid,$_abv,$_category,$_style, $_country){
+
+		try{
+			$stmt = $this->db->prepare("INSERT INTO preferences
+								(uuid, preferred_abv_range, preferred_category, preferred_style, preferred_country)
+				VALUES (:uuid,:abv,:category,:style, :country)");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->bindParam(":abv",$_abv,PDO::PARAM_INT);
+			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
+			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
+			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+			die();
+		}
+	}
+
 //============================================================
 
 	function getAllMessages(){
@@ -466,11 +487,3 @@ class DB{
 	}
 
 }
-// $db = new DB();
-// if ($_POST["dropdownValue"]){
-// 	echo "this happened";
-//     //call the function or execute the code
-//     $data = $db->getStylesByCategory($_POST["dropdownValue"]);//do i need to call DB->getStylesByCategory
-// 		$test = 'che boi';
-// 		return $test;
-// }
