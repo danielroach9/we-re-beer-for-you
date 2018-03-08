@@ -427,11 +427,14 @@ class DB{
 	function getPreferredBeer($_uuid,$_abv,$_category,$_style, $_country){ // give uuid, get curated beers
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT name
-																	FROM beers
-																	WHERE cat_id = ".$_category.
-																	" AND style_id = ".$_style.
-																	" AND country = ".$_country."");
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name
+																	FROM beers b
+																	JOIN breweries br on br.id = b.brewery_id
+																	WHERE b.cat_id = ".$_category.
+																	" AND b.style_id = ".$_style.
+																	" AND br.country = ".$_country);
+
+
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
