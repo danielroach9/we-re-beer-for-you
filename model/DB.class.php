@@ -424,7 +424,7 @@ class DB{
 		}
 	}
 
-	function getPreferredBeer($_abv,$_category,$_style, $_country){ // give uuid, get curated beers
+	function getPreferredBeer($_uuid,$_abv,$_category,$_style, $_country){ // give uuid, get curated beers
 		try{
 			$data = array();
 			$stmt = $this->db->prepare("SELECT name
