@@ -27,6 +27,18 @@ if(isset($_POST['action'])){
 			$value = $db->insertNewPreference($uuid, $abv, $category, $style, $country);
 			echo $value;
 			break;
+		case 'getPreferredBeer':
+			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
+			$category = isset($_POST['category']) ? $_POST['category'] : null;
+			$style = isset($_POST['style']) ? $_POST['style'] : null;
+			$country = isset($_POST['country']) ? $_POST['country'] : null;
+			$value = $db->insertNewPreference($uuid, $abv, $category, $style, $country);
+			echo $value;
+		break;
+
+			# code...
+			break;
 	}
 }
 class DB{
