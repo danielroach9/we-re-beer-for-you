@@ -64,7 +64,7 @@ $( document ).ready(function(){
 				var $style = $('#preferenceForm').find('#stylesDropdown').val();
 				var $abv = 0;
 				var $uuid = 1;
-				var $country_name = "United States"//$('#preferenceForm').find('#countryDropdown').val();//need to get string, int value is meaningless
+				var $country_name = $('#preferenceForm').find('#countryDropdown').val().text();//need to get string, int value is meaningless
 
 				var $data = {
 					uuid: $uuid,
