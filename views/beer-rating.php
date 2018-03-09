@@ -73,7 +73,7 @@ $ratings = $db->getRecentRatings();
 			      <span class='rating'>" . $rating->getRating() . "</span> &nbsp;
 			      <div><a>brewery_name</a>
 			      <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span></div>
-			      <div style='color:#666;'>" . $rating->getComments() . "
+			      <div style='color:#666;'>" . $rating->getComment() . "
 			      </div>
 			      <span style='color:#8b8b8b;'>" . $rating->getID() . "</span><br><hr>
 			    </td>";
