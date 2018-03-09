@@ -62,7 +62,7 @@
           <form id="beerRatingForm">
             <div class="card-content">
               <span class="card-title center-align">Submit Beer Review</span>
-	      <!--<p><span class="error">* required field.</span></p>-->
+	      <p><span class="error">* required field.</span></p>
               <div class="row">
                 <div class="input-field col s12">
                   <label for="first_name">Beer name</label>

@@ -141,7 +141,6 @@ $( document ).ready(function(){
 		});
 
 		$('#beerRatingForm').click(function(){
-			e.preventDefault();
 			var $beerID = $('#beerRatingForm').find('#beerID').val();
 			var $comment = $('#beerRatingForm').find('#comment').val();
 			var $rating = $("input[name='star']:checked").val();
@@ -160,11 +159,11 @@ $( document ).ready(function(){
 
 			$.ajax({
 				  type: "POST",
-				  url: 'model/DB.class.php',
+				  url: '../model/DB.class.php',
 				  data: $data
-			}).done(function(msg) {
-	              console.log(msg);
-				  if(msg){
+			}).done(function(data) {
+	              		  console.log(data);
+				  if(data){
 				  	alert("Review was submitted!");
 				  }
 				  else{
