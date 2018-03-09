@@ -64,7 +64,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
               </div>
             </div>
             <div class="card-action center-align">
-              <input type="submit" class="btn brown waves-effect waves-light" value="Show me the beer!!">
+              <button class="btn brown waves-effect waves-light">Show me the beer!</button>
             </div>
             </form>
             <p>Preferred Beers</p>
