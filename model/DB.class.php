@@ -11,6 +11,14 @@ if(isset($_POST['action'])){
 			$value = $db->performLogin($user, $pass);
 			return $value;
 			break;
+		case 'performRegister':
+			$firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
+			$lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
+			$email = isset($_POST['email']) ? $_POST['email'] : null;
+			$password = isset($_POST['password']) ? $_POST['password'] : null;
+			$value = $db->insertNewUser($firstName, $lastName,$email,$password);
+			return $value;
+			break;
 		case 'getStylesByCategory':
 			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			$value = $db->getStylesByCategory($cat_id);

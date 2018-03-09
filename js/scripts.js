@@ -35,29 +35,26 @@ $( document ).ready(function(){
 			var $email = $('#registerForm').find('#email').val();
 			var $password = $('#registerForm').find('#password').val();
 
-			console.log($first_name);
-			console.log($last_name);
-			console.log($email);
-			console.log($password);
+			var $data = {
+				firstName: $first_name,
+				lastName: $last_name,
+				email: $email,
+				password: $password,
+				action: 'performRegister'
+			};
 
-			// var $data = {
-			// 	user: $userName,
-			// 	pass: $password,
-			// 	action: 'performLogin'
-			// };
-
-			// $.ajax({
-			// 	  type: "POST",
-			// 	  url: 'model/DB.class.php',
-			// 	  data: $data
-			// }).done(function(msg) {
-	  //             console.log(msg);
-			// 	  if(msg){
-			// 	  	window.location.href = 'views/inbox.php';
-			// 	  }else{
-			// 	  	alert("User/password incorrect!");
-			// 	  }
-			// });
+			$.ajax({
+				  type: "POST",
+				  url: 'model/DB.class.php',
+				  data: $data
+			}).done(function(msg) {
+	              console.log(msg);
+				  if(msg){
+				  	window.location.href = 'views/inbox.php';
+				  }else{
+				  	alert("User/password incorrect!");
+				  }
+			});
     	});
 
     	$('#selectedCategory').change(function(e){
