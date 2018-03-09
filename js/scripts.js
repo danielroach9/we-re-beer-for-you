@@ -140,7 +140,8 @@ $( document ).ready(function(){
 			})
 		});
 
-		$('#beerRatingForm').submit(function(){
+		$('#beerRatingForm').submit(function(e){
+			e.preventDefault();
 			var $beerID = $('#beerRatingForm').find('#beerID').val();
 			var $comment = $('#beerRatingForm').find('#comment').val();
 			var $rating = $("input[name='star']:checked").val();
