@@ -16,7 +16,7 @@ if(isset($_POST['action'])){
 			$lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
 			$email = isset($_POST['email']) ? $_POST['email'] : null;
 			$password = isset($_POST['password']) ? $_POST['password'] : null;
-			$value = $db->insertNewUser($firstName, $lastName,$email,$password);
+			$value = $db->insertNewUser($firstName, $lastName,$email,$password,1);
 			return $value;
 			break;
 		case 'getStylesByCategory':
