@@ -130,14 +130,13 @@ $( document ).ready(function(){
 			  	url: '../model/DB.class.php',
 				data: $data
 			}).done(function(data){
-				console.log("==============================");
-				console.log(data);
-
-				// if(data){
-				// 	console.log(data);
-				// }else{
-				// 	console.log("did not go through");
-				// }
+				if(data){
+					console.log(data);
+					alert("Message was successfully sent.");
+				}else{
+					console.log(data);
+					alert("An error occurred while trying to send the message. | "+data);
+				}
 			})
 		});
 });
