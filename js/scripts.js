@@ -22,7 +22,8 @@ $( document ).ready(function(){
 	              console.log(msg);
 				  if(msg){
 				  	window.location.href = 'views/inbox.php';
-				  }else{
+				  }
+				  else{
 				  	alert("User/password incorrect!");
 				  }
 			});
@@ -41,30 +42,29 @@ $( document ).ready(function(){
 				  type: "POST",
 				  url: '../model/DB.class.php',
 				  data: $data
-			}).done(function(data) {
-				if(data){
-					data = JSON.parse(data);
-					$("#stylesDropdown").html(data.reduce((prev,curr)=>{
-						return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
-					},"")
-				  );
-					$('#stylesDropdown').material_select();//this re initializes the select because materialize hides the real thing
-				}else{
-					alert("something broke");
-					//nothing..
-				}
-			});
+					}).done(function(data) {
+						if(data){
+							data = JSON.parse(data);
+							$("#stylesDropdown").html(data.reduce((prev,curr)=>{
+								return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
+							},"")
+						  );
+							$('#stylesDropdown').material_select();//this re initializes the select because materialize hides the real thing
+
+						}else{
+							alert("something broke");
+							//nothing..
+						}
+					});
 	    });
 			$("#preferenceForm").submit(function(e){
 				e.preventDefault();
 		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
 				var $style = $('#preferenceForm').find('#stylesDropdown').val();
 				var $abv = $('#preferenceForm').find('#abvRange').val();
-				var $uuid = 1;
 				var $country_name = $('#preferenceForm').find('#countryDropdown option:selected').text();//need to get string, int value is meaningless
 
 				var $data = {
-					uuid: $uuid,
 					category: $cat_id,
 					style: $style,
 					abv: $abv,
@@ -80,7 +80,6 @@ $( document ).ready(function(){
 					  if(msg){
 							alert("success: you submitted preferences successfully");
 							var $data2 = {
-								uuid: $uuid,
 								category: $cat_id,
 								style: $style,
 								abv: $abv,
@@ -111,66 +110,20 @@ $( document ).ready(function(){
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();
-			var $recipient = $('#send-to-input').val();
+			var $recipientID = $('#send-to-input').val();
+			var $recipientName = $('#send-to-input :selected').text();
 			var $content = $('#message-area').val();
 
-			console.log($subject);
-			console.log($recipient);
-			console.log($content);
+			console.log("subject: "+$subject);
+			console.log("recipient ID: "+$recipientID);
+			console.log("recipient Name: "+$recipientName);
+			console.log("content: "+$content);
 
-			var $data = {
-				subject: $subject,
-				recipient: $recipient,
-				content: $content,
-				action: 'insertNewMessage'
-			};
+			// $.ajax({
 
-			$.ajax({
-				type: "POST",
-			  	url: '../model/DB.class.php',
-				data: $data
-			}).done(function(data){
-				if(data){
-					console.log(data);
-					alert("Message was successfully sent.");
-				}else{
-					console.log(data);
-					alert("An error occurred while trying to send the message. | "+data);
-				}
-			})
-		});
+			// }).done(function(data){
 
-		$('#beerRatingForm').submit(function(e){
-			e.preventDefault();
-			var $beerID = $('#beerRatingForm').find('#beerID').val();
-			var $comment = $('#beerRatingForm').find('#comment').val();
-			var $rating = $("input[name='star']:checked").val();
-			//if(!($("input[name='star']:checked"])){alert("Please select a rating");}
-			var $location = $('#beerRatingForm').find('#location').val();
-			var $uuid = 1; //HARDCODED
-			
-			var $data = {
-					beerID: $beerID,
-					comment: $comment,
-					rating: $rating,
-					location: $location,
-					uuid: $uuid,
-					action: 'insertNewRating'
-			};
-
-			$.ajax({
-				  type: "POST",
-				  url: '../model/DB.class.php',
-				  data: $data
-			}).done(function(data) {
-	              		  console.log(data);
-				  if(data){
-				  	alert("Review was submitted!");
-				  }
-				  else{
-				  	alert("Something went wrong submitting review..");
-				  }
-			});
+			// })
 		});
 });
 

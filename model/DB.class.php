@@ -19,7 +19,7 @@ if(isset($_POST['action'])){
 			//return $value; //why does print_r do what return should???
 			break;
 		case 'insertNewPreference':
-			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$uuid = isset($_SESSION['uuid']) ? $_SESSION['uuid'] : null;
 			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
 			$category = isset($_POST['category']) ? $_POST['category'] : null;
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
@@ -28,7 +28,7 @@ if(isset($_POST['action'])){
 			echo $value;
 			break;
 		case 'getPreferredBeer':
-			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$uuid = isset($_SESSION['uuid']) ? $_SESSION['uuid'] : null;
 			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
 			$category = isset($_POST['category']) ? $_POST['category'] : null;
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
