@@ -130,11 +130,14 @@ $( document ).ready(function(){
 			  	url: '../model/DB.class.php',
 				data: $data
 			}).done(function(data){
-				if(data){
-					console.log(data);
-				}else{
-					console.log("did not go through");
-				}
+				console.log("==============================");
+				console.log(data);
+
+				// if(data){
+				// 	console.log(data);
+				// }else{
+				// 	console.log("did not go through");
+				// }
 			})
 		});
 });
