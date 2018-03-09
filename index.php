@@ -31,7 +31,7 @@
             </div>
             <div class="card-action center-align">
               <h5>Try out a new beer today!!</h5>
-              <input type="submit" class="btn brown waves-effect waves-light" value="Search">
+              <button class="btn brown waves-effect waves-light">Search</button>
             </div>
           </form>
         </div>
@@ -44,7 +44,7 @@
 
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
-          <form>
+          <form id="registerForm">
             <div class="card-content">
               <span ><h4 class="card-title center-align">Register</h4></span>
               <div class="row">
@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="card-action center-align">
-              < type="submit" class="btn brown waves-effect waves-light" value="Register">
+              <button class="btn brown waves-effect waves-light">Register</button>
             </div>
             </form>
 

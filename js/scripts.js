@@ -29,6 +29,38 @@ $( document ).ready(function(){
 			});
     	});
 
+    	$("#registerForm").submit(function(e){
+			e.preventDefault();
+	        var $first_name = $('#registerForm').find('#first_name').val();
+			var $last_name = $('#registerForm').find('#last_name').val();
+			var $email = $('#registerForm').find('#email').val();
+			var $password = $('#registerForm').find('#password').val();
+
+			console.log($first_name);
+			console.log($last_name);
+			console.log($email);
+			console.log($password);
+
+			// var $data = {
+			// 	user: $userName,
+			// 	pass: $password,
+			// 	action: 'performLogin'
+			// };
+
+			// $.ajax({
+			// 	  type: "POST",
+			// 	  url: 'model/DB.class.php',
+			// 	  data: $data
+			// }).done(function(msg) {
+	  //             console.log(msg);
+			// 	  if(msg){
+			// 	  	window.location.href = 'views/inbox.php';
+			// 	  }else{
+			// 	  	alert("User/password incorrect!");
+			// 	  }
+			// });
+    	});
+
     	$('#selectedCategory').change(function(e){
 				e.preventDefault();
 	        var $cat_id = $(this).val();
