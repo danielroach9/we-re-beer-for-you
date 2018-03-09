@@ -114,6 +114,10 @@ $( document ).ready(function(){
 			var $recipient = $('#send-to-input').val();
 			var $content = $('#message-area').val();
 
+			console.log($subject);
+			console.log($recipient);
+			console.log($content);
+
 			var $data = {
 				subject: $subject,
 				recipient: $recipient,
