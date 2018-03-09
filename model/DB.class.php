@@ -545,6 +545,7 @@ class DB{
 			return $this->db->lastInsertId();
 		}
 		catch(PDOException $e){
+			var_dump("insertNewMessage - ".$e->getMessage());
 			echo "insertNewMessage - ".$e->getMessage();
 			die();
 		}
