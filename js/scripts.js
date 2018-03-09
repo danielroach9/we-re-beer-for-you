@@ -114,7 +114,7 @@ $( document ).ready(function(){
 			var $recipient = $('#send-to-input').val();
 			var $content = $('#message-area').val();
 
-			var $data{
+			var $data = {
 				subject: $subject,
 				recipient: $recipient,
 				content: $content,
