@@ -1,8 +1,6 @@
 <?php
 require_once("../model/DB.class.php");
 
-var_dump($_SESSION);
-
 $db = new DB();
 $beer = NULL;
 $id = $_GET['id'];

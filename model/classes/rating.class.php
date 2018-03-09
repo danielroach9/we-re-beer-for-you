@@ -10,7 +10,7 @@ class Rating
 	// Get the Rating's purchase ID
 	public function getPurchaseID(){return $this->purchase_id;}
 	// Get the Rating's beer ID
-	public function getBeerID(){return $this->beerID;}
+	public function getBeerID(){return $this->beer_id;}
 	// Get the Rating's comments
 	public function getComment(){return $this->comment;}
 	// Get the Rating's rating number
