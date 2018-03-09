@@ -46,7 +46,7 @@ if(isset($_POST['action'])){
 			$title = isset($_POST['subject']) ? $_POST['subject'] : null;
 			$content = isset($_POST['content']) ? $_POST['content'] : null;
 			$value = $db->insertNewMessage($recipient,$sender,$title,$content);
-			return $value;
+			print $value;
 			break;
 	}
 }
