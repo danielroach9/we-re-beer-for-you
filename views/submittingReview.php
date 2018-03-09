@@ -1,80 +1,105 @@
 <!DOCTYPE HTML> 
-<html>
-<head>
+
 <style>
 .error {color: #FF0000;}
-</style>
-</head>
-<body>  
 
-
-<?php
-require_once("../model/DB.class.php");
-// define variables and set to empty values
-$beerErr = $locationErr = "";
-$beer_id = $location = $comment = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["beer_id"])) {
-    $beerErr = "Beer Name is required";
-  }/* else {
-    $beer_id = test_input($_POST["beer_id"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$beer_id)) {
-      $beerErr = "Only letters and white space allowed";
-    }
-  }*/
-  
-  if (empty($_POST["location"])) {
-    $locationErr = "Location is required";
-  } /*else {
-    $location = test_input($_POST["location"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$location)) {
-      $locationErr = "Only letters and white space allowed";
-    }
-  }*/
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } //else {
-   //$comment = test_input($_POST["comment"]);
-  //}
-
+.txt-center {
+  text-align: center;
 }
-   
+.hide {
+  display: none;
+}
 
-    function test_input(){
-        return insertNewRating($beer_id,$comment,3, $location, 1);
-    }
-    if(isset($_POST['submit'])){
-	test_input();
-    } 
-?>
+.clear {
+  float: none;
+  clear: both;
+}
 
-<h2>Submit Beer Review</h2>
-<p><span class="error">* required field.</span></p>
-<form method="post" action="submittingReview.php">
-  Beer name:<br>
-  <input type="text" name="beername" value="<?php echo $beer_id;?>">
-  <span class="error">* <?php echo $beerErr;?></span>
-  <br><br>
-  Location:<br>
-  <input type="text" name="location" value="<?php echo $location;?>">
-  <span class="error">* <?php echo $locationErr;?></span>
-  <br><br>
-  Rating:<br>
-  <input type="radio" name="rating" value="1"> 1<br>
-  <input type="radio" name="rating" value="2"> 2<br>
-  <input type="radio" name="rating" value="3"> 3<br>
-  <input type="radio" name="rating" value="4"> 4<br>
-  <input type="radio" name="rating" value="5" checked> 5<br>
-  <input type="submit" name="submit" value="Submit">
-</form> 
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
 
-<br><br>
-<textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" value="<?php echo $comment;?>" form="usrform">
-</textarea>
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
 
-</body>
-</html>
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
+</style>
+
+<div class="section no-pad-bot" id="register">
+    <div class="container">
+
+      <div class="valign-wrapper row login-box">
+        <div class="card hoverable col s6 offset-s3">
+          <form id="beerRatingForm">
+            <div class="card-content">
+              <span ><h4 class="card-title center-align">Submit Beer Review</h4></span>
+	      <p><span class="error">* required field.</span></p>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="first_name">Beer name</label>
+                  <input type="text" name="beerID" id="beerID" >
+		  <span class="error">*</span>
+                </div>
+                <div class="input-field col s12">
+                  <label for="location">Location</label>
+                  <input type="text" name="location" id="location">
+		  <span class="error">*</span>
+                </div>
+		 <label for="rating">Rating</label>
+                 <div class="rating">
+		    <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
+		    <label for="star5" >☆</label>
+		    <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
+		    <label for="star4" >☆</label>
+		    <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
+		    <label for="star3" >☆</label>
+		    <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
+		    <label for="star2" >☆</label>
+		    <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
+		    <label for="star1" >☆</label>
+		    <div class="clear"></div>
+		    <span class="error"></span>
+        	</div>
+		<label for="comment">Comment</label>
+		<div class="input-field col s12">		
+		    <textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" id="comment">
+	    	    </textarea>
+		</div>
+              </div>
+            </div>
+	    <div class="card-action center-align">
+              <input type="submit" class="btn brown waves-effect waves-light" value="Submit Rating">
+            </div>
+            </form>
+	    
+
+        </div>
+      </div>
+    </div>
+  </div>

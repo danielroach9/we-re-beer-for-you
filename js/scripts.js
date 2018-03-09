@@ -139,6 +139,39 @@ $( document ).ready(function(){
 				}
 			})
 		});
+
+		$('#beerRatingForm').click(function(){
+			e.preventDefault();
+			var $beerID = $('#beerRatingForm').find('#beerID').val();
+			var $comment = $('#beerRatingForm').find('#comment').val();
+			var $rating = $("input[name='star']:checked").val();
+			//if(!($("input[name='star']:checked"])){alert("Please select a rating");}
+			var $location = $('#beerRatingForm').find('#location').val();
+			var $uuid = 1; //HARDCODED
+			
+			var $data = {
+					beerID: $beerID,
+					comment: $comment,
+					rating: $rating,
+					location: $location,
+					uuid: $uuid,
+					action: 'insertNewRating'
+			};
+
+			$.ajax({
+				  type: "POST",
+				  url: 'model/DB.class.php',
+				  data: $data
+			}).done(function(msg) {
+	              console.log(msg);
+				  if(msg){
+				  	alert("Review was submitted!");
+				  }
+				  else{
+				  	alert("Something went wrong submitting review..");
+				  }
+			});
+		});
 });
 
 function showRegister(){
