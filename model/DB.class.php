@@ -57,7 +57,7 @@ if(isset($_POST['action'])){
 			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
 			$value = $db->insertNewRating($beerID, $comment, $rating, $location, $uuid);
 			echo $value;
-			break
+			break;
 	}
 }
 class DB{
