@@ -50,11 +50,11 @@ if(isset($_POST['action'])){
 			break;
 
 		case 'insertNewRating':
-			$beerID: isset($_POST['beerID']) ? $_POST['beerID'] : null;
-			$comment: isset($_POST['comment']) ? $_POST['comment'] : null;
-			$rating: isset($_POST['rating']) ? $_POST['rating'] : null;
-			$location: isset($_POST['location']) ? $_POST['location'] : null;
-			$uuid: isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$beerID = isset($_POST['beerID']) ? $_POST['beerID'] : null;
+			$comment = isset($_POST['comment']) ? $_POST['comment'] : null;
+			$rating = isset($_POST['rating']) ? $_POST['rating'] : null;
+			$location = isset($_POST['location']) ? $_POST['location'] : null;
+			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
 			$value = $db->insertNewRating($beerID, $comment, $rating, $location, $uuid);
 			echo $value;
 			break

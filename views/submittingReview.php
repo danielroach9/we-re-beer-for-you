@@ -51,6 +51,10 @@
 }
 </style>
 
+<?php include "inc/header.php"; ?>
+<title>We're beer for you!</title>
+<?php include "inc/nav.php"; ?>
+
 <div class="section no-pad-bot" id="register">
     <div class="container">
 
@@ -103,3 +107,5 @@
       </div>
     </div>
   </div>
+<?php include "inc/footer.php"; ?>
+
