@@ -55,15 +55,14 @@
 <title>We're beer for you!</title>
 <?php include "inc/nav.php"; ?>
 
-<div class="section no-pad-bot" id="register">
+<div class="section no-pad-bot" id="index-banner">
     <div class="container">
-
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
           <form id="beerRatingForm">
             <div class="card-content">
               <span class="card-title center-align">Submit Beer Review</span>
-	      <p><span class="error">* required field.</span></p>
+	      <!--<p><span class="error">* required field.</span></p>-->
               <div class="row">
                 <div class="input-field col s12">
                   <label for="first_name">Beer name</label>
