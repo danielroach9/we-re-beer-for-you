@@ -12,9 +12,33 @@ if(isset($_POST['action'])){
 			return $value;
 			break;
 		case 'getStylesByCategory':
-			$cat_id = isset($_POST['cat_id']) ? $_POST['cat_id'] : null;
+			$cat_id = isset($_POST['category']) ? $_POST['category'] : null;
 			$value = $db->getStylesByCategory($cat_id);
-			return $value;
+			echo json_encode($value);
+			//print_r($value);
+			//return $value; //why does print_r do what return should???
+			break;
+		case 'insertNewPreference':
+			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
+			$category = isset($_POST['category']) ? $_POST['category'] : null;
+			$style = isset($_POST['style']) ? $_POST['style'] : null;
+			$country = isset($_POST['country']) ? $_POST['country'] : null;
+			$value = $db->insertNewPreference($uuid, $abv, $category, $style, $country);
+			echo $value;
+			break;
+		case 'getPreferredBeer':
+			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
+			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
+			$category = isset($_POST['category']) ? $_POST['category'] : null;
+			$style = isset($_POST['style']) ? $_POST['style'] : null;
+			$country = isset($_POST['country']) ? $_POST['country'] : null;
+			$value = $db->getPreferredBeer($uuid, $abv, $category, $style, $country);
+			echo json_encode($value);
+			// echo $value;
+		break;
+
+			# code...
 			break;
 		case 'insertNewMessage':
 			$recipient = isset($_POST['recipient']) ? $_POST['recipient'] : null;
@@ -367,10 +391,12 @@ class DB{
 			return $data;
 	}
 
-	function getStylesByCategory($cat_id){
+	function getStylesByCategory($cat_id){ // sanitize var, check if int
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT id, style_name FROM styles where cat_id = ".$cat_id);
+			$stmt = $this->db->prepare("SELECT id, style_name
+																	FROM styles
+																	WHERE cat_id = ".$cat_id);
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
@@ -382,8 +408,61 @@ class DB{
 			die();
 		}
 
-		return $data;
+		return false;
 	}
+
+	function insertNewPreference($_uuid,$_abv,$_category,$_style, $_country){
+
+		try{
+			$stmt = $this->db->prepare("INSERT INTO preferences
+								(uuid, preferred_abv_range, preferred_category, preferred_style, preferred_country)
+				VALUES (:uuid,:abv,:category,:style, :country)");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->bindParam(":abv",$_abv,PDO::PARAM_INT);
+			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
+			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
+			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+			// return "test boi";
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+			die();
+		}
+	}
+
+	function getPreferredBeer($_uuid,$_abv,$_category,$_style, $_country){ // give uuid, get curated beers
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name, s.style_name, b.abv
+																	FROM beers b
+																	JOIN breweries br on br.id = b.brewery_id
+																	JOIN categories c on c.id = b.cat_id
+																	JOIN styles s on s.id = b.style_id
+																	WHERE b.cat_id = ".$_category.
+																	" AND b.style_id = ".$_style.
+																	" AND br.country = '".$_country."' AND ABS(b.abv - ".$_abv.") < 1");
+
+																	//abv notes: cannot do exact comparison because abv is float in database
+																	//adjust the ofsetting value for a broader abv search
+
+
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC); // does this need to change as per above when selecting multiple
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getStylesByCategory - ".$e->getMessage();
+			die();
+		}
+
+		return false;
+	}
+
 
 //============================================================
 
@@ -472,11 +551,3 @@ class DB{
 	}
 
 }
-// $db = new DB();
-// if ($_POST["dropdownValue"]){
-// 	echo "this happened";
-//     //call the function or execute the code
-//     $data = $db->getStylesByCategory($_POST["dropdownValue"]);//do i need to call DB->getStylesByCategory
-// 		$test = 'che boi';
-// 		return $test;
-// }

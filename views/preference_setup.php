@@ -17,20 +17,19 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
     <div class="container">
       <div class="valign-wrapper row login-box">
         <div class="card hoverable col s6 offset-s3">
-          <form>
+          <form id="preferenceForm">
             <div class="card-content">
               <span class="card-title center-align">Preferences</span>
               <div class="row">
                 <div class="input-field col s12">
-                  <label for="preferred_abv_range">ABV Range</label>
-                  <input type="text" class="preferences" name="preferred_abv_range" id="preferred_abv_range" >
+                  <label for="preferred_abv_range">Preferred ABV</label>
+                  <br>
                   <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <input type="range" min="1" max="40" step="0.1" value="5" class="slider" id="abvRange">
+                    <p>ABV: <span id="abvPrint"></span></p>
                   </div>
                 </div>
                 <div class="input-field col s12">
-                  <input type="text" class="preferences" name="preferred_category" id="preferred_category" >
-
                   <select name="select1" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
@@ -41,8 +40,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     <label for="preferred_category">Prefered Category</label>
                 </div>
                 <div class="input-field col s12">
-                  <input type="text" class="preferences" name="preferred_style" id="preferred_style">
-                  <select name="select">
+                  <select name="select" id="stylesDropdown">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
@@ -52,8 +50,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     <label for="preferred_style">Prefered Style</label>
                 </div>
                 <div class="input-field col s12">
-                  <input type="text" class="preferences" name="preferred_country" id="preferred_country">
-                  <select name="select">
+                  <select name="select" id="countryDropdown">
                  <?php
                     foreach ($countries as $value) {
                       $count = 1;
@@ -67,12 +64,23 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
               </div>
             </div>
             <div class="card-action center-align">
-              <input type="submit" class="btn brown waves-effect waves-light" value="Register">
+              <input type="submit" class="btn brown waves-effect waves-light" value="Show me the beer!!">
             </div>
             </form>
+            <p>Preferred Beers</p>
+            <p id="preferredBeers">test</p>
 
         </div>
       </div>
     </div>
   </div>
+  <script>
+    var slider = document.getElementById("abvRange");
+    var output = document.getElementById("abvPrint");
+    output.innerHTML = slider.value+'%';
+
+    slider.oninput = function() {
+      output.innerHTML = this.value+'%';
+    }
+  </script>
 <?php include "inc/footer.php"; ?>

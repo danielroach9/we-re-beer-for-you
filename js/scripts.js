@@ -28,7 +28,8 @@ $( document ).ready(function(){
 			});
     	});
 
-    	$('#selectedCategory').change(function(){
+    	$('#selectedCategory').change(function(e){
+				e.preventDefault();
 	        var $cat_id = $(this).val();
 
 	        var $data = {
@@ -42,17 +43,71 @@ $( document ).ready(function(){
 				  data: $data
 			}).done(function(data) {
 				if(data){
-					console.log(data);
+					data = JSON.parse(data);
+					$("#stylesDropdown").html(data.reduce((prev,curr)=>{
+						return `${prev}<option value=${curr.id}>${curr.style_name}</option>`
+					},"")
+				  );
+					$('#stylesDropdown').material_select();//this re initializes the select because materialize hides the real thing
 				}else{
+					alert("something broke");
 					//nothing..
 				}
 			});
-
-	        $.post('../model/DB.class.php', { dropdownValue: cat_id }, function(data){
-	          alert('ajax completed. Response:  '+data);
-	          //do after submission operation in DOM
-	        });
 	    });
+			$("#preferenceForm").submit(function(e){
+				e.preventDefault();
+		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
+				var $style = $('#preferenceForm').find('#stylesDropdown').val();
+				var $abv = $('#preferenceForm').find('#abvRange').val();
+				var $uuid = 1;
+				var $country_name = $('#preferenceForm').find('#countryDropdown option:selected').text();//need to get string, int value is meaningless
+
+				var $data = {
+					uuid: $uuid,
+					category: $cat_id,
+					style: $style,
+					abv: $abv,
+					country: $country_name,
+					action: 'insertNewPreference'
+				};
+				$.ajax({
+					  type: "POST",
+					  url: '../model/DB.class.php',
+					  data: $data
+				}).done(function(msg) {
+		              console.log(msg);
+					  if(msg){
+							alert("success: you submitted preferences successfully");
+							var $data2 = {
+								uuid: $uuid,
+								category: $cat_id,
+								style: $style,
+								abv: $abv,
+								country: $country_name,
+								action: 'getPreferredBeer'
+							};
+							$.ajax({
+								  type: "POST",
+								  url: '../model/DB.class.php',
+									data: $data2
+							}).done(function(msg) {
+								//console.log(msg);
+								alert(msg);
+								msg = JSON.parse(msg);
+								$("#preferredBeers").html(msg.reduce((prev,curr)=>{
+									return `${prev}<p> ${curr.id} ${curr.name}</p>`
+								},"")
+							  );
+							});
+
+					  	// window.location.href = 'views/inbox.php';
+					  }
+					  else{
+					  	alert("Something broke");
+					  }
+				});
+	    	});
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();
