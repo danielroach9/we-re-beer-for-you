@@ -62,7 +62,7 @@
         <div class="card hoverable col s6 offset-s3">
           <form id="beerRatingForm">
             <div class="card-content">
-              <span ><h4 class="card-title center-align">Submit Beer Review</h4></span>
+              <span ><class="card-title center-align">Submit Beer Review</span>
 	      <p><span class="error">* required field.</span></p>
               <div class="row">
                 <div class="input-field col s12">
