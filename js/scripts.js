@@ -22,8 +22,7 @@ $( document ).ready(function(){
 	              console.log(msg);
 				  if(msg){
 				  	window.location.href = 'views/inbox.php';
-				  }
-				  else{
+				  }else{
 				  	alert("User/password incorrect!");
 				  }
 			});
@@ -39,11 +38,11 @@ $( document ).ready(function(){
 
 	        $.ajax({
 				  type: "POST",
-				  url: 'model/DB.class.php',
+				  url: '../model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
 				if(data){
-					console.console.log(data);
+					console.log(data);
 				}else{
 					//nothing..
 				}
@@ -57,20 +56,27 @@ $( document ).ready(function(){
 
 		$('#msg_send').click(function(){
 			var $subject = $('#subject-input').val();
-			var $recipientID = $('#send-to-input').val();
-			var $recipientName = $('#send-to-input :selected').text();
+			var $recipient = $('#send-to-input').val();
 			var $content = $('#message-area').val();
 
-			console.log("subject: "+$subject);
-			console.log("recipient ID: "+$recipientID);
-			console.log("recipient Name: "+$recipientName);
-			console.log("content: "+$content);
+			var $data{
+				subject: $subject,
+				recipient: $recipient,
+				content: $content,
+				action: 'insertNewMessage'
+			};
 
-			// $.ajax({
-
-			// }).done(function(data){
-
-			// })
+			$.ajax({
+				type: "POST",
+			  	url: '../model/DB.class.php',
+				data: $data
+			}).done(function(data){
+				if(data){
+					console.log(data);
+				}else{
+					console.log("did not go through");
+				}
+			})
 		});
 });
 

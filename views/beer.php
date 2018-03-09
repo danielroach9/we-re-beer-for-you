@@ -21,7 +21,6 @@ else {
 }
 
 $users = $db->getAllUsers();
-var_dump($users);
 ?>
 
 
@@ -122,7 +121,7 @@ var_dump($users);
               <?php 
                 foreach ($users as $user) {
                   if(!empty($user)){
-                    echo "<option value='".$user->getID()."''>".$user->getWholeName()."<option>";
+                    echo "<option value='".$user->getID()."''>".$user->getWholeName()."</option>";
                   }
                 }
               ?>

@@ -16,6 +16,14 @@ if(isset($_POST['action'])){
 			$value = $db->getStylesByCategory($cat_id);
 			return $value;
 			break;
+		case 'insertNewMessage':
+			$recipient = isset($_POST['recipient']) ? $_POST['recipient'] : null;
+			$sender = isset($_SESSION['accountID']) ? $_SESSION['accountID'] : null;
+			$title = isset($_POST['subject']) ? $_POST['subject'] : null;
+			$content = isset($_POST['content']) ? $_POST['content'] : null;
+			$value = $db->insertNewMessage($recipient,$sender,$title,$content);
+			return $value;
+			break;
 	}
 }
 class DB{
