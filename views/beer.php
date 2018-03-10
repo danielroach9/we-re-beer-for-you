@@ -73,10 +73,10 @@ var_dump($ratings);
                 <div class='rating'>
                   <span>
                     <i class='fa fa-star'></i>
-                    <i class=".($review.rating >= 2 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review.rating >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review.rating >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review.rating >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->rating >= 2 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->rating >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->rating >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->rating >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>
                     .$review.rating
                   </span>
                 </div>
