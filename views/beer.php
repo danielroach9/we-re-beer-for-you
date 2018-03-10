@@ -67,22 +67,21 @@ var_dump($ratings);
       <div class="card-panel grey lighten-2">
         <?php
           foreach ($ratings as $review) {
-            echo var_dump($review);
             echo "
               <div>
                 <div class='rating'>
                   <span>
                     <i class='fa fa-star'></i>
-                    <i class=".($review->rating >= 2 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review->rating >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review->rating >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    <i class=".($review->rating >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>
-                    .$review.rating
+                    <i class=".($review->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    .$review->getRating()
                   </span>
                 </div>
-                <span class='datime-and-location'>$rating.location</span>
+                <span class='datetime-and-location'>".$rating.getLocation()."</span>
                 <span class='comment'>
-                  <p>$rating.comment</p>
+                  <p>".$rating.getComment()."</p>
                 </span>
               </div>
             ";
