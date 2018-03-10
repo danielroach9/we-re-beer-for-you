@@ -76,7 +76,7 @@ var_dump($ratings);
                     <i class=".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
                     <i class=".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
                     <i class=".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>"
-                    .$review->getRating()
+                    .$review->getRating()."
                   </span>
                 </div>
                 <span class='datetime-and-location'>".$review.getLocation()."</span>
