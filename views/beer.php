@@ -87,6 +87,7 @@ var_dump($ratings);
                 </span>
                 <span class='username'>".$username."</span>
               </div>
+              <hr>
             ";
           }
         ?>
@@ -109,7 +110,6 @@ var_dump($ratings);
             </span>
             <span class="username">dxr5716</span>
           </div>
-          <hr>
           <div id="review2">
             <div class=rating>
               <span>
