@@ -79,7 +79,7 @@ var_dump($ratings);
                     .$review->getRating()."
                   </span>
                 </div>
-                <span class='datetime-and-location'>".$review.getLocation()."</span>
+                <span class='datetime-and-location'>".$review->getLocation()."</span>
                 <span class='comment'>
                   <p>".$review.getComment()."</p>
                 </span>
