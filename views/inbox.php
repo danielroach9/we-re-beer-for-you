@@ -1,5 +1,12 @@
 <?php
-//session_start();
+if(isset($_SESSION['loggedIn'])){
+	if($_SESSION['loggedIn'] == true){
+
+	}
+}else{
+	header("Location: ./index.php");
+}
+
 require_once ("../model/DB.class.php");
 
 $db = new DB();
