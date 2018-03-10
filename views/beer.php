@@ -27,7 +27,6 @@ $users = $db->getAllUsers();
 
 // pulling beer ratings hebrev
 $ratings = $db->getRatingsByBeerId($id);
-var_dump($ratings);
 ?>
 
 
