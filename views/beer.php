@@ -11,7 +11,10 @@ if ($id == 'random') {
 
     $rand_num = mt_rand(1, 5901);
     $val = $db->getBeerInfoByID($rand_num);
-    if(!empty($val)) { $beer = $val; }
+    if(!empty($val)) {
+      $beer = $val;
+      $id = $rand_num;
+    }
   }
 
 }
@@ -21,6 +24,10 @@ else {
 }
 
 $users = $db->getAllUsers();
+
+// pulling beer ratings hebrev
+$ratings = $db->getRatingsByBeerId($id);
+var_dump($ratings);
 ?>
 
 
@@ -58,6 +65,28 @@ $users = $db->getAllUsers();
 
     <div class="row" id="recent-reviews">
       <div class="card-panel grey lighten-2">
+        <?php
+          foreach ($ratings as $review) {
+            echo "
+              <div>
+                <div class='rating'>
+                  <span>
+                    <i class='fa fa-star'></i>
+                    <i class=".($review->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    <i class=".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."</i>
+                    .$review->getRating()
+                  </span>
+                </div>
+                <span class='datetime-and-location'>".$rating.getLocation()."</span>
+                <span class='comment'>
+                  <p>".$rating.getComment()."</p>
+                </span>
+              </div>
+            ";
+          }
+        ?>
         <div id="review1">
           <div class=rating>
             <span>
@@ -118,7 +147,7 @@ $users = $db->getAllUsers();
             <!-- <input id="send-to-input" type="text"/> -->
             <select id="send-to-input">
               <option value="" disabled selected>Choose a user to send the message!</option>
-              <?php 
+              <?php
                 foreach ($users as $user) {
                   if(!empty($user)){
                     echo "<option value='".$user->getID()."''>".$user->getWholeName()."</option>";
