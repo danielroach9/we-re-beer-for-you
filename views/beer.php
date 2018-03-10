@@ -67,22 +67,26 @@ var_dump($ratings);
       <div class="card-panel grey lighten-2">
         <?php
           foreach ($ratings as $review) {
+            $from = $db->getUserByID($review->getID());
+            $username = $from[0]->getWholeName();
             echo "
               <div>
                 <div class='rating'>
                   <span>
                     <i class='fa fa-star'></i>
-                    <i class='".($review->getRating() >= 2 ? "fa fa-star" : "fa fa-star-o")."'></i>
-                    <i class='".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-o")."'></i>
-                    <i class='".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-o")."'></i>
-                    <i class='".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-o")."'></i></span>"
+                    <i class='".($review->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."'></i>
+                    <i class='".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."'></i>
+                    <i class='".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."'></i>
+                    <i class='".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."'></i></span>"
                     .$review->getRating()."
                 </div>
                 <span class='datetime-and-location'>".$review->getLocation()."</span>
                 <span class='comment'>
                   <p>".$review->getComment()."</p>
                 </span>
+                <span class='username'>".$username."</span>
               </div>
+              <hr>
             ";
           }
         ?>
@@ -105,7 +109,6 @@ var_dump($ratings);
             </span>
             <span class="username">dxr5716</span>
           </div>
-          <hr>
           <div id="review2">
             <div class=rating>
               <span>
