@@ -506,7 +506,7 @@ class DB{
 			$data = array();
 			$stmt = $this->db->prepare("SELECT * FROM rating
 										WHERE beer_id = :beer_id");
-			$stmt-bindParam(":beer_id", $_beer_id, PDO::PARAM_INT);
+			$stmt->bindParam(":beer_id", $_beer_id, PDO::PARAM_INT);
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_CLASS, 'rating');
