@@ -1,4 +1,4 @@
-<?php include ("views/inc/header.php"); ?>
+<?php include ("inc/header.php"); ?>
 	<title>Search</title>
 	<?php include "inc/nav.php"; ?>
 </head>
@@ -52,4 +52,4 @@
 		</div>
 		<button id="searchBtn">Search</button>
 	</form>
-<?php include ("views/inc/footer.php"); ?>
+<?php include ("inc/footer.php"); ?>
