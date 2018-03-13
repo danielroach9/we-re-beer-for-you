@@ -1,6 +1,5 @@
 <?php
 if(!isset($_SESSION['loggedIn'])){
-	echo "<script type='text/javascript'>alert('Please login before you can access this page');</script>";
 	header("Location: ../index.php");
 }
 
@@ -12,7 +11,7 @@ $messages = $db->getMessagesForUser($_SESSION['accountID']);
 
 <?php include 'inc/header.php'?>
 
-<title> WB4U | Daniels Inbox </title>
+<title> WB4U | <?php echo "{$_SESSION['accountFirstName'].' '.$_SESSION['accountLastName']}'" ?>'s Inbox </title>
 <?php include 'inc/nav.php'?>
 <div class="container-fluid">
 	<div class="row">
