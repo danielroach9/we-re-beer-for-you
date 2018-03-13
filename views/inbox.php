@@ -1,6 +1,10 @@
 <?php
-if(!isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == false){
-	header("Location: ../index.php");
+if(isset($_SESSION['loggedIn'])){
+	if($_SESSION['loggedIn'] == true){
+		
+	}
+}else{
+	header("Location: ./index.php");
 }
 
 require_once ("../model/DB.class.php");
@@ -11,7 +15,7 @@ $messages = $db->getMessagesForUser($_SESSION['accountID']);
 
 <?php include 'inc/header.php'?>
 
-<title> WB4U | <?php echo "{$_SESSION['loggedIn']}" ?> Inbox </title>
+<title> WB4U | Daniels Inbox </title>
 <?php include 'inc/nav.php'?>
 <div class="container-fluid">
 	<div class="row">
