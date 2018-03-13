@@ -27,7 +27,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <select name="select1" id="selectedCategory">
-                  	<option value="" disabled selected>Choose a Beer Style!</option>
+                  	<option value="" disabled selected>Choose a Beer Category!</option>
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
@@ -38,6 +38,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <select name="select" id="stylesDropdown">
+                  	<option value="" disabled selected>Choose a Beer Style!</option>
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';
