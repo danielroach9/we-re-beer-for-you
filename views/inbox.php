@@ -1,9 +1,5 @@
 <?php
-if(isset($_SESSION['loggedIn'])){
-	if($_SESSION['loggedIn'] == true){
-
-	}
-}else{
+if(!isset($_SESSION['loggedIn'])){
 	header("Location: ./index.php");
 }
 
