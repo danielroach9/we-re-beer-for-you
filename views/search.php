@@ -1,3 +1,14 @@
+<?php
+require_once("../model/DB.class.php");
+
+$db = new DB();
+$categories = $db->getCategories();
+$countries = $db->getCountries();
+$styles = $db->getStylesByCategory(1); //hardcoded parameter to start
+
+
+?>
+
 <?php include ("inc/header.php"); ?>
 	<title>Search</title>
 	<?php include "inc/nav.php"; ?>
