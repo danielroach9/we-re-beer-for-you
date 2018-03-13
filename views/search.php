@@ -3,9 +3,7 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 $categories = $db->getCategories();
-$countries = $db->getCountries();
 $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
-
 
 ?>
 
@@ -47,19 +45,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                     </select>
                     <label for="preferred_style">Prefered Style</label>
                 </div>
-                <div class="input-field col s12">
-                  <select name="select" id="countryDropdown">
-                 <?php
-                    foreach ($countries as $value) {
-                      $count = 1;
-                      echo '<option value='.$count.'>'.$value[country].'</option>';
-                      $count++;
-                    }
-                    ?>
-                    </select>
-                    <label for="preferred_country">Preferred Country</label>
-                </div>
-              </div>
+            </div>
 		</div>
 		<button id="searchBtn">Search</button>
 	</form>
