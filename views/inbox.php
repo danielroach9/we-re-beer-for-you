@@ -1,5 +1,6 @@
 <?php
 if(!isset($_SESSION['loggedIn'])){
+	echo "<script type='text/javascript'>alert('Please login before you can access this page');</script>";
 	header("Location: ../index.php");
 }
 
