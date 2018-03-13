@@ -27,6 +27,7 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
                 </div>
                 <div class="input-field col s12">
                   <select name="select1" id="selectedCategory">
+                  	<option value="" disabled selected>Choose a Beer Style!</option>
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
