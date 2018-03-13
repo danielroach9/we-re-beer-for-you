@@ -1,15 +1,19 @@
 <?php
-$id;
+$qry;
 $cat;
 $stl;
 if(isset($_GET['q'])){
 	if(isset($_GET['cat']) && isset($_GET['stl'])){
+		$qry = $_GET['q'];
+		$cat = $_GET['cat'];
+		$stl = $_GET['stl'];
 		var_dump($cat);
 		var_dump($stl);
-		var_dump($id);
+		var_dump($qry);
 	}
 	else{
-		var_dump($id);
+		$qry = $_GET['q'];
+		var_dump($qry);
 	}
 }
 
