@@ -1,4 +1,18 @@
 <?php
+$id;
+$cat;
+$stl;
+if(isset($_GET['q'])){
+	if(isset($_GET['cat']) && isset($_GET['stl'])){
+		var_dump($cat);
+		var_dump($stl);
+		var_dump($id);
+	}
+	else{
+		var_dump($id);
+	}
+}
+
 require_once("../model/DB.class.php");
 
 $db = new DB();
@@ -13,7 +27,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 <body>
 	<form>
 		<input type="text" name="">
-		<button id="searchFilters">Search Filters</button>
+		<a href="#" id="searchFilters">Apply Filters</a>
 		<div id="filters">
 			<div class="row">
                 <div class="input-field col s6">
@@ -42,4 +56,22 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 		</div>
 		<button id="searchBtn">Search</button>
 	</form>
+
+	<div id=results>
+		<?php
+
+      foreach ($brewery_beers as $value) {
+        echo "
+          <div class='col s4'>
+          <div class='card small beer-card'>
+          <div class='card-content center-align'>
+          <a href='beer.php?id=$value[id]'><span class='card-title'>$value[name]</span></a>
+          <p>Category: $value[cat_name]</p>
+          <p>Style:  $value[style_name]</p>
+          </div>
+        </div>
+        </div>";
+      }
+      ?>
+	</div>
 <?php include ("inc/footer.php"); ?>
