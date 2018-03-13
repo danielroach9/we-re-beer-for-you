@@ -3,8 +3,7 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 $categories = $db->getCategories();
-$styles = $db->getStylesByCategory(1); //hardcoded parameter to start
-
+$styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 ?>
 
 <?php include ("inc/header.php"); ?>
