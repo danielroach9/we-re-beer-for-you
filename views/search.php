@@ -16,15 +16,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 		<button id="searchFilters">Search Filters</button>
 		<div id="filters">
 			<div class="row">
-                <div class="input-field col s12">
-                  <label for="preferred_abv_range">Preferred ABV</label>
-                  <br>
-                  <div class="slidecontainer">
-                  	<p>ABV: <span id="abvPrint"></span></p>
-                    <input type="range" min="1" max="40" step="0.1" value="5" class="slider" id="abvRange">
-                  </div>
-                </div>
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                   <select name="select1" id="selectedCategory">
                   	<option value="" disabled selected>Choose a Beer Category!</option>
                   <?php
@@ -35,7 +27,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
                     </select>
                     <label for="preferred_category">Prefered Category</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                   <select name="select" id="stylesDropdown">
                   	<option value="" disabled selected>Choose a Beer Style!</option>
                   <?php
