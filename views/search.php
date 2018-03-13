@@ -60,18 +60,18 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	<div id=results>
 		<?php
 
-      foreach ($brewery_beers as $value) {
-        echo "
-          <div class='col s4'>
-          <div class='card small beer-card'>
-          <div class='card-content center-align'>
-          <a href='beer.php?id=$value[id]'><span class='card-title'>$value[name]</span></a>
-          <p>Category: $value[cat_name]</p>
-          <p>Style:  $value[style_name]</p>
-          </div>
-        </div>
-        </div>";
-      }
+      //foreach ($brewery_beers as $value) {
+      //   echo "
+      //     <div class='col s4'>
+      //     <div class='card small beer-card'>
+      //     <div class='card-content center-align'>
+      //     <a href='beer.php?id=$value[id]'><span class='card-title'>$value[name]</span></a>
+      //     <p>Category: $value[cat_name]</p>
+      //     <p>Style:  $value[style_name]</p>
+      //     </div>
+      //   </div>
+      //   </div>";
+      // }
       ?>
 	</div>
 <?php include ("inc/footer.php"); ?>
