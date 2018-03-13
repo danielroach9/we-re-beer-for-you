@@ -7,9 +7,9 @@ if(isset($_GET['q'])){
 		$qry = $_GET['q'];
 		$cat = $_GET['cat'];
 		$stl = $_GET['stl'];
+		var_dump($qry);
 		var_dump($cat);
 		var_dump($stl);
-		var_dump($qry);
 	}
 	else{
 		$qry = $_GET['q'];
@@ -30,7 +30,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 </head>
 <body>
 	<form>
-		<input type="text" name="">
+		<input type="text" name="" placeholder="Search for a Beer">
 		<a href="#" id="searchFilters">Apply Filters</a>
 		<div id="filters">
 			<div class="row">
