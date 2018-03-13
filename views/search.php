@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php include ("views/inc/header.php"); ?>
 	<title>Search</title>
+	<?php include "inc/nav.php"; ?>
 </head>
 <body>
 	<form>
@@ -53,5 +52,4 @@
 		</div>
 		<button id="searchBtn">Search</button>
 	</form>
-</body>
-</html>
+<?php include ("views/inc/footer.php"); ?>
