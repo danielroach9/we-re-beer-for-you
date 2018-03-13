@@ -30,12 +30,12 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 </head>
 <body>
 	<form>
-		<input type="text" name="" placeholder="Search for a Beer" <?php if(isset($_GET['q'])){ echo "value='{$qry}'"; } ?>>
+		<input type="text" name="q" placeholder="Search for a Beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
 		<a href="#" id="searchFilters">Apply Filters</a>
 		<div id="filters">
 			<div class="row">
                 <div class="input-field col s6">
-                  <select name="select1" id="selectedCategory">
+                  <select name="cat" id="selectedCategory">
                   	<option value="" disabled selected>Choose a Beer Category!</option>
                   <?php
                     foreach ($categories as $value) {
@@ -46,7 +46,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
                     <label for="preferred_category">Prefered Category</label>
                 </div>
                 <div class="input-field col s6">
-                  <select name="select" id="stylesDropdown">
+                  <select name="stl" id="stylesDropdown">
                   	<option value="" disabled selected>Choose a Beer Style!</option>
                   <?php
                     foreach ($styles as $value) {
