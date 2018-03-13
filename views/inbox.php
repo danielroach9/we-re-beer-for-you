@@ -11,7 +11,7 @@ $messages = $db->getMessagesForUser($_SESSION['accountID']);
 
 <?php include 'inc/header.php'?>
 
-<title> WB4U | <?php echo "{$_SESSION['accountFirstName']$_SESSION['accountLastName']}" ?>'s Inbox </title>
+<title> WB4U | <?php echo "$_SESSION['accountFirstName']" ?>'s Inbox </title>
 <?php include 'inc/nav.php'?>
 <div class="container-fluid">
 	<div class="row">
