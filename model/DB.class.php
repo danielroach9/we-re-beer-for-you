@@ -45,9 +45,6 @@ if(isset($_POST['action'])){
 			echo json_encode($value);
 			// echo $value;
 		break;
-
-			# code...
-			break;
 		case 'insertNewMessage':
 			$recipient = isset($_POST['recipient']) ? $_POST['recipient'] : null;
 			$sender = isset($_SESSION['accountID']) ? $_SESSION['accountID'] : null;
@@ -65,6 +62,15 @@ if(isset($_POST['action'])){
 			$uuid = isset($_POST['uuid']) ? $_POST['uuid'] : null;
 			$value = $db->insertNewRating($beerID, $comment, $rating, $location, $uuid);
 			echo $value;
+			break;
+
+
+		case 'getBeerInfoByFullSearch':
+			$name = isset($_POST['query']) ? $_POST['query'] : null;
+			$category = isset($_POST['category']) ? $_POST['category'] : null;
+			$style = isset($_POST['style']) ? $_POST['style'] : null;
+			$value = $db->getBeerInfoByFullSearch($name,$category,$style);
+			return $value;
 			break;
 	}
 }
@@ -278,6 +284,33 @@ class DB{
 		}
 		catch(PDOException $e){
 			echo "getBeerInfoByName - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
+	function getBeerInfoByFullSearch($_name, $_category, $_style){
+		try{
+			$data = array();
+			$name = "%".$_name."%";
+			$stmt = $this->db->prepare("SELECT b.name, c.cat_name,s.style_name, b.abv, b.descript
+										FROM beers b
+										JOIN categories c ON c.id = b.cat_id
+										JOIN styles s ON s.id = b.style_id
+										WHERE b.name LIKE :name
+										AND b.cat_id = :category
+										AND b.style_id = :style");
+			$stmt->bindParam(":name",$name,PDO::PARAM_STR);
+			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
+			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getBeerInfoByFullSearch - ".$e->getMessage();
 			die();
 		}
 		return $data;

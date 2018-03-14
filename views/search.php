@@ -1,4 +1,7 @@
 <?php
+require_once("../model/DB.class.php");
+$db = new DB();
+
 $qry;
 $cat;
 $stl;
@@ -7,19 +10,11 @@ if(isset($_GET['q'])){
 		$qry = $_GET['q'];
 		$cat = $_GET['cat'];
 		$stl = $_GET['stl'];
-		var_dump($qry);
-		var_dump($cat);
-		var_dump($stl);
 	}
 	else{
 		$qry = $_GET['q'];
-		var_dump($qry);
 	}
 }
-
-require_once("../model/DB.class.php");
-
-$db = new DB();
 $categories = $db->getCategories();
 $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 ?>
