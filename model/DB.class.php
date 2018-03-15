@@ -268,7 +268,7 @@ class DB{
 		try{
 			$data = array();
 			$name = "%".$_name."%";
-			$stmt = $this->db->prepare("SELECT b.name, c.cat_name,
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name,
 			 s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c ON c.id = b.cat_id
@@ -293,7 +293,7 @@ class DB{
 		try{
 			$data = array();
 			$name = "%".$_name."%";
-			$stmt = $this->db->prepare("SELECT b.name, c.cat_name,s.style_name, b.abv, b.descript
+			$stmt = $this->db->prepare("SELECT b.id, b.name, c.cat_name,s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c ON c.id = b.cat_id
 										JOIN styles s ON s.id = b.style_id

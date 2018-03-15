@@ -10,9 +10,11 @@ if(isset($_GET['q'])){
 		$qry = $_GET['q'];
 		$cat = $_GET['cat'];
 		$stl = $_GET['stl'];
+		$searchResults = $db->getBeerInfoByFullSearch($qry,$cat,$stl);
 	}
 	else{
 		$qry = $_GET['q'];
+		$searchResults = $db->getBeerInfoByName($qry);
 	}
 }
 $categories = $db->getCategories();
@@ -24,7 +26,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	<?php include "inc/nav.php"; ?>
 </head>
 <body>
-	<form>
+	<form id="searchForm">
 		<input type="text" id="searchQuery" name="q" placeholder="Search for a Beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
 		<a href="#" id="searchFilters">Apply Filters</a>
 		<div id="filters">
@@ -58,19 +60,18 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 
 	<div id=results>
 		<?php
-
-      //foreach ($brewery_beers as $value) {
-      //   echo "
-      //     <div class='col s4'>
-      //     <div class='card small beer-card'>
-      //     <div class='card-content center-align'>
-      //     <a href='beer.php?id=$value[id]'><span class='card-title'>$value[name]</span></a>
-      //     <p>Category: $value[cat_name]</p>
-      //     <p>Style:  $value[style_name]</p>
-      //     </div>
-      //   </div>
-      //   </div>";
-      // }
-      ?>
+	      foreach ($searchResults as $result) {
+	        echo "
+	          <div class='col s4'>
+	          <div class='card small beer-card'>
+	          <div class='card-content center-align'>
+	          <a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
+	          <p>Category: $result[cat_name]</p>
+	          <p>Style:  $result[style_name]</p>
+	          </div>
+	        </div>
+	        </div>";
+	      }
+      	?>
 	</div>
 <?php include ("inc/footer.php"); ?>
