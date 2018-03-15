@@ -64,10 +64,11 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 		<?php
 			if ((isset($_GET['q']) || isset($_GET['cat']) || isset($_GET['stl']))) {
 				if(!empty($searchResults)){
+					$size = count($searchResults);
 					echo "<div class='col s12'>
 			    			<div class='card small beer-card'>
 			          			<div class='card-content center-align'>
-			    		  			<p>Found {count($searchResults)} Search Results.</p>
+			    		  			<p>Found $size Search Results.</p>
 			    		  		</div>
 			    		  	</div>
 			    		  </div>";
