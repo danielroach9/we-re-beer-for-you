@@ -62,7 +62,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	<div id=results>
 		<div class="row">
 		<?php
-			if(isset($searchResults) && !empty($searchResults)){
+			if((isset($_GET['q']) || isset($_GET['cat']) || isset($_GET['stl'])) && !empty($searchResults)){
 		      foreach ($searchResults as $result) {
 		        echo "
 		          <div class='col s3'>
