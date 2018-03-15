@@ -5,6 +5,7 @@ $db = new DB();
 $qry;
 $cat;
 $stl;
+$searchResults;
 if(isset($_GET['q'])){
 	if(isset($_GET['cat']) && isset($_GET['stl'])){
 		$qry = $_GET['q'];
@@ -59,19 +60,27 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	</form>
 
 	<div id=results>
+		<div class="row">
 		<?php
-	      foreach ($searchResults as $result) {
-	        echo "
-	          <div class='col s4'>
-	          <div class='card small beer-card'>
-	          <div class='card-content center-align'>
-	          <a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
-	          <p>Category: $result[cat_name]</p>
-	          <p>Style:  $result[style_name]</p>
-	          </div>
-	        </div>
-	        </div>";
-	      }
+			if(!empty($searchResults)){
+		      foreach ($searchResults as $result) {
+		        echo "
+		          <div class='col s3'>
+		          <div class='card small beer-card'>
+		          <div class='card-content center-align'>
+		          <a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
+		          <p>Category: $result[cat_name]</p>
+		          <p>Style:  $result[style_name]</p>
+		          </div>
+		        </div>
+		        </div>";
+		      }
+		    }else{
+		    	echo "<div class='col s12'>
+		    		  	<p>No search results found.</p>
+		    		  </div>";
+		    }
       	?>
+      	</div>
 	</div>
 <?php include ("inc/footer.php"); ?>

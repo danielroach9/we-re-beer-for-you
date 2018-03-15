@@ -201,17 +201,6 @@ $( document ).ready(function(){
 				  }
 			});
 		});
-
-		$('#searchForm').submit(function(e){
-			e.preventDefault();
-			var $query = $('#searchQuery').value();
-			var $category = $('#selectedCategory').value();
-			var $style = $('#stylesDropdown').value();
-
-			console.log("query: "+$query);
-			console.log("category: "+$category);
-			console.log("style: "+$style);
-		});
 });
 
 function showRegister(){

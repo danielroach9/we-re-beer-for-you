@@ -63,15 +63,6 @@ if(isset($_POST['action'])){
 			$value = $db->insertNewRating($beerID, $comment, $rating, $location, $uuid);
 			echo $value;
 			break;
-
-
-		case 'getBeerInfoByFullSearch':
-			$name = isset($_POST['query']) ? $_POST['query'] : null;
-			$category = isset($_POST['category']) ? $_POST['category'] : null;
-			$style = isset($_POST['style']) ? $_POST['style'] : null;
-			$value = $db->getBeerInfoByFullSearch($name,$category,$style);
-			return $value;
-			break;
 	}
 }
 class DB{
