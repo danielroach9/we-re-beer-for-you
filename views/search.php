@@ -25,7 +25,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 </head>
 <body>
 	<form>
-		<input type="text" name="q" placeholder="Search for a Beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
+		<input type="text" id="searchQuery" name="q" placeholder="Search for a Beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
 		<a href="#" id="searchFilters">Apply Filters</a>
 		<div id="filters">
 			<div class="row">
