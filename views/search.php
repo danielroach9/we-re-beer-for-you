@@ -62,24 +62,26 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	<div id=results>
 		<div class="row">
 		<?php
-			if((isset($_GET['q']) || isset($_GET['cat']) || isset($_GET['stl'])) && !empty($searchResults)){
-		      foreach ($searchResults as $result) {
-		        echo "
-		          <div class='col s3'>
-		          <div class='card small beer-card'>
-		          <div class='card-content center-align'>
-		          <a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
-		          <p>Category: $result[cat_name]</p>
-		          <p>Style:  $result[style_name]</p>
-		          </div>
-		        </div>
-		        </div>";
-		      }
-		    }else{
-		    	echo "<div class='col s12'>
-		    		  	<p>No search results found.</p>
-		    		  </div>";
-		    }
+			if ((isset($_GET['q']) || isset($_GET['cat']) || isset($_GET['stl']))) {
+				if(!empty($searchResults)){
+			      foreach ($searchResults as $result) {
+			        echo "
+			          <div class='col s3'>
+			          <div class='card small beer-card'>
+			          <div class='card-content center-align'>
+			          <a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
+			          <p>Category: $result[cat_name]</p>
+			          <p>Style:  $result[style_name]</p>
+			          </div>
+			        </div>
+			        </div>";
+			      }
+			    }else{
+			    	echo "<div class='col s12'>
+			    		  	<p>No search results found.</p>
+			    		  </div>";
+			    }
+			}
       	?>
       	</div>
 	</div>
