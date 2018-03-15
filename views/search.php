@@ -62,7 +62,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 	<div id=results>
 		<div class="row">
 		<?php
-			if(!empty($searchResults)){
+			if(isset($searchResults) && !empty($searchResults)){
 		      foreach ($searchResults as $result) {
 		        echo "
 		          <div class='col s3'>
