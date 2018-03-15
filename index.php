@@ -29,11 +29,11 @@
             <div class="card-action center-align">
               <a onclick="showRegister();">Don't have an account yet? Register now!</a>
             </div>
-            <div class="card-action center-align">
-              <h5>Try out a new beer today!!</h5>
-              <button class="btn brown waves-effect waves-light">Search</button>
-            </div>
           </form>
+          <div class="card-action center-align">
+              <h5>Try out a new beer today!!</h5>
+              <button id="searchLink" class="btn brown waves-effect waves-light">Search</button>
+          </div>
         </div>
       </div>
     </div>

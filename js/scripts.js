@@ -201,6 +201,10 @@ $( document ).ready(function(){
 				  }
 			});
 		});
+
+		$('#searchLink').click(function(e){
+			window.location.href = 'views/search.php';
+		});
 });
 
 function showRegister(){
