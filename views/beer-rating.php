@@ -64,10 +64,10 @@ $ratings = $db->getRecentRatings();
 				<div class=rating>
 				      <span>
 					<i class='fa fa-star'></i>
-					<i class='".($review->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."'></i>
-				        <i class='".($review->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."'></i>
-				        <i class='".($review->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."'></i>
-					<i class='".($review->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."'></i>
+					<i class='".($rating->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."'></i>
+				        <i class='".($rating->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."'></i>
+				        <i class='".($rating->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."'></i>
+					<i class='".($rating->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."'></i>
 				      </span>"
 					 . $rating->getRating() .
 				      "</div>
