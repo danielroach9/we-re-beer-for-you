@@ -5,8 +5,8 @@ $db = new DB();
 $categories = $db->getCategories();
 $countries = $db->getCountries();
 $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
-$name = isset($_SESSION['accountFirstName']) ? $_SESSION['accountFirstName'] : null;
-
+$fname = isset($_SESSION['accountFirstName']) ? $_SESSION['accountFirstName'] : null;
+$lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : null;
 
 ?>
 
