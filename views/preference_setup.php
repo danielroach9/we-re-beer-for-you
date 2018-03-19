@@ -5,6 +5,7 @@ $db = new DB();
 $categories = $db->getCategories();
 $countries = $db->getCountries();
 $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
+$name = isset($_SESSION['accountFirstName']) ? $_SESSION['accountFirstName'] : null;
 
 
 ?>
@@ -20,6 +21,11 @@ $styles = $db->getStylesByCategory(1); //hardcoded parameter to start
           <form id="preferenceForm">
             <div class="card-content">
               <span class="card-title center-align">Preferences</span>
+              <p>Name:
+                <?php
+                echo $name;
+                 ?>
+               </p>
               <div class="row">
                 <div class="input-field col s12">
                   <label for="preferred_abv_range">Preferred ABV</label>
