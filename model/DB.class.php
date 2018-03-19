@@ -235,7 +235,7 @@ class DB{
 	function getBeerInfoByID($_id){
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT b.name, bs.name AS 'brewery_name', c.cat_name, s.style_name, b.abv, b.descript
+			$stmt = $this->db->prepare("SELECT b.name, bs.name AS 'brewery_name',bs.id AS 'brewery_id', c.cat_name, s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c on c.id = b.cat_id
 										JOIN styles s on s.id = b.style_id
