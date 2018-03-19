@@ -8,7 +8,7 @@
       <li><a href="beers.php">Beers</a></li>
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="activity.php">Activity</a></li>
-      <li><a href="account.php"><?php if(isset($_SESSION)){ echo "$_SESSION['accountFirstName'] $_SESSION['accountLastName']";}else{echo "My Account"}?></a></li>
+      <li><a href="account.php"><?php if(isset($_SESSION)){ echo "$_SESSION['accountFirstName'] $_SESSION['accountLastName']";}else{echo "My Account";}?></a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="beers.php">Beers</a></li>
