@@ -43,51 +43,45 @@ $ratings = $db->getRecentRatings();
 
 	<h1>Beer Ratings: Recent</h1>
 
-		<div class="btn-group" stype="width:100%">
+		<!--<div class="btn-group" stype="width:100%">
 		  <button style="width:20%">Recent</button>
 		  <button style="width:20%">New</button>
 		  <button style="width:20%">Favorites</button>
 		  <button style="width:20%">Popular</button>
 		  <button style="width:20%">Local</button>
-		</div>
+		</div>-->
 
 		<table class="table" style="padding-right:20px;padding-top:100px;">
 		<tbody>
 		  <tr>
-		    <td valign="top" align="center">
-		      <!-- This is for image of beer -->
-		    </td>
 		    <?php
 		      foreach( $ratings as $rating ){
-			/*echo
-		      	"<td>getID" . $rating->getID() . "</td>
-		    	<td>getLocation" . $rating->getLocation() . "</td>
-			<td>getRating" . $rating->getRating() . "</td>
-			<td>getComments" . $rating->getComments() . "</td>
-			<td>getBeerID" . $rating->getBeerID() . "</td>
-			<td>getPurchaseID" . $rating->getPurchaseID() . "</td>";*/
-			
+			$from = $db->getUserByID($rating->getID());
+            		$username = $from[0]->getWholeName();
+
 			echo
-			     "<td>
-			      <a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a>
-			      <span class='rating'>" . $rating->getRating() . "</span> &nbsp;
-			      <div><a>brewery_name</a>
-			      <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span></div>
-			      <div style='color:#666;'>" . $rating->getComment() . "
-			      </div>
-			      <span style='color:#8b8b8b;'>" . $rating->getID() . "</span><br><hr>
-			    </td>";
-		      }
+				"<a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a><br>
+				<div class=rating>
+				      <span>
+					<i class='fa fa-star'></i>
+					<i class='".($rating->getRating() >= 2 ? "fa fa-star" : "fa fa-star-0")."'></i>
+				        <i class='".($rating->getRating() >= 3 ? "fa fa-star" : "fa fa-star-0")."'></i>
+				        <i class='".($rating->getRating() >= 4 ? "fa fa-star" : "fa fa-star-0")."'></i>
+					<i class='".($rating->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."'></i>
+				      </span>"
+					 . $rating->getRating() .
+				"</div>
+				 <div>
+				     <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span>
+				 </div>
+				 <div style='color:#666;'>"
+				    . $rating->getComment() . 
+				 "</div>
+				      <span class='username'>" . $username . "</span>
+				  </div><br><hr> <br><br>"
+			;}
 		    ?>
-		    <!--<td>
-		      <a style="font-size:20px; font-weight:bold;"><?php echo$rating['beerID'] ?></a>
-		      <span class="rating"><?php echo$rating['rating'] ?></span> &nbsp;
-		      <div><a>brewery_name</a>
-		      <span style="color:#8b8b8b;" class="location/origin">brewery_location</span></div>
-		      <div style="color:#666;"><?php echo$rating['comments'] ?>
-		      </div>
-		      <span style="color:#8b8b8b;"><?php echo$rating['UUID'] ?></span><br><hr>
-		    </td>-->
+		    
 		  </tr>
 
 		  <tr>
@@ -110,3 +104,52 @@ $ratings = $db->getRecentRatings();
 	  
 	</body>
 </html>
+
+
+<!--
+
+<div class="row" id="recent-reviews">
+      <div class="card-panel grey lighten-2">
+        <div id="review1">
+          <div class=rating>
+            <span>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+              4
+            </div>
+            <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
+            <span class="comment">
+              <p>
+                12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
+                Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
+              </p>
+            </span>
+            <span class="username">dxr5716</span>
+          </div>
+          <hr>
+          <div id="review2">
+            <div class=rating>
+              <span>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                4
+              </div>
+              <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
+              <span class="comment">
+                <p>
+                  12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
+                  Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
+                </p>
+              </span>
+              <span class="username">dxr5716</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
