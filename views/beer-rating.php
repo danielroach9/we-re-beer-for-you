@@ -56,7 +56,7 @@ $ratings = $db->getRecentRatings();
 		  <tr>
 		    <?php
 		      foreach( $ratings as $rating ){
-			$from = $db->getUserByID($review->getID());
+			$from = $db->getUserByID($rating->getID());
             		$username = $from[0]->getWholeName();
 
 			echo
