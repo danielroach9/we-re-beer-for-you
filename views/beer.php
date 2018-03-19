@@ -41,7 +41,7 @@ $ratings = $db->getRatingsByBeerId($id);
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
       <h4>Style: <?php echo $beer['style_name'] ?></h4>
-      <h4><i class="tooltipped fa fa-question-circle" data-position="left" data-delay="50" data-tooltip="Alcohol By Volume">ABV: <?php echo $beer['abv'] ?>%</h4>
+      <h4><i class="tooltipped fa fa-question-circle" data-position="left" data-delay="50" data-tooltip="Alcohol By Volume"></i>ABV: <?php echo $beer['abv'] ?>%</h4>
       <p>
         <?php
         if(empty($beer['descript'])) {
