@@ -23,7 +23,7 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
               <span class="card-title center-align">Preferences</span>
               <p>Name:
                 <?php
-                echo $name;
+                echo $fname . " " . $lname;
                  ?>
                </p>
               <div class="row">
