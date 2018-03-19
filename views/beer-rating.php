@@ -107,7 +107,7 @@ $ratings = $db->getRecentRatings();
 </html>
 
 
-
+<!--
 
 <div class="row" id="recent-reviews">
       <div class="card-panel grey lighten-2">
@@ -153,4 +153,4 @@ $ratings = $db->getRecentRatings();
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
