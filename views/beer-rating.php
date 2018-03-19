@@ -70,16 +70,15 @@ $ratings = $db->getRecentRatings();
 					<i class='".($rating->getRating() >= 5 ? "fa fa-star" : "fa fa-star-0")."'></i>
 				      </span>"
 					 . $rating->getRating() .
-				      "</div>
-				      <div>
-				          <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span>
-				      </div>
-				      <div style='color:#666;'>"
-					   . $rating->getComment() . 
-				      "</div>
+				"</div>
+				 <div>
+				     <span style='color:#8b8b8b;' class='location/origin'>" . $rating->getLocation() . "</span>
+				 </div>
+				 <div style='color:#666;'>"
+				    . $rating->getComment() . 
+				 "</div>
 				      <span class='username'>" . $username . "</span>
-				    </div>
-				</div> <br><br>"
+				  </div><br><hr> <br><br>"
 			;}
 		    ?>
 		    
