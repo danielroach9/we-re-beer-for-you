@@ -37,12 +37,11 @@ $ratings = $db->getRatingsByBeerId($id);
 <div class="container-fluid">
   <div class="row">
     <div class="card-panel grey lighten-2 jumbotron center-align" id="beer-info">
-      <h4><?php echo $beer['name'] ?>
-        <a class="waves-effect waves-light btn modal-trigger" href="#recommend"><i class="fa fa-share-square left"></i>Recommend</a>
-      </h4>
+      <h4><?php echo $beer['name'] ?></h4>
       <h4><?php echo $beer['brewery_name'] ?></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
       <h4>Style: <?php echo $beer['style_name'] ?></h4>
+      <h4>ABV: <?php echo $beer['abv'] ?>%</h4>
       <p>
         <?php
         if(empty($beer['descript'])) {
@@ -53,12 +52,13 @@ $ratings = $db->getRatingsByBeerId($id);
         }
         ?>
       </p>
-      <div class="col s2 center-align">
+      <a class="waves-effect waves-light btn modal-trigger" href="#recommend"><i class="fa fa-share-square left"></i>Recommend</a>
+      <!-- <div class="col s2 center-align">
         <p style="margin: 0;">ABV</p>
         <i class="tooltipped fa fa-question-circle" data-position="right" data-delay="50" data-tooltip="Alcohol By Volume">
         </i>
         <p style="margin: 0;"><?php echo $beer['abv'] ?>%</p>
-      </div>
+      </div> -->
     </div>
   </div>
 
