@@ -79,7 +79,7 @@ $ratings = $db->getRecentRatings();
 				      "</div>
 				      <span class='username'>" . $username . "</span>
 				    </div>
-				</div>"
+				</div> <br><br>"
 			;}
 		    ?>
 		    
