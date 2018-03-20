@@ -475,6 +475,29 @@ class DB{
 		}
 	}
 
+	function updatePreference($_uuid,$_abv,$_category,$_style, $_country){
+		try{
+			$stmt = $this->db->prepare("UPDATE preferences 
+			SET preferred_abv_range=:abv,
+				preferred_category=:category,
+				preferred_style=:style,
+				preferred_country=:country
+			WHERE uuid=:uuid");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->bindParam(":abv",$_abv,PDO::PARAM_INT);
+			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
+			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
+			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo "updatePreference - ".$e->getMessage();
+			die();
+		}
+	}
+
 	function getPreferredBeer($_uuid,$_abv,$_category,$_style, $_country){ // give uuid, get curated beers
 		try{
 			$data = array();
