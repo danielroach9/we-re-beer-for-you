@@ -80,11 +80,11 @@ $beers = $db->getAllBeers();
                   <select name="beerName" id="beerName">
                   <?php
                     foreach ($beers as $beer) {
-                      echo '<option value=' . $beer["beerName"] . '</option>';
+                      echo '<option value=' . $beer['name'] . '</option>';
                     }
                     ?>
                     </select>
-                    <label for="preferred_category">Prefered Category</label>
+                    <label for="beer">Beer</label>
                 </div>
 
                 <div class="input-field col s12">

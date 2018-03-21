@@ -1,6 +1,6 @@
 $( document ).ready(function(){
 
-		$("#filters").hide();
+		// $("#filters").hide();
 		$('select').material_select();
         $(".button-collapse").sideNav();
 		$('.modal').modal();
@@ -29,7 +29,7 @@ $( document ).ready(function(){
 				  }
 			});
 		});
-		$("#filterText").click(function () {
+		/* $("#filterText").click(function () {
 			var af = "Apply Filters";
 			var rf = "Remove Filters";
 			var text = $(this).text();
@@ -41,20 +41,7 @@ $( document ).ready(function(){
 				$(this).text(af);
 				$("#filters").hide();
 			}
-		});
-
-		$('#selectedCategory').select2({
-			placeholder: "Choose a category",
-			allowClear: true,
-		});
-		$('#stylesDropdown').select2({
-			placeholder: "Choose a style",
-			allowClear: true,
-		});
-		$('#countryDropdown').select2({
-			placeholder: "Choose a country",
-			allowClear: true,
-		});
+		}); */
 		
     	$("#registerForm").submit(function(e){
 			e.preventDefault();

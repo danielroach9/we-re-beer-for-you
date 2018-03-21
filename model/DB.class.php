@@ -654,4 +654,16 @@ class DB{
 		}
 	}
 
+	function getAllBreweries() {
+		try {
+			$stmt = $this->db->prepare("SELECT name, city, state, country FROM breweries ORDER BY name ASC");
+			$stmt->execute();
+		}
+		catch(PDOException $e) {
+			var_dump(" - ".$e->getMessage());
+			echo "getAllBreweries - ".$e->getMessage();
+			die();
+		}
+	}
+
 }
