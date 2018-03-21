@@ -52,7 +52,8 @@ $ratings = $db->getRecentRatings();
 			$from = $db->getUserByID($rating->getID());
             		$username = $from[0]->getWholeName();
 
-			$beerName = $db->getBeerByID($rating->getBeerID());
+			$beer = $db->getBeerByID($rating->getBeerID());
+			$beerName = $beer['name'];
 
 			echo
 				"<a style='font-size:20px; font-weight:bold;'>" . $beerName . "</a>
