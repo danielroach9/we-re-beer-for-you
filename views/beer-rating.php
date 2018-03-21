@@ -56,7 +56,7 @@ $ratings = $db->getRecentRatings();
               <span class="card-title center-align">Submit Beer Review</span>
 
 
-		<table class="table" style="padding-right:20px;padding-top:100px;">
+		<table class="table" style="padding-right:100px;padding-top:100px;">
 		<tbody>
 		  <tr>
 		    <?php
@@ -116,6 +116,6 @@ $ratings = $db->getRecentRatings();
       </div>
     </div>
   </div>
-<?php include "inc/footer.php"; ?>
 </html>
+<?php include "inc/footer.php"; ?>
 
