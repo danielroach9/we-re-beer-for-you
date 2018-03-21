@@ -2,7 +2,8 @@
 require_once("../model/DB.class.php");
 
 $db = new DB();
-$ratings = $db->getRecentRatings();
+$uuid = isset($_SESSION['accountID']) ? $_SESSION['accountID'] : null;
+$ratings = $db->getMyRatings($uuid);
 $fname = isset($_SESSION['accountFirstName']) ? $_SESSION['accountFirstName'] : null;
 $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : null;
 
