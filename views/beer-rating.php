@@ -43,13 +43,6 @@ $ratings = $db->getRecentRatings();
 
 	<h1>Beer Ratings: Recent</h1>
 
-		<!--<div class="btn-group" stype="width:100%">
-		  <button style="width:20%">Recent</button>
-		  <button style="width:20%">New</button>
-		  <button style="width:20%">Favorites</button>
-		  <button style="width:20%">Popular</button>
-		  <button style="width:20%">Local</button>
-		</div>-->
 
 		<table class="table" style="padding-right:20px;padding-top:100px;">
 		<tbody>
@@ -59,8 +52,11 @@ $ratings = $db->getRecentRatings();
 			$from = $db->getUserByID($rating->getID());
             		$username = $from[0]->getWholeName();
 
+			$beer = $db->getBeerByID($rating->getBeerID());
+			$beerName = $beer[0];
+
 			echo
-				"<a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a><br>
+				"<a style='font-size:20px; font-weight:bold;'>" . $beerName . "</a>
 				<div class=rating>
 				      <span>
 					<i class='fa fa-star'></i>
@@ -78,7 +74,7 @@ $ratings = $db->getRecentRatings();
 				    . $rating->getComment() . 
 				 "</div>
 				      <span class='username'>" . $username . "</span>
-				  </div><br><hr> <br><br>"
+				  </div><br><hr>"
 			;}
 		    ?>
 		    
@@ -105,51 +101,3 @@ $ratings = $db->getRecentRatings();
 	</body>
 </html>
 
-
-<!--
-
-<div class="row" id="recent-reviews">
-      <div class="card-panel grey lighten-2">
-        <div id="review1">
-          <div class=rating>
-            <span>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              4
-            </div>
-            <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
-            <span class="comment">
-              <p>
-                12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
-                Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-              </p>
-            </span>
-            <span class="username">dxr5716</span>
-          </div>
-          <hr>
-          <div id="review2">
-            <div class=rating>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                4
-              </div>
-              <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
-              <span class="comment">
-                <p>
-                  12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
-                  Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-                </p>
-              </span>
-              <span class="username">dxr5716</span>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
