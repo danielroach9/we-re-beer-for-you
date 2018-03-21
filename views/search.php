@@ -39,7 +39,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 						<div class="input-field col s12">
 							<span style="font-size: 20pt">Search for a beer </span>
 							<input class="validate" type="text" id="searchQuery" name="q" placeholder="Search for a beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
-							<a id="filterText" style="font-size: 16pt" id="searchFilters">Apply Filters</a>
+							<span id="filterText" style="font-size: 16pt" id="searchFilters">Apply Filters</span>
 						</div>
 						<div class="row card-action" id="filters">
 							<div class="input-field col s6">
