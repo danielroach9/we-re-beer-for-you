@@ -27,7 +27,7 @@ if(isset($_POST['action'])){
 			//return $value; //why does print_r do what return should???
 			break;
 		case 'insertNewPreference':
-			$uuid = isset($_SESSION['uuid']) ? $_SESSION['uuid'] : null;
+			$uuid = isset($_SESSION['accountID']) ? $_SESSION['accountID'] : null;
 			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
 			$category = isset($_POST['category']) ? $_POST['category'] : null;
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
@@ -36,7 +36,7 @@ if(isset($_POST['action'])){
 			echo $value;
 			break;
 		case 'getPreferredBeer':
-			$uuid = isset($_SESSION['uuid']) ? $_SESSION['uuid'] : null;
+			$uuid = isset($_SESSION['accountID']) ? $_SESSION['accountID'] : null;
 			$abv = isset($_POST['abv']) ? $_POST['abv'] : null;
 			$category = isset($_POST['category']) ? $_POST['category'] : null;
 			$style = isset($_POST['style']) ? $_POST['style'] : null;
@@ -235,7 +235,7 @@ class DB{
 	function getBeerInfoByID($_id){
 		try{
 			$data = array();
-			$stmt = $this->db->prepare("SELECT b.name, bs.name AS 'brewery_name', c.cat_name, s.style_name, b.abv, b.descript
+			$stmt = $this->db->prepare("SELECT b.name, bs.name AS 'brewery_name',bs.id AS 'brewery_id', c.cat_name, s.style_name, b.abv, b.descript
 										FROM beers b
 										JOIN categories c on c.id = b.cat_id
 										JOIN styles s on s.id = b.style_id
@@ -471,6 +471,29 @@ class DB{
 		}
 		catch(PDOException $e){
 			echo $e->getMessage();
+			die();
+		}
+	}
+
+	function updatePreference($_uuid,$_abv,$_category,$_style, $_country){
+		try{
+			$stmt = $this->db->prepare("UPDATE preferences 
+			SET preferred_abv_range=:abv,
+				preferred_category=:category,
+				preferred_style=:style,
+				preferred_country=:country
+			WHERE uuid=:uuid");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
+			$stmt->bindParam(":abv",$_abv,PDO::PARAM_INT);
+			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
+			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
+			$stmt->bindParam(":country",$_country,PDO::PARAM_STR);//country name
+			$stmt->execute();
+
+			return $this->db->lastInsertId();
+		}
+		catch(PDOException $e){
+			echo "updatePreference - ".$e->getMessage();
 			die();
 		}
 	}

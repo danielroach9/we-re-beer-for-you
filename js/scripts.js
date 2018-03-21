@@ -89,11 +89,9 @@ $( document ).ready(function(){
 		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
 				var $style = $('#preferenceForm').find('#stylesDropdown').val();
 				var $abv = $('#preferenceForm').find('#abvRange').val();
-				var $uuid = 1;
 				var $country_name = $('#preferenceForm').find('#countryDropdown option:selected').text();//need to get string, int value is meaningless
 
 				var $data = {
-					uuid: $uuid,
 					category: $cat_id,
 					style: $style,
 					abv: $abv,
@@ -109,7 +107,6 @@ $( document ).ready(function(){
 					  if(msg){
 							alert("success: you submitted preferences successfully");
 							var $data2 = {
-								uuid: $uuid,
 								category: $cat_id,
 								style: $style,
 								abv: $abv,
