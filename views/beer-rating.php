@@ -33,7 +33,7 @@ $ratings = $db->getRecentRatings();
     background-color: #3e8e41;
 }
 </style>
-
+<!--
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title>WB4U | Beer Ratings</title>
@@ -42,14 +42,19 @@ $ratings = $db->getRecentRatings();
 	<body>
 
 	<h1>Beer Ratings: Recent</h1>
+-->
+<?php include "inc/header.php"; ?>
+<title>We're beer for you!</title>
+<?php include "inc/nav.php"; ?>
 
-		<!--<div class="btn-group" stype="width:100%">
-		  <button style="width:20%">Recent</button>
-		  <button style="width:20%">New</button>
-		  <button style="width:20%">Favorites</button>
-		  <button style="width:20%">Popular</button>
-		  <button style="width:20%">Local</button>
-		</div>-->
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="valign-wrapper row login-box">
+        <div class="card hoverable col s6 offset-s3">
+          <form id="beerRatingForm">
+            <div class="card-content">
+              <span class="card-title center-align">Submit Beer Review</span>
+
 
 		<table class="table" style="padding-right:20px;padding-top:100px;">
 		<tbody>
@@ -59,8 +64,11 @@ $ratings = $db->getRecentRatings();
 			$from = $db->getUserByID($rating->getID());
             		$username = $from[0]->getWholeName();
 
+			$beer = $db->getBeerByID($rating->getBeerID());
+			$beerName = $beer['name'];
+
 			echo
-				"<a style='font-size:20px; font-weight:bold;'>" . $rating->getBeerID() . "</a><br>
+				"<a style='font-size:20px; font-weight:bold;'>" . $beerName . "</a>
 				<div class=rating>
 				      <span>
 					<i class='fa fa-star'></i>
@@ -78,78 +86,22 @@ $ratings = $db->getRecentRatings();
 				    . $rating->getComment() . 
 				 "</div>
 				      <span class='username'>" . $username . "</span>
-				  </div><br><hr> <br><br>"
+				  </div><br><hr>"
 			;}
 		    ?>
 		    
 		  </tr>
 
-		  <tr>
-		    <td valign="top" align="center">
-		      <!-- This is for image of beer -->
-		    </td>
-		    <td>
-		      <a style="font-size:20px; font-weight:bold;">Blue Moon Pacific Apricot Wheat</a>
-		      <span class="rating">2.4</span> &nbsp;
-		      <div><a>Blue Moon Brewing Company (MillerCoors)</a>
-		      <span style="color:#8b8b8b;" class="location/origin">Denver, Colorado</span></div>
-		      <div style="color:#666;">12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat. <br><br> Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-		      </div>
-		      <span style="color:#8b8b8b;">aUserName</span><br><hr>
-		    </td>
-		  </tr>
 		</tbody>
 		</table>
 
 	  
 	</body>
-</html>
 
-
-<!--
-
-<div class="row" id="recent-reviews">
-      <div class="card-panel grey lighten-2">
-        <div id="review1">
-          <div class=rating>
-            <span>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-              4
-            </div>
-            <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
-            <span class="comment">
-              <p>
-                12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
-                Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-              </p>
-            </span>
-            <span class="username">dxr5716</span>
-          </div>
-          <hr>
-          <div id="review2">
-            <div class=rating>
-              <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                4
-              </div>
-              <span class="datetime-and-location">Finnegan's Pub @ 03/01/2018 3:30 PM</span>
-              <span class="comment">
-                <p>
-                  12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat.
-                  Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-                </p>
-              </span>
-              <span class="username">dxr5716</span>
-            </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+</html>
+<?php include "inc/footer.php"; ?>
+

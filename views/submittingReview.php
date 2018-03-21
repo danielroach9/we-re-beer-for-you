@@ -1,3 +1,9 @@
+<?php
+require_once("../model/DB.class.php");
+$db = new DB();
+$beers = $db->getAllBeers();
+?>
+
 <!DOCTYPE HTML> 
 
 <style>
@@ -69,6 +75,18 @@
                   <input type="text" name="beerID" id="beerID" >
 		  <span class="error">*</span>
                 </div>
+
+		<div class="input-field col s12">
+                  <select name="beerName" id="beerName">
+                  <?php
+                    foreach ($beers as $beer) {
+                      echo '<option value=' . $beer['name'] . '</option>';
+                    }
+                    ?>
+                    </select>
+                    <label for="beer">Beer</label>
+                </div>
+
                 <div class="input-field col s12">
                   <label for="location">Location</label>
                   <input type="text" name="location" id="location">
@@ -102,9 +120,9 @@
             </form>
 	    
 
-        </div>
-      </div>
-    </div>
-  </div>
-<?php include "inc/footer.php"; ?>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	<?php include "inc/footer.php"; ?>
 

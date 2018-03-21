@@ -477,7 +477,7 @@ class DB{
 
 	function updatePreference($_uuid,$_abv,$_category,$_style, $_country){
 		try{
-			$stmt = $this->db->prepare("UPDATE preferences 
+			$stmt = $this->db->prepare("UPDATE preferences
 			SET preferred_abv_range=:abv,
 				preferred_category=:category,
 				preferred_style=:style,
@@ -629,6 +629,18 @@ class DB{
 		catch(PDOException $e){
 			var_dump("insertNewMessage - ".$e->getMessage());
 			echo "insertNewMessage - ".$e->getMessage();
+			die();
+		}
+	}
+
+	function getAllBreweries() {
+		try {
+			$stmt = $this->db->prepare("SELECT name, city, state, country FROM breweries ORDER BY name ASC");
+			$stmt->execute();
+		}
+		catch(PDOException $e) {
+			var_dump(" - ".$e->getMessage());
+			echo "getAllBreweries - ".$e->getMessage();
 			die();
 		}
 	}
