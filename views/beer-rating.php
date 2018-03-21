@@ -33,7 +33,7 @@ $ratings = $db->getRecentRatings();
     background-color: #3e8e41;
 }
 </style>
-
+<!--
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title>WB4U | Beer Ratings</title>
@@ -42,6 +42,18 @@ $ratings = $db->getRecentRatings();
 	<body>
 
 	<h1>Beer Ratings: Recent</h1>
+-->
+<?php include "inc/header.php"; ?>
+<title>We're beer for you!</title>
+<?php include "inc/nav.php"; ?>
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="valign-wrapper row login-box">
+        <div class="card hoverable col s6 offset-s3">
+          <form id="beerRatingForm">
+            <div class="card-content">
+              <span class="card-title center-align">Submit Beer Review</span>
 
 
 		<table class="table" style="padding-right:20px;padding-top:100px;">
@@ -99,5 +111,11 @@ $ratings = $db->getRecentRatings();
 
 	  
 	</body>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<?php include "inc/footer.php"; ?>
 </html>
 
