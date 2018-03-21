@@ -407,6 +407,7 @@ class DB{
 																	WHERE uuid = :uuid
 																	ORDER BY purchase_id DESC
 																	");
+			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'rating');
