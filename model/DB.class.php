@@ -399,6 +399,27 @@ class DB{
 		}
 		return $data;
 	}
+
+	function getMyRatings($_uuid){
+		try{
+			$data = array();
+			$stmt = $this->db->prepare("SELECT * FROM rating
+																	WHERE uuid = :uuid
+																	ORDER BY purchase_id DESC
+																	");
+			$stmt->execute();
+
+			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'rating');
+
+			return $data;
+		}
+		catch(PDOException $e){
+			echo "getMyRatings - ".$e->getMessage();
+			die();
+		}
+		return $data;
+	}
+
 	function getCategories(){
 		try{
 			$data = array();
@@ -477,7 +498,7 @@ class DB{
 
 	function updatePreference($_uuid,$_abv,$_category,$_style, $_country){
 		try{
-			$stmt = $this->db->prepare("UPDATE preferences 
+			$stmt = $this->db->prepare("UPDATE preferences
 			SET preferred_abv_range=:abv,
 				preferred_category=:category,
 				preferred_style=:style,
