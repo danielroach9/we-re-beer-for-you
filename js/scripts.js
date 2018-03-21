@@ -30,18 +30,18 @@ $( document ).ready(function(){
 
     	$("#registerForm").submit(function(e){
 			e.preventDefault();
-	        var $first_name = $('#registerForm').find('#first_name').val();
-			var $last_name = $('#registerForm').find('#last_name').val();
-			var $email = $('#registerForm').find('#email').val();
-			var $password = $('#registerForm').find('#password').val();
+		    var $first_name = $('#registerForm').find('#first_name').val();
+				var $last_name = $('#registerForm').find('#last_name').val();
+				var $email = $('#registerForm').find('#email').val();
+				var $password = $('#registerForm').find('#password').val();
 
-			var $data = {
-				firstName: $first_name,
-				lastName: $last_name,
-				email: $email,
-				password: $password,
-				action: 'performRegister'
-			};
+				var $data = {
+					firstName: $first_name,
+					lastName: $last_name,
+					email: $email,
+					password: $password,
+					action: 'performRegister'
+				};
 
 			$.ajax({
 				  type: "POST",
@@ -177,7 +177,7 @@ $( document ).ready(function(){
 			//if(!($("input[name='star']:checked"])){alert("Please select a rating");}
 			var $location = $('#beerRatingForm').find('#location').val();
 			var $uuid = 1; //HARDCODED
-			
+
 			var $data = {
 					beerID: $beerID,
 					comment: $comment,
