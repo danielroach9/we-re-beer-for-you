@@ -32,15 +32,16 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 </head>
 <body>
 	<section>
-		<div class="container" style="width:100%; margin:2em;">
+		<div class="row">
 			<div class="card hoverable col s12">
 				<form id="searchForm">
 					<div class="card-content">
 						<div class="input-field col s12">
-							<input class="validate" type="text" id="searchQuery" name="q" placeholder="Search for a Beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
-							<a onclick="showFilter();" id="searchFilters">Apply Filters</a>
+							<span style="font-size: 20pt">Search for a beer </span>
+							<input class="validate" type="text" id="searchQuery" name="q" placeholder="Search for a beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
+							<a id="filterText" style="font-size: 16pt" id="searchFilters">Apply Filters</a>
 						</div>
-						<div class="row card-action hide" id="filters">
+						<div class="row card-action" id="filters">
 							<div class="input-field col s6">
 								<select name="cat" id="selectedCategory">
 									<option value="" disabled selected>Choose a Beer Category!</option>
@@ -67,24 +68,23 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 						<br />
 					<button class="btn brown waves-effect waves-light" id="searchBtn">Search</button>
 				</form>
-
+				</div>
+				</div>
 				<div id=results>
 					<div class="row">
 						<?php
 						if ((isset($_GET['q']) || isset($_GET['cat']) || isset($_GET['stl']))) {
 							if(!empty($searchResults)){
 								$size = count($searchResults);
-								echo "<div class='col s12'>
-								<div class='card small beer-card'>
-								<div class='card-content center-align'>
-								<p>Found $size Search Results.</p>
+								echo "<span style='text-align:center;font-size:22pt;color:white; margin:0 auto;'>Found $size search results.</span>
 								</div>
-								</div>
-								</div>";
+								<div class='row'>
+								";
+
 								foreach ($searchResults as $result) {
 									echo "
 									<div class='col s3'>
-									<div class='card small beer-card'>
+									<div class='card hoverable small beer-card'>
 									<div class='card-content center-align'>
 									<a href='beer.php?id=$result[id]'><span class='card-title'>$result[name]</span></a>
 									<p>Category: $result[cat_name]</p>
@@ -94,13 +94,7 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 									</div>";
 								}
 							}else{
-								echo "<div class='col s12'>
-								<div class='card small beer-card'>
-								<div class='card-content center-align'>
-								<p>No search results found.</p>
-								</div>
-								</div>
-								</div>";
+								echo "<span style='text-align:center;font-size:22pt;color:white; margin:0 auto;'>No results found</span>";
 							}
 						}
 						?>
@@ -108,9 +102,4 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 				</div>
 			</div>
 		</section>
-		<script>
-			function showFilter(){
-				document.getElementById("filters").className = "row card-action";
-			}
-		</script>
 		<?php include ("inc/footer.php"); ?>

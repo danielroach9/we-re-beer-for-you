@@ -14,7 +14,7 @@
       <li><a href="beers.php">Beers</a></li>
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="activity.php">Activity</a></li>
-      <li><a href="account.php">My Account</a></li>
+      <li><a href="account.php"><?php if(isset($_SESSION)){ echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];}else{echo "My Account";}?></a></li>
     </ul>
   </div>
 </nav>

@@ -36,7 +36,7 @@ $ratings = $db->getRatingsByBeerId($id);
 <?php include 'inc/nav.php'?>
 <div class="container-fluid">
   <div class="row">
-    <div class="card-panel grey lighten-2 jumbotron center-align" id="beer-info">
+    <div class="card-panel grey lighten-2 jumbotron center-align hoverable" id="beer-info">
       <h4><?php echo $beer['name'] ?></h4>
       <h4><a target="_blank" href="brewery.php?id=<?php echo $beer['brewery_id']?>"><?php echo $beer['brewery_name'] ?></a></h4>
       <h4>Category: <?php echo $beer['cat_name'] ?></h4>
@@ -57,7 +57,7 @@ $ratings = $db->getRatingsByBeerId($id);
   </div>
 
   <div class="row" id="recent-reviews">
-    <div class="card-panel grey lighten-2">
+    <div class="card-panel grey lighten-2 hoverable">
       <?php
       foreach ($ratings as $review) {
         $from = $db->getUserByID($review->getID());

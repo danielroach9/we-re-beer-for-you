@@ -36,7 +36,7 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
                   </div>
                 </div>
                 <div class="input-field col s12">
-                  <select name="select1" id="selectedCategory">
+                  <select name="category" id="selectedCategory">
                   <?php
                     foreach ($categories as $value) {
                       echo '<option value='.$value[id].'>'.$value[cat_name].'</option>';
@@ -46,7 +46,7 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
                     <label for="preferred_category">Prefered Category</label>
                 </div>
                 <div class="input-field col s12">
-                  <select name="select" id="stylesDropdown">
+                  <select name="styles" id="stylesDropdown">
                   <?php
                     foreach ($styles as $value) {
                       echo '<option value='.$value[id].'>'.$value[style_name].'</option>';

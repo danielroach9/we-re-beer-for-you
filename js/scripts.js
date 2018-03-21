@@ -1,4 +1,6 @@
 $( document ).ready(function(){
+
+		$("#filters").hide();
 		$('select').material_select();
         $(".button-collapse").sideNav();
 		$('.modal').modal();
@@ -26,8 +28,34 @@ $( document ).ready(function(){
 				  	alert("User/password incorrect!");
 				  }
 			});
-    	});
+		});
+		$("#filterText").click(function () {
+			var af = "Apply Filters";
+			var rf = "Remove Filters";
+			var text = $(this).text();
+			if(text == af){
+				$(this).text(rf);
+				$("#filters").show();
+			}
+			else if(text == rf){
+				$(this).text(af);
+				$("#filters").hide();
+			}
+		});
 
+		$('#selectedCategory').select2({
+			placeholder: "Choose a category",
+			allowClear: true,
+		});
+		$('#stylesDropdown').select2({
+			placeholder: "Choose a style",
+			allowClear: true,
+		});
+		$('#countryDropdown').select2({
+			placeholder: "Choose a country",
+			allowClear: true,
+		});
+		
     	$("#registerForm").submit(function(e){
 			e.preventDefault();
 		    var $first_name = $('#registerForm').find('#first_name').val();
@@ -205,7 +233,8 @@ $( document ).ready(function(){
 });
 
 function showRegister(){
-  $("#register").show();
-  $('#register').addClass('animated flipInY');
-  $("#login").hide();
-}
+	$("#register").show();
+	$('#register').addClass('animated flipInY');
+	$("#login").hide();
+  }
+  

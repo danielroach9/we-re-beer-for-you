@@ -6,6 +6,12 @@ body,
   animation: fadeIn 1s;
 }
 
+.input-field input[type=text]:focus + label{
+    font-size:14pt;
+    margin-bottom:1em;
+    color:black;
+}
+
 .card{
   width: 600px;
   height: 100%;
