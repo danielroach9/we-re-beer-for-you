@@ -56,7 +56,7 @@ $ratings = $db->getRecentRatings();
               <span class="card-title center-align">Submit Beer Review</span>
 
 
-		<table class="table" style="padding-right:100px;padding-top:100px;">
+		<table class="table" style="padding-right:20px;padding-top:100px;">
 		<tbody>
 		  <tr>
 		    <?php
@@ -92,20 +92,6 @@ $ratings = $db->getRecentRatings();
 		    
 		  </tr>
 
-		  <tr>
-		    <td valign="top" align="center">
-		      <!-- This is for image of beer -->
-		    </td>
-		    <td>
-		      <a style="font-size:20px; font-weight:bold;">Blue Moon Pacific Apricot Wheat</a>
-		      <span class="rating">2.4</span> &nbsp;
-		      <div><a>Blue Moon Brewing Company (MillerCoors)</a>
-		      <span style="color:#8b8b8b;" class="location/origin">Denver, Colorado</span></div>
-		      <div style="color:#666;">12 oz. bottle. Appearance is an orange cloudy color, fast dying head. Aroma is artificial apricot, straw and malted wheat. <br><br> Mouthfeel is light without any sugar but... The fruit definitely has a slightly fake taste to it. Wheat backbone / straw is thin as is the texture. No need to say any more here.
-		      </div>
-		      <span style="color:#8b8b8b;">aUserName</span><br><hr>
-		    </td>
-		  </tr>
 		</tbody>
 		</table>
 
