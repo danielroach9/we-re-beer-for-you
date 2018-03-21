@@ -480,7 +480,11 @@ class DB{
 		try{
 			$stmt = $this->db->prepare("INSERT INTO preferences
 								(uuid, preferred_abv_range, preferred_category, preferred_style, preferred_country)
-				VALUES (:uuid,:abv,:category,:style, :country)");
+				VALUES (:uuid,:abv,:category,:style, :country)
+				ON DUPLICATE KEY
+				UPDATE (preferred_abv_range, preferred_category, preferred_style, preferred_country)
+				VALUES (:abv,:category,:style, :country)
+				");
 			$stmt->bindParam(":uuid",$_uuid,PDO::PARAM_INT);
 			$stmt->bindParam(":abv",$_abv,PDO::PARAM_INT);
 			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
