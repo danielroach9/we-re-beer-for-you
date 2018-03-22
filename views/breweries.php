@@ -4,7 +4,7 @@ require_once("../model/DB.class.php");
 $db = new DB();
 
 function filterArrayByLetter($letter) {
-  return (this->name[0] == $letter);
+  return (this['name'][0] == $letter);
 }
 
 $breweries = $db->getAllBreweries();
