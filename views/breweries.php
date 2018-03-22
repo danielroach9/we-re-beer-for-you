@@ -3,13 +3,13 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 
-function filterArrayByLetter($letter) {
-  return (['name'][0] == $letter);
+function filterArrayByLetter($letter, $key) {
+  return ($key['name'][0] == $letter);
 }
 
 $breweries = $db->getAllBreweries();
 
-$breweries_a = array_filter($breweries, 'filterArrayByLetter');
+$breweries_a = array_filter($breweries, 'filterArrayByLetter', ARRAY_FILTER_USE_BOTH);
 
 var_dump($breweries_a);
 ?>
