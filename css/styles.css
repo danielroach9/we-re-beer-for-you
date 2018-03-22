@@ -148,3 +148,8 @@ footer{
 .brewery-listing .col .s3 .card .small {
   height: 150px;
 }
+
+.brewery-card {
+  width: 100%;
+  height: 150px;
+}

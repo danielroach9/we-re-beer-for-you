@@ -71,8 +71,8 @@ $breweries_d = array_filter($breweries, function($key) {
           //   </li>
           // ";
           echo "
-            <div class='col s3'>
-              <div class='card small beer-card'>
+            <div class='col s3 brewery-card'>
+              <div class='card small'>
                 <div class='card-content center-align'>
                   <a href='brewery.php?id=$brewery[id]'>
                     <span class='card-title'>$brewery[name]</span>
