@@ -3,18 +3,23 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 
-// function filterArrayByLetter($letter, $key) {
-//   return ($key['name'][0] == $letter);
-// }
-
 $breweries = $db->getAllBreweries();
+
 $breweries_a = array_filter($breweries, function($key) {
-  return ($key['name'][0] == "A");
+  return ($key['name'][0] == "A" || $key['name'][0] == "a");
 }, ARRAY_FILTER_USE_BOTH);
 
-// $breweries_a = array_filter($breweries, 'filterArrayByLetter', ARRAY_FILTER_USE_BOTH);
+$breweries_b = array_filter($breweries, function($key) {
+  return ($key['name'][0] == "B" || $key['name'][0] == "b");
+}, ARRAY_FILTER_USE_BOTH);
 
-var_dump($breweries_a);
+$breweries_a = array_filter($breweries, function($key) {
+  return ($key['name'][0] == "C" || $key['name'][0] == "c");
+}, ARRAY_FILTER_USE_BOTH);
+
+$breweries_a = array_filter($breweries, function($key) {
+  return ($key['name'][0] == "D" || $key['name'][0] == "d");
+}, ARRAY_FILTER_USE_BOTH);
 ?>
 
 <?php include 'inc/header.php'?>
@@ -24,7 +29,7 @@ var_dump($breweries_a);
   <div class="row card-panel">
     <ul class="tabs center-align">
       <!-- No breweries with first letter X-->
-      <li class="tab"><a class="active" href="#!">A</a></li>
+      <li class="tab"><a class="active" href="#breweries_a">A</a></li>
       <li class="tab "><a href="#!">B</a></li>
       <li class="tab"><a href="#!">C</a></li>
       <li class="tab"><a href="#!">D</a></li>
@@ -51,6 +56,22 @@ var_dump($breweries_a);
       <li class="tab"><a href="#!">Z</a></li>
       <li class="tab"><a href="#!">0-9</a></li>
     </ul>
-    <!-- <div class="collection"></div> -->
+    <div>
+
+    </div>
+    <div id="breweries_a">
+      <ul class="collection">
+        <?php
+        foreach($breweries_a as $brewery) {
+          echo "
+            <li class='collection-item'>
+              <a href='brewery.php?id=$brewery[id]'>$brewery[name]</a>
+              <p>$brewery[city], $brewery[state] $brewery[country]</p>
+            </li>
+          "
+        }
+         ?>
+      </div>
+    </div>
   </div>
 </div>
