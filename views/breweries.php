@@ -130,7 +130,7 @@ $breweries_num = array_filter($breweries, function($key) {
         <?php
         foreach($breweries_num as $brewery) {
           echo "
-          <div class='col s3'>
+          <div class='col s4'>
           <div class='card beer-card'>
           <div class='card-content center-align'>
           <a href='brewery.php?id=$brewery[id]'>
