@@ -145,6 +145,6 @@ footer{
   margin-bottom: 0px;
 }
 
-.brewery-listing card.small {
+.brewery-listing .col .s3 .card.small {
   height: 150px;
 }
