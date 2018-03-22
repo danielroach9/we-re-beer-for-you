@@ -30,8 +30,8 @@ $breweries_d = array_filter($breweries, function($key) {
     <ul class="tabs center-align">
       <!-- No breweries with first letter X-->
       <li class="tab"><a class="active" href="#breweries_a">A</a></li>
-      <li class="tab "><a href="#!">B</a></li>
-      <li class="tab"><a href="#!">C</a></li>
+      <li class="tab "><a href="#breweries_b">B</a></li>
+      <li class="tab"><a href="#breweries_c">C</a></li>
       <li class="tab"><a href="#!">D</a></li>
       <li class="tab"><a href="#!">E</a></li>
       <li class="tab"><a href="#!">F</a></li>
