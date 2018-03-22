@@ -150,6 +150,6 @@ footer{
 }
 
 .brewery-card {
-  width: 100%;
+  width: 100% !important;
   height: 150px;
 }
