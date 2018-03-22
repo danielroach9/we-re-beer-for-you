@@ -3,8 +3,15 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 
+function filterArrayByLetter($letter) {
+  return (this->name[0] == $letter);
+}
+
 $breweries = $db->getAllBreweries();
-var_dump($breweries);
+
+$breweries_a = array_filter($breweries, 'filterArrayByLetter');
+
+var_dump($breweries_a);
 ?>
 
 <?php include 'inc/header.php'?>
