@@ -143,3 +143,11 @@ footer{
 .brewery-card {
   height: 150px;
 }
+
+.row #beers-listing .col {
+  padding: 0.75rem 0.75rem;
+}
+
+.row .brewery-listing .col {
+  padding: 0.75rem 0.75rem;
+}
