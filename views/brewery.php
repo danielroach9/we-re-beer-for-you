@@ -38,7 +38,7 @@ $brewery_beers = $db->getBeersByBrewery($id);
 
       foreach ($brewery_beers as $value) {
         echo "
-          <div class='col s4 brewery-card'>
+          <div class='col s4'>
           <div class='card beer-card'>
           <div class='card-content center-align'>
           <a href='beer.php?id=$value[id]'><span class='card-title'>$value[name]</span></a>

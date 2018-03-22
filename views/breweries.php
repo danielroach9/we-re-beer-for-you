@@ -56,20 +56,10 @@ $breweries_d = array_filter($breweries, function($key) {
       <li class="tab"><a href="#!">Z</a></li>
       <li class="tab"><a href="#!">0-9</a></li>
     </ul>
-    <div>
-
-    </div>
     <div id="breweries_a">
       <div class="row brewery-listing">
         <?php
         foreach($breweries_a as $brewery) {
-          // echo "
-          //   <li class='collection-item'>
-          //     <a href='brewery.php?id=$brewery[id]'>$brewery[name]</a>
-          //     <p>$brewery[city], $brewery[state]</p>
-          //     <p>$brewery[country]</p>
-          //   </li>
-          // ";
           echo "
             <div class='col s3'>
               <div class='card beer-card'>
