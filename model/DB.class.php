@@ -660,7 +660,7 @@ class DB{
 			$data = array();
 			$stmt = $this->db->prepare("SELECT name, city, state, country FROM breweries ORDER BY name ASC");
 			$stmt->execute();
-			$data = $stmt->fetchAll(PDO:FETCH_ASSOC);
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $data;
 		}
 		catch(PDOException $e) {
