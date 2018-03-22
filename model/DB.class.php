@@ -658,7 +658,7 @@ class DB{
 	function getAllBreweries() {
 		try {
 			$data = array();
-			$stmt = $this->db->prepare("SELECT name, city, state, country FROM breweries ORDER BY name ASC");
+			$stmt = $this->db->prepare("SELECT id, name, city, state, country FROM breweries ORDER BY name ASC");
 			$stmt->execute();
 			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			return $data;
