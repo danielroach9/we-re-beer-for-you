@@ -1,5 +1,7 @@
 $( document ).ready(function(){
 
+		$('tabs').tabs();
+		
 		// $("#filters").hide();
 		$('select').material_select();
         $(".button-collapse").sideNav();
@@ -42,7 +44,7 @@ $( document ).ready(function(){
 				$("#filters").hide();
 			}
 		}); */
-		
+
     	$("#registerForm").submit(function(e){
 			e.preventDefault();
 		    var $first_name = $('#registerForm').find('#first_name').val();
@@ -224,4 +226,3 @@ function showRegister(){
 	$('#register').addClass('animated flipInY');
 	$("#login").hide();
   }
-  
