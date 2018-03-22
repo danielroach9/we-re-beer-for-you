@@ -56,7 +56,7 @@ $breweries_d = array_filter($breweries, function($key) {
       <li class="tab"><a href="#!">Z</a></li>
       <li class="tab"><a href="#!">0-9</a></li>
     </ul>
-    <div id="breweries_a">
+    <div id="breweries_a" class="col s12">
       <div class="row brewery-listing">
         <?php
         foreach($breweries_a as $brewery) {
@@ -77,7 +77,7 @@ $breweries_d = array_filter($breweries, function($key) {
         ?>
       </div>
     </div>
-    <div id="breweries_b">
+    <div id="breweries_b" class="col s12">
       <div class="row brewery-listing">
         <?php
         foreach($breweries_b as $brewery) {
@@ -98,7 +98,7 @@ $breweries_d = array_filter($breweries, function($key) {
         ?>
       </div>
     </div>
-    <div id="breweries_c">
+    <div id="breweries_c" class="col s12">
       <div class="row brewery-listing">
         <?php
         foreach($breweries_c as $brewery) {
