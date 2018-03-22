@@ -407,7 +407,7 @@ class DB{
 																	WHERE uuid = :uuid
 																	ORDER BY purchase_id DESC
 																	");
-			
+
 			$stmt->execute();
 
 			$data = $stmt->fetchAll(PDO::FETCH_CLASS,'rating');
@@ -657,14 +657,18 @@ class DB{
 
 	function getAllBreweries() {
 		try {
+			$data = array();
 			$stmt = $this->db->prepare("SELECT name, city, state, country FROM breweries ORDER BY name ASC");
 			$stmt->execute();
+			$data = $stmt->fetchAll(PDO:FETCH_ASSOC);
+			return $data;
 		}
 		catch(PDOException $e) {
 			var_dump(" - ".$e->getMessage());
 			echo "getAllBreweries - ".$e->getMessage();
 			die();
 		}
+		return $data;
 	}
 
 }
