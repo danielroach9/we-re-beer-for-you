@@ -13,11 +13,11 @@ $breweries_b = array_filter($breweries, function($key) {
   return ($key['name'][0] == "B" || $key['name'][0] == "b");
 }, ARRAY_FILTER_USE_BOTH);
 
-$breweries_a = array_filter($breweries, function($key) {
+$breweries_c = array_filter($breweries, function($key) {
   return ($key['name'][0] == "C" || $key['name'][0] == "c");
 }, ARRAY_FILTER_USE_BOTH);
 
-$breweries_a = array_filter($breweries, function($key) {
+$breweries_d = array_filter($breweries, function($key) {
   return ($key['name'][0] == "D" || $key['name'][0] == "d");
 }, ARRAY_FILTER_USE_BOTH);
 ?>
@@ -66,7 +66,8 @@ $breweries_a = array_filter($breweries, function($key) {
           echo "
             <li class='collection-item'>
               <a href='brewery.php?id=$brewery[id]'>$brewery[name]</a>
-              <p>$brewery[city], $brewery[state] $brewery[country]</p>
+              <p>$brewery[city], $brewery[state]</p>
+              <p>$brewery[country]</p>
             </li>
           ";
         }
