@@ -68,7 +68,7 @@ $breweries_a = array_filter($breweries, function($key) {
               <a href='brewery.php?id=$brewery[id]'>$brewery[name]</a>
               <p>$brewery[city], $brewery[state] $brewery[country]</p>
             </li>
-          "
+          ";
         }
          ?>
       </div>
