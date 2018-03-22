@@ -33,9 +33,6 @@ $breweries_num = array_filter($breweries, function($key) {
   <div class="row card-panel">
     <div class="col s12">
       <input id="search" placeholder="Search for a brewery"/>
-      <i class="fa fa-search" aria-hidden="true"></i>
-    </div>
-    <div class="col s12">
       <ul class="tabs center-align">
         <!-- No breweries with first letter X-->
         <li class="tab"><a class="active" href="#breweries_a">A</a></li>
