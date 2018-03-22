@@ -62,89 +62,89 @@ $breweries_num = array_filter($breweries, function($key) {
         <li class="tab"><a href="#!">0-9</a></li>
       </ul>
     </div>
-    <div id="breweries_a" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
-        <?php
-        foreach($breweries_a as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
-        }
-        ?>
-      </div>
+  </div>
+  <div id="breweries_a" class="col s12" style="display: none;">
+    <div class="row brewery-listing">
+      <?php
+      foreach($breweries_a as $brewery) {
+        echo "
+        <div class='col s3'>
+        <div class='card beer-card'>
+        <div class='card-content center-align'>
+        <a href='brewery.php?id=$brewery[id]'>
+        <span class='card-title'>$brewery[name]</span>
+        </a>
+        <p>$brewery[city], $brewery[state]</p>
+        <p>$brewery[country]</p>
+        </div>
+        </div>
+        </div>
+        ";
+      }
+      ?>
     </div>
-    <div id="breweries_b" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
-        <?php
-        foreach($breweries_b as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
-        }
-        ?>
-      </div>
+  </div>
+  <div id="breweries_b" class="col s12" style="display: none;">
+    <div class="row brewery-listing">
+      <?php
+      foreach($breweries_b as $brewery) {
+        echo "
+        <div class='col s3'>
+        <div class='card beer-card'>
+        <div class='card-content center-align'>
+        <a href='brewery.php?id=$brewery[id]'>
+        <span class='card-title'>$brewery[name]</span>
+        </a>
+        <p>$brewery[city], $brewery[state]</p>
+        <p>$brewery[country]</p>
+        </div>
+        </div>
+        </div>
+        ";
+      }
+      ?>
     </div>
-    <div id="breweries_c" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
-        <?php
-        foreach($breweries_c as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
-        }
-        ?>
-      </div>
+  </div>
+  <div id="breweries_c" class="col s12" style="display: none;">
+    <div class="row brewery-listing">
+      <?php
+      foreach($breweries_c as $brewery) {
+        echo "
+        <div class='col s3'>
+        <div class='card beer-card'>
+        <div class='card-content center-align'>
+        <a href='brewery.php?id=$brewery[id]'>
+        <span class='card-title'>$brewery[name]</span>
+        </a>
+        <p>$brewery[city], $brewery[state]</p>
+        <p>$brewery[country]</p>
+        </div>
+        </div>
+        </div>
+        ";
+      }
+      ?>
     </div>
-    <div id="breweries_num" class="col s12" style="display: block;">
-      <div class="row brewery-listing">
-        <?php
-        foreach($breweries_num as $brewery) {
-          echo "
-          <div class='col s4'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
-        }
-        ?>
-      </div>
+  </div>
+  <div id="breweries_num" class="col s12" style="display: block;">
+    <div class="row brewery-listing">
+      <?php
+      foreach($breweries_num as $brewery) {
+        echo "
+        <div class='col s4'>
+        <div class='card beer-card'>
+        <div class='card-content center-align'>
+        <a href='brewery.php?id=$brewery[id]'>
+        <span class='card-title'>$brewery[name]</span>
+        </a>
+        <p>$brewery[city], $brewery[state]</p>
+        <p>$brewery[country]</p>
+        </div>
+        </div>
+        </div>
+        ";
+      }
+      ?>
     </div>
   </div>
 </div>
