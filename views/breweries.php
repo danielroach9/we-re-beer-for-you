@@ -41,7 +41,6 @@ var_dump($breweries);
       <li class="tab"><a href="#!">Z</a></li>
       <li class="tab"><a href="#!">0-9</a></li>
     </ul>
-    <div class="collection">
-    </div>
+    <!-- <div class="collection"></div> -->
   </div>
 </div>
