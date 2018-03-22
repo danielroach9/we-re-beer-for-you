@@ -60,7 +60,7 @@ $breweries_d = array_filter($breweries, function($key) {
 
     </div>
     <div id="breweries_a">
-      <div class="brewery-listing">
+      <div class="row brewery-listing">
         <?php
         foreach($breweries_a as $brewery) {
           // echo "
