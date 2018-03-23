@@ -100,8 +100,6 @@ function array_sort($array, $on, $order=SORT_ASC)
         <li class="tab"><a href="#!">0-9</a></li>
       </ul>
     </div>
-    // <div id="breweries_a" class="col s12" style="display: none;">
-    //   <div class="row brewery-listing">
         <?php
 
         $curLetter = "";
