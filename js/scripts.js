@@ -219,10 +219,18 @@ $( document ).ready(function(){
 		$('#searchLink').click(function(e){
 			window.location.href = 'views/search.php';
 		});
+
+		function showRegister(){
+			$("#register").show();
+			$('#register').addClass('animated flipInY');
+			$("#login").hide();
+		  }
+
+		function showLogin(){
+			$("#register").hide();
+			$('#login').addClass('animated flipInY');
+			$("#login").show();
+		}
 });
 
-function showRegister(){
-	$("#register").show();
-	$('#register').addClass('animated flipInY');
-	$("#login").hide();
-  }
+
