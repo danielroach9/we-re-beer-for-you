@@ -5,6 +5,8 @@ $db = new DB();
 
 $breweries = $db->getAllBreweries();
 
+$breweries_sorted = array_sort($breweries, 'name', SORT_ASC));
+
 $breweries_a = array_filter($breweries, function($key) {
   return ($key['name'][0] == "A" || $key['name'][0] == "a");
 }, ARRAY_FILTER_USE_BOTH);
@@ -62,10 +64,21 @@ $breweries_num = array_filter($breweries, function($key) {
         <li class="tab"><a href="#!">0-9</a></li>
       </ul>
     </div>
-    <div id="breweries_a" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
+    // <div id="breweries_a" class="col s12" style="display: none;">
+    //   <div class="row brewery-listing">
         <?php
-        foreach($breweries_a as $brewery) {
+
+        $curLetter = "";
+
+        foreach ($breweries_sorted as $brewery){
+          $name = $brewery['name'];
+          if($curLetter != $name[0]){
+            $curLetter = $name[0];
+
+            echo "<div id='breweries_$curLetter' class='col s12' style='display: none;''>
+                   <div class='row brewery-listing'>"
+          }
+
           echo "
           <div class='col s3'>
           <div class='card beer-card'>
@@ -80,26 +93,42 @@ $breweries_num = array_filter($breweries, function($key) {
           </div>
           ";
         }
+
+        // foreach($breweries_a as $brewery) {
+        //   echo "
+        //   <div class='col s3'>
+        //   <div class='card beer-card'>
+        //   <div class='card-content center-align'>
+        //   <a href='brewery.php?id=$brewery[id]'>
+        //   <span class='card-title'>$brewery[name]</span>
+        //   </a>
+        //   <p>$brewery[city], $brewery[state]</p>
+        //   <p>$brewery[country]</p>
+        //   </div>
+        //   </div>
+        //   </div>
+        //   ";
+        // }
         ?>
-      </div>
-    </div>
-    <div id="breweries_b" class="col s12" style="display: none;">
+<!--       </div>
+    </div> -->
+    <!-- <div id="breweries_b" class="col s12" style="display: none;">
       <div class="row brewery-listing">
         <?php
-        foreach($breweries_b as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
+        // foreach($breweries_b as $brewery) {
+        //   echo "
+        //   <div class='col s3'>
+        //   <div class='card beer-card'>
+        //   <div class='card-content center-align'>
+        //   <a href='brewery.php?id=$brewery[id]'>
+        //   <span class='card-title'>$brewery[name]</span>
+        //   </a>
+        //   <p>$brewery[city], $brewery[state]</p>
+        //   <p>$brewery[country]</p>
+        //   </div>
+        //   </div>
+        //   </div>
+        //   ";
         }
         ?>
       </div>
@@ -107,20 +136,20 @@ $breweries_num = array_filter($breweries, function($key) {
     <div id="breweries_c" class="col s12" style="display: none;">
       <div class="row brewery-listing">
         <?php
-        foreach($breweries_c as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
+        // foreach($breweries_c as $brewery) {
+        //   echo "
+        //   <div class='col s3'>
+        //   <div class='card beer-card'>
+        //   <div class='card-content center-align'>
+        //   <a href='brewery.php?id=$brewery[id]'>
+        //   <span class='card-title'>$brewery[name]</span>
+        //   </a>
+        //   <p>$brewery[city], $brewery[state]</p>
+        //   <p>$brewery[country]</p>
+        //   </div>
+        //   </div>
+        //   </div>
+        //   ";
         }
         ?>
       </div>
@@ -128,24 +157,24 @@ $breweries_num = array_filter($breweries, function($key) {
     <div id="breweries_num" class="col s12" style="display: block;">
       <div class="row brewery-listing">
         <?php
-        foreach($breweries_num as $brewery) {
-          echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
-          <div class='card-content center-align'>
-          <a href='brewery.php?id=$brewery[id]'>
-          <span class='card-title'>$brewery[name]</span>
-          </a>
-          <p>$brewery[city], $brewery[state]</p>
-          <p>$brewery[country]</p>
-          </div>
-          </div>
-          </div>
-          ";
+        // foreach($breweries_num as $brewery) {
+        //   echo "
+        //   <div class='col s3'>
+        //   <div class='card beer-card'>
+        //   <div class='card-content center-align'>
+        //   <a href='brewery.php?id=$brewery[id]'>
+        //   <span class='card-title'>$brewery[name]</span>
+        //   </a>
+        //   <p>$brewery[city], $brewery[state]</p>
+        //   <p>$brewery[country]</p>
+        //   </div>
+        //   </div>
+        //   </div>
+        //   ";
         }
         ?>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 </div>
