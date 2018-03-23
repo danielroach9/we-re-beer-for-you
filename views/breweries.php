@@ -5,7 +5,7 @@ $db = new DB();
 
 $breweries = $db->getAllBreweries();
 
-$breweries_sorted = array_sort($breweries, 'name', SORT_ASC));
+$breweries_sorted = array_sort($breweries, 'name', SORT_ASC);
 
 $breweries_a = array_filter($breweries, function($key) {
   return ($key['name'][0] == "A" || $key['name'][0] == "a");
