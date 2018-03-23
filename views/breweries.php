@@ -125,9 +125,13 @@ function array_sort($array, $on, $order=SORT_ASC)
           </div>
           </div>
           </div>
-          </div>
-          </div>
           ";
+
+          if($curLetter != $name[0]){
+
+            echo "</div>
+                   </div>";
+          }
         }
 
         // foreach($breweries_a as $brewery) {
