@@ -76,8 +76,8 @@ $breweries_num = array_filter($breweries, function($key) {
           if($curLetter != $name[0]){
             $curLetter = $name[0];
 
-            echo "<div id='breweries_$curLetter' class='col s12' style='display: none;''>
-                   <div class='row brewery-listing'>"
+            echo "<div id='breweries_$curLetter' class='col s12'>
+                   <div class='row brewery-listing'>";
           }
 
           echo "
