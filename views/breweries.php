@@ -130,7 +130,7 @@ $breweries_num = array_filter($breweries, function($key) {
         //   </div>
         //   </div>
         //   ";
-        }
+        //}
         ?>
       </div>
     </div>
@@ -151,7 +151,7 @@ $breweries_num = array_filter($breweries, function($key) {
         //   </div>
         //   </div>
         //   ";
-        }
+        //}
         ?>
       </div>
     </div>
@@ -172,7 +172,7 @@ $breweries_num = array_filter($breweries, function($key) {
         //   </div>
         //   </div>
         //   ";
-        }
+        //}
         ?>
       </div>
     </div> -->
