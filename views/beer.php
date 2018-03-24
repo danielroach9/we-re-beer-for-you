@@ -9,7 +9,7 @@ if(!isset($_GET['id'])){
   while($beer == NULL) {
     $rand_num = mt_rand(1, 5901);
     $val = $db->getBeerInfoByID($rand_num);
-    if(!empty($val)) {
+    if(!empty($val['name'])) {
       $beer = $val;
       $id = $rand_num;
     }
