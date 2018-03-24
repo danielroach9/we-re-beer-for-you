@@ -265,7 +265,8 @@ class DB{
 										JOIN categories c ON c.id = b.cat_id
 										JOIN styles s ON s.id = b.style_id
 										WHERE b.name LIKE :name
-										AND b.descript NOT LIKE ''");
+										AND b.descript NOT LIKE ''
+										ORDER BY b.name ASC");
 			$stmt->bindParam(":name",$name,PDO::PARAM_STR);
 			$stmt->execute();
 
@@ -290,7 +291,8 @@ class DB{
 										JOIN styles s ON s.id = b.style_id
 										WHERE b.name LIKE :name
 										AND b.cat_id = :category
-										AND b.style_id = :style");
+										AND b.style_id = :style
+										ORDER BY b.name ASC");
 			$stmt->bindParam(":name",$name,PDO::PARAM_STR);
 			$stmt->bindParam(":category",$_category,PDO::PARAM_INT);
 			$stmt->bindParam(":style",$_style,PDO::PARAM_INT);
