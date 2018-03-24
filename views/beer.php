@@ -19,7 +19,7 @@ if(!$_GET['id']){
   $ratings = $db->getRatingsByBeerId($id);
 }
 else {
-  $id = $_GET['id']
+  $id = $_GET['id'];
   $beer = $db->getBeerInfoByID($id);
   $ratings = $db->getRatingsByBeerId($id);
 }
