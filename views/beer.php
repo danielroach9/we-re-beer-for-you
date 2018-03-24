@@ -15,6 +15,7 @@ if(!$_GET['id']){
       $id = $rand_num;
     }
   }
+  $beer = $db->getBeerInfoByID($id);
   $ratings = $db->getRatingsByBeerId($id);
 }
 else {
