@@ -8,11 +8,11 @@ $id = $_GET['id'];
 
 if(!$_GET['id']){
   
-  while($beer == NULL) {
+  while($brewery == NULL) {
     $rand_num = mt_rand(1, 5901);
     $val = $db->getBreweryInfoByID($rand_num);
     if(!empty($val)) {
-      $beer = $val;
+      $brewery = $val;
       $id = $rand_num;
     }
   }
