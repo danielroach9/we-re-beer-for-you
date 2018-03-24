@@ -45,7 +45,7 @@ $ratings = $db->getRecentRatings();
 -->
 <?php include "inc/header.php"; ?>
 <title>We're beer for you!</title>
-<!-- ?php include "inc/nav.php"; ?> -->
+?php include "inc/nav.php"; ?>
 
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
