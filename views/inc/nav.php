@@ -6,7 +6,7 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">&#9776;</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="search.php">Search for beers</a></li>
-      <li><a href="brewery.php">Breweries</a></li>
+      <li><a href="breweries.php">Breweries</a></li>
       <li><a href="activity.php">Activity</a></li>
       <li><a href="account.php"><?php if(isset($_SESSION)){ echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];}else{echo "My Account";}?></a></li>
     </ul>
