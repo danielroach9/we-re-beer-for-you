@@ -216,9 +216,5 @@ function array_sort($array, $on, $order=SORT_ASC)
         ?>
       </div>
     </div> -->
-  </div>
-</div>
-</div>
-</div>
 </div>
 </div>
