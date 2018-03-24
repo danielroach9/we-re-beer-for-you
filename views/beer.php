@@ -3,10 +3,9 @@ require_once("../model/DB.class.php");
 
 $db = new DB();
 $beer = NULL;
-$id = $_GET['id'];
+$id = NULL;
 
-if(!$_GET['id']){
-  
+if(!isset($_GET['id'])){
   while($beer == NULL) {
     $rand_num = mt_rand(1, 5901);
     $val = $db->getBeerInfoByID($rand_num);
