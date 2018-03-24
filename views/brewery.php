@@ -2,10 +2,6 @@
 require_once("../model/DB.class.php");
 
 $db = new DB();
-$id = $_GET['id'];
-
-$brewery = $db->getBreweryInfoByID($id);
-$brewery_beers = $db->getBeersByBrewery($id);
 
 $brewery = NULL;
 $id = $_GET['id'];
