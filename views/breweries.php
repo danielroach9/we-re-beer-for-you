@@ -66,9 +66,7 @@ function array_sort($array, $on, $order=SORT_ASC)
 <?php include 'inc/header.php'?>
 <title>WB4U | Breweries</title>
 <?php include 'inc/nav.php'?>
-<div class="container-fluid">
   <div class="row card-panel">
-    <div class="col s12">
       <input id="search" placeholder="Search for a brewery"/>
       <ul class="tabs center-align">
         <!-- No breweries with first letter X-->
@@ -99,8 +97,7 @@ function array_sort($array, $on, $order=SORT_ASC)
         <li class="tab"><a href="#!">Z</a></li>
         <li class="tab"><a href="#!">0-9</a></li>
       </ul>
-    </div>
-    <div>
+      
         <?php
 
         $curLetter = "";
@@ -109,14 +106,11 @@ function array_sort($array, $on, $order=SORT_ASC)
           $name = $brewery['name'];
           if($curLetter != $name[0]){
             $curLetter = $name[0];
-
-            echo "<div id='breweries_$curLetter' class='col s12'>
-                   <div class='row brewery-listing'>";
+            echo "<div id='breweries_$curLetter'>";
           }
 
           echo "
-          <div class='col s3'>
-          <div class='card beer-card'>
+          <div class='col s3 card beer-card' id=''>
           <div class='card-content center-align'>
           <a href='brewery.php?id=$brewery[id]'>
           <span class='card-title'>$brewery[name]</span>
@@ -125,97 +119,12 @@ function array_sort($array, $on, $order=SORT_ASC)
           <p>$brewery[country]</p>
           </div>
           </div>
-          </div>
           ";
 
           if($curLetter != $name[0]){
-
-            echo "</div>
-                   </div>";
+            echo "</div>";
           }
         }
-
-        // foreach($breweries_a as $brewery) {
-        //   echo "
-        //   <div class='col s3'>
-        //   <div class='card beer-card'>
-        //   <div class='card-content center-align'>
-        //   <a href='brewery.php?id=$brewery[id]'>
-        //   <span class='card-title'>$brewery[name]</span>
-        //   </a>
-        //   <p>$brewery[city], $brewery[state]</p>
-        //   <p>$brewery[country]</p>
-        //   </div>
-        //   </div>
-        //   </div>
-        //   ";
-        // }
         ?>
-<!--       </div>
-    </div> -->
-    <!-- <div id="breweries_b" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
-        <?php
-        // foreach($breweries_b as $brewery) {
-        //   echo "
-        //   <div class='col s3'>
-        //   <div class='card beer-card'>
-        //   <div class='card-content center-align'>
-        //   <a href='brewery.php?id=$brewery[id]'>
-        //   <span class='card-title'>$brewery[name]</span>
-        //   </a>
-        //   <p>$brewery[city], $brewery[state]</p>
-        //   <p>$brewery[country]</p>
-        //   </div>
-        //   </div>
-        //   </div>
-        //   ";
-        //}
-        ?>
-      </div>
-    </div>
-    <div id="breweries_c" class="col s12" style="display: none;">
-      <div class="row brewery-listing">
-        <?php
-        // foreach($breweries_c as $brewery) {
-        //   echo "
-        //   <div class='col s3'>
-        //   <div class='card beer-card'>
-        //   <div class='card-content center-align'>
-        //   <a href='brewery.php?id=$brewery[id]'>
-        //   <span class='card-title'>$brewery[name]</span>
-        //   </a>
-        //   <p>$brewery[city], $brewery[state]</p>
-        //   <p>$brewery[country]</p>
-        //   </div>
-        //   </div>
-        //   </div>
-        //   ";
-        //}
-        ?>
-      </div>
-    </div>
-    <div id="breweries_num" class="col s12" style="display: block;">
-      <div class="row brewery-listing">
-        <?php
-        // foreach($breweries_num as $brewery) {
-        //   echo "
-        //   <div class='col s3'>
-        //   <div class='card beer-card'>
-        //   <div class='card-content center-align'>
-        //   <a href='brewery.php?id=$brewery[id]'>
-        //   <span class='card-title'>$brewery[name]</span>
-        //   </a>
-        //   <p>$brewery[city], $brewery[state]</p>
-        //   <p>$brewery[country]</p>
-        //   </div>
-        //   </div>
-        //   </div>
-        //   ";
-        //}
-        ?>
-      </div>
-    </div> -->
   </div>
-</div>
-</div>
+<?php include 'inc/footer.php'?>
