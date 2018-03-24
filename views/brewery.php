@@ -6,6 +6,29 @@ $id = $_GET['id'];
 
 $brewery = $db->getBreweryInfoByID($id);
 $brewery_beers = $db->getBeersByBrewery($id);
+
+$brewery = NULL;
+$id = $_GET['id'];
+
+if(!$_GET['id']){
+  
+  while($beer == NULL) {
+    $rand_num = mt_rand(1, 5901);
+    $val = $db->getBreweryInfoByID($rand_num);
+    if(!empty($val)) {
+      $beer = $val;
+      $id = $rand_num;
+    }
+  }
+  $brewery = $db->getBreweryInfoByID($id);
+  $brewery_beers = $db->getBeersByBrewery($id);
+}
+else {
+  $id = $_GET['id'];
+  $brewery = $db->getBreweryInfoByID($id);
+  $brewery_beers = $db->getBeersByBrewery($id);
+}
+
  ?>
 
 <?php include 'inc/header.php'?>
