@@ -46,6 +46,7 @@
         <div class="card hoverable col s6 offset-s3">
           <form id="registerForm">
             <div class="card-content">
+              <span onclick="showLogin();"> &#8592; Back </span>
               <span ><h4 class="card-title center-align">Register</h4></span>
               <div class="row">
                 <div class="input-field col s12">

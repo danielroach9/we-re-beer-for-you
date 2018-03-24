@@ -36,11 +36,11 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 			<div class="card hoverable col s12">
 				<form id="searchForm">
 					<div class="card-content">
-						<div class="input-field col s12">
+						<div class="row form-group">
 							<span style="font-size: 20pt">Search for a beer </span>
 							<input class="validate" type="text" id="searchQuery" name="q" placeholder="Search for a beer" value="<?php if(isset($_GET['q'])){ echo "{$qry}"; } ?>">
-							<span id="filterText" style="font-size: 16pt" id="searchFilters">Apply Filters</span>
 						</div>
+						<span style="font-size: 16pt; padding-left:1.5em;" id="searchFilters">Apply Filters</span>
 						<div class="row card-action" id="filters">
 							<div class="input-field col s6">
 								<select name="cat" id="selectedCategory">
@@ -64,12 +64,12 @@ $styles = $db->getStylesByCategory(0); //hardcoded parameter to start
 								</select>
 								<label for="preferred_style">Prefered Style</label>
 							</div>
+							<button style="margin-left:1em;margin-top:1em;"class="btn brown waves-effect waves-light" id="searchBtn">Search</button>
+
 						</div>
-						<br />
-					<button class="btn brown waves-effect waves-light" id="searchBtn">Search</button>
 				</form>
-				</div>
-				</div>
+			</div>
+		</div>
 				<div id=results>
 					<div class="row">
 						<?php

@@ -45,7 +45,7 @@ $ratings = $db->getRecentRatings();
 -->
 <?php include "inc/header.php"; ?>
 <title>We're beer for you!</title>
-<?php include "inc/nav.php"; ?>
+<!-- ?php include "inc/nav.php"; ?> -->
 
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -53,7 +53,7 @@ $ratings = $db->getRecentRatings();
         <div class="card hoverable col s6 offset-s3">
           <form id="beerRatingForm">
             <div class="card-content">
-              <span class="card-title center-align">Submit Beer Review</span>
+              <span class="card-title center-align">Beer Reviews</span>
 
 
 		<table class="table" style="padding-right:20px;padding-top:100px;">
