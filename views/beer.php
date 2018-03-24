@@ -5,10 +5,9 @@ $db = new DB();
 $beer = NULL;
 $id = $_GET['id'];
 
-if ($id == 'random') {
-
+if(!$_GET['id']){
+  
   while($beer == NULL) {
-
     $rand_num = mt_rand(1, 5901);
     $val = $db->getBeerInfoByID($rand_num);
     if(!empty($val)) {
@@ -16,17 +15,18 @@ if ($id == 'random') {
       $id = $rand_num;
     }
   }
-
-}
-
-else {
   $beer = $db->getBeerInfoByID($id);
+  $ratings = $db->getRatingsByBeerId($id);
+}
+else {
+  $id = $_GET['id'];
+  $beer = $db->getBeerInfoByID($id);
+  $ratings = $db->getRatingsByBeerId($id);
 }
 
 $users = $db->getAllUsers();
 
 // pulling beer ratings hebrev
-$ratings = $db->getRatingsByBeerId($id);
 ?>
 
 
