@@ -17,6 +17,7 @@ if(!isset($_GET['id'])){
   $brewery = $db->getBreweryInfoByID($id);
   $brewery_beers = $db->getBeersByBrewery($id);
 }
+//Make check for not empty beer info, else do random
 else {
   $id = $_GET['id'];
   $brewery = $db->getBreweryInfoByID($id);
