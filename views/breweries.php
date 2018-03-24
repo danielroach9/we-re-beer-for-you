@@ -100,6 +100,7 @@ function array_sort($array, $on, $order=SORT_ASC)
         <li class="tab"><a href="#!">0-9</a></li>
       </ul>
     </div>
+    <div>
         <?php
 
         $curLetter = "";
@@ -130,7 +131,6 @@ function array_sort($array, $on, $order=SORT_ASC)
           if($curLetter != $name[0]){
 
             echo "</div>
-                   </div>
                    </div>";
           }
         }
@@ -216,5 +216,6 @@ function array_sort($array, $on, $order=SORT_ASC)
         ?>
       </div>
     </div> -->
+  </div>
 </div>
 </div>
