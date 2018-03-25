@@ -1,10 +1,10 @@
 <?php
-	if(!isset($_SESSION)){
-		var_dump("expression1");
-		header('Location: ./index.php');
-	}else{
-		var_dump("expression2");
-	}
+if(!isset($_SESSION)){
+    session_start();
+} 
+if(empty($_SESSION)){
+	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">

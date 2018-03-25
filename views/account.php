@@ -1,13 +1,4 @@
-<?php
-if(isset($_SESSION['loggedIn'])){
-	if($_SESSION['loggedIn'] == true){
-		
-	}
-}else{
-	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
-}
-
- include "inc/header.php"; ?>
+<?php include "inc/header.php"; ?>
 <title>We're beer for you!</title>
 <?php include "inc/nav.php"; ?>
 	<form>
