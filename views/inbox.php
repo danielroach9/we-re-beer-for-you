@@ -4,7 +4,7 @@ if(isset($_SESSION['loggedIn'])){
 		
 	}
 }else{
-	header("Location: ../index.php");
+	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php");
 }
 
 require_once ("../model/DB.class.php");
