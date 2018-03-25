@@ -9,14 +9,14 @@
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="beer-rating.php">Beer Ratings</a></li>
       <li><a href="account.php"><?php echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];?></a></li>
-      <li id="signOut"><a href="#">Sign Out</a></li>
+      <li><a id="signOut" href="#">Sign Out</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="beers.php">Beers</a></li>
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="beer-rating.php">Beer Ratings</a></li>
       <li><a href="account.php"><?php echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];?></a></li>
-      <li id="signOut"><a href="#">Sign Out</a></li>
+      <li><a id="signOut" href="#">Sign Out</a></li>
     </ul>
   </div>
 </nav>
