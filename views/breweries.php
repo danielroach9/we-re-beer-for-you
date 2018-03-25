@@ -122,9 +122,10 @@ function array_sort($array, $on, $order=SORT_ASC)
           ";
 
           if($curLetter != $name[0]){
-            echo "</div></div>";
+            echo "</div>";
           }
         }
         ?>
+      </div>
   </div>
 <?php include 'inc/footer.php'?>
