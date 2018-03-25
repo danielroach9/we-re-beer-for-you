@@ -53,6 +53,7 @@ $( document ).ready(function(){
 				  url: '../model/DB.class.php',
 				  data: $data
 			}).done(function(msg) {
+				window.location.href = "http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?signout=true";
 			});
 		});
 
