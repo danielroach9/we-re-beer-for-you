@@ -45,12 +45,12 @@ $( document ).ready(function(){
 			}
 		}); */
 
-		$("#signOut").click(function(e){
+		$("#signOut").click(function(){
 			var $data = { action: 'performRegister'};
 
 			$.ajax({
 				  type: "POST",
-				  url: 'model/DB.class.php',
+				  url: '../model/DB.class.php',
 				  data: $data
 			}).done(function(msg) {
 			});
