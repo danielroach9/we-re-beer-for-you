@@ -13,6 +13,9 @@ if(isset($_POST['action'])){
 			$value = $db->performLogin($user, $pass);
 			return $value;
 			break;
+		case 'performLogOut':
+			$value = $db->performLogOut();
+			break;
 		case 'performRegister':
 			$firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
 			$lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
@@ -110,6 +113,7 @@ class DB{
 	function performLogOut(){
 		session_unset();
 		session_destroy();
+		header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?signout=true");
 	}
 
 	function getAllUsers(){

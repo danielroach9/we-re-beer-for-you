@@ -45,6 +45,17 @@ $( document ).ready(function(){
 			}
 		}); */
 
+		$("#signOut").click(function(e){
+			var $data = { action: 'performRegister'};
+
+			$.ajax({
+				  type: "POST",
+				  url: 'model/DB.class.php',
+				  data: $data
+			}).done(function(msg) {
+			});
+		});
+
     	$("#registerForm").submit(function(e){
 			e.preventDefault();
 		    var $first_name = $('#registerForm').find('#first_name').val();
