@@ -103,11 +103,11 @@ function array_sort($array, $on, $order=SORT_ASC)
         $curLetter = "";
 
         foreach ($breweries_sorted as $brewery){
-          $name = $brewery['name'];
-          if($curLetter != $name[0]){
-            $curLetter = $name[0];
-            echo "<div id='breweries_$curLetter'>";
-          }
+          // $name = $brewery['name'];
+          // if($curLetter != $name[0]){
+          //   $curLetter = $name[0];
+          //   echo "<div id='breweries_$curLetter'>";
+          // }
 
           echo "
           <div class='col s3 card beer-card' id=''>
@@ -121,11 +121,10 @@ function array_sort($array, $on, $order=SORT_ASC)
           </div>
           ";
 
-          if($curLetter != $name[0]){
-            echo "</div>";
-          }
+          // if($curLetter != $name[0]){
+          //   echo "</div>";
+          // }
         }
         ?>
-      </div>
   </div>
 <?php include 'inc/footer.php'?>
