@@ -1,8 +1,7 @@
 <?php
-if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+if(!isset($_SESSION)){
+    session_start(); 
+} 
 var_dump($_SESSION);
 // if(isset($_SESSION)){
 // 	if($_SESSION['loggedIn'] == true){
