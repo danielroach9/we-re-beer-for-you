@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 	if(!isset($_SESSION)){
 		var_dump("expression1");
 		header('Location: ./index.php');
