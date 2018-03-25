@@ -119,6 +119,7 @@ function array_sort($array, $on, $order=SORT_ASC)
           <p>$brewery[country]</p>
           </div>
           </div>
+          </div>
           ";
 
           if($curLetter != $name[0]){
