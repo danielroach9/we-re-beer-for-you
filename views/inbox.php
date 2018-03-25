@@ -39,3 +39,4 @@ $messages = $db->getMessagesForUser($_SESSION['accountID']);
 				</table>
 	</div>
 </div>
+<?php include 'inc/footer.php'?>
