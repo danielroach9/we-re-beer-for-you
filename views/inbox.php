@@ -1,14 +1,17 @@
 <?php
 if(!isset($_SESSION)){
-    //session_start();
-    header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
+    session_start();
 } 
+if(empty($_SESSION)){
+	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
+}
+//var_dump($_SESSION);
 // if(isset($_SESSION)){
 // 	if($_SESSION['loggedIn'] == true){
 		
 // 	}
 // }else{
-// 	
+// 	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
 // }
 
 require_once ("../model/DB.class.php");
