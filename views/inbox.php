@@ -4,7 +4,7 @@ if(isset($_SESSION['loggedIn'])){
 		
 	}
 }else{
-	header("Location: ./index.php");
+	header("Location: ../index.php");
 }
 
 require_once ("../model/DB.class.php");
