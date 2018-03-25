@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['loggedIn'])){
+if(isset($_SESSION)){
 	if($_SESSION['loggedIn'] == true){
 		
 	}

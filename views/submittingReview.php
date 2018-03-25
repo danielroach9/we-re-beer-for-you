@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['loggedIn'])){
-  if($_SESSION['loggedIn'] == true){
+  if(!$_SESSION['loggedIn'] == true){
     
   }
 }else{
