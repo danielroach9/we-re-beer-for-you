@@ -1,7 +1,7 @@
 <?php session_start();
 	if(!isset($_SESSION)){
 		var_dump("expression1");
-		header('Location: index.php');
+		header('Location: ./index.php');
 	}else{
 		var_dump("expression2");
 	}
