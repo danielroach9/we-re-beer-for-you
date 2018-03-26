@@ -79,7 +79,7 @@ $( document ).ready(function(){
 			}).done(function(msg) {
 	              console.log(msg);
 				  if(msg){
-				  	window.location.href = 'views/inbox.php';
+				  	window.location.href = 'views/.php';
 				  }else{
 				  	alert("User/password incorrect!");
 				  }
