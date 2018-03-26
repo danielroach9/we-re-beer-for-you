@@ -1,4 +1,5 @@
 <?php include "inc/header.php"; 
+	require_once("../model/DB.class.php");
 	$db = new DB();
 	$user = $db->getUserByID($_SESSION['accountID']);
 ?>
