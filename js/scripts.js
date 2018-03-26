@@ -115,7 +115,7 @@ $( document ).ready(function(){
 	    });
 			$("#preferenceForm").submit(function(e){
 				e.preventDefault();
-		    var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
+		    	var $cat_id = $('#preferenceForm').find('#selectedCategory').val();
 				var $style = $('#preferenceForm').find('#stylesDropdown').val();
 				var $abv = $('#preferenceForm').find('#abvRange').val();
 				var $country_name = $('#preferenceForm').find('#countryDropdown option:selected').text();//need to get string, int value is meaningless
@@ -125,36 +125,40 @@ $( document ).ready(function(){
 					style: $style,
 					abv: $abv,
 					country: $country_name,
-					action: 'insertNewPreference'
+					action: 'getPreferredBeer'
 				};
 				$.ajax({
 					  type: "POST",
 					  url: '../model/DB.class.php',
 					  data: $data
-				}).done(function(msg) {
-		              console.log(msg);
-					  if(msg){
-							alert("success: you submitted preferences successfully");
-							var $data2 = {
-								category: $cat_id,
-								style: $style,
-								abv: $abv,
-								country: $country_name,
-								action: 'getPreferredBeer'
-							};
-							$.ajax({
-								  type: "POST",
-								  url: '../model/DB.class.php',
-									data: $data2
-							}).done(function(msg) {
-								//console.log(msg);
-								alert(msg);
-								msg = JSON.parse(msg);
-								$("#preferredBeers").html(msg.reduce((prev,curr)=>{
-									return `${prev}<p> ${curr.id} ${curr.name}</p>`
-								},"")
-							  );
-							});
+				}).done(function(data) {
+		              console.log(data);
+					  if(data){
+					  		$.each(data,function(key,value){
+					  			$("#results").html(value);
+					  		});
+							// alert("success: you submitted preferences successfully");
+							// var $data2 = {
+							// 	category: $cat_id,
+							// 	style: $style,
+							// 	abv: $abv,
+							// 	country: $country_name,
+							// 	action: 'getPreferredBeer'
+							// };
+							// $.ajax({
+							// 	  type: "POST",
+							// 	  url: '../model/DB.class.php',
+							// 		data: $data2
+							// }).done(function(msg) {
+							// 	//console.log(msg);
+							// 	alert(msg);
+							// 	msg = JSON.parse(msg);
+							// 	$("#preferredBeers").html(msg.reduce((prev,curr)=>{
+							// 		return `${prev}<p> ${curr.id} ${curr.name}</p>`
+							// 	},"")
+							//   );
+							// });
+							
 
 					  	// window.location.href = 'views/inbox.php';
 					  }
