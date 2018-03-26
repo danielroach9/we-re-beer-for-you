@@ -15,5 +15,5 @@
 	</form>
 	<label>Preference</label>
 		<button>Update Preferences</button>
-</body>
-</html>
+
+<?php include "inc/footer.php"; ?>
