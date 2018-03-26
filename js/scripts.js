@@ -136,7 +136,7 @@ $( document ).ready(function(){
 		  //             console.log(data);
 				 	  if(data){
 					  		$.each(data,function(key,value){
-					  			$("#results").append(value);
+					  			$("#results").append("hello");
 					  		});
 				// 			// alert("success: you submitted preferences successfully");
 				// 			// var $data2 = {
