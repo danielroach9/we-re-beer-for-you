@@ -196,6 +196,7 @@ class DB{
 			$stmt->bindParam(":role",$_roleID,PDO::PARAM_INT);
 			$stmt->execute();
 
+			print $this->db->lastInsertId();
 			return $this->db->lastInsertId();
 		}
 		catch(PDOException $e){
