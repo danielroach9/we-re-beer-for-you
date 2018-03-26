@@ -3,7 +3,7 @@
 <?php include "inc/nav.php"; ?>
 	<form>
 		<label>First Name</label>
-		<input type="text" name="f_name">
+		<input type="text" name="f_name" placeholder="<?php echo $_SESSION['accountFirstName'];?>">
 		<label>Last Name</label>
 		<input type="text" name="l_name">
 		<label>Email</label>
