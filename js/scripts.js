@@ -127,45 +127,46 @@ $( document ).ready(function(){
 					country: $country_name,
 					action: 'getPreferredBeer'
 				};
-				$.ajax({
-					  type: "POST",
-					  url: '../model/DB.class.php',
-					  data: $data
-				}).done(function(data) {
-		              console.log(data);
-					  if(data){
-					  		$.each(data,function(key,value){
-					  			$("#results").html(value);
-					  		});
-							// alert("success: you submitted preferences successfully");
-							// var $data2 = {
-							// 	category: $cat_id,
-							// 	style: $style,
-							// 	abv: $abv,
-							// 	country: $country_name,
-							// 	action: 'getPreferredBeer'
-							// };
-							// $.ajax({
-							// 	  type: "POST",
-							// 	  url: '../model/DB.class.php',
-							// 		data: $data2
-							// }).done(function(msg) {
-							// 	//console.log(msg);
-							// 	alert(msg);
-							// 	msg = JSON.parse(msg);
-							// 	$("#preferredBeers").html(msg.reduce((prev,curr)=>{
-							// 		return `${prev}<p> ${curr.id} ${curr.name}</p>`
-							// 	},"")
-							//   );
-							// });
+				console.log($data);
+				// $.ajax({
+				// 	  type: "POST",
+				// 	  url: '../model/DB.class.php',
+				// 	  data: $data
+				// }).done(function(data) {
+		  //             console.log(data);
+				// 	  if(data){
+				// 	  		$.each(data,function(key,value){
+				// 	  			$("#results").html(value);
+				// 	  		});
+				// 			// alert("success: you submitted preferences successfully");
+				// 			// var $data2 = {
+				// 			// 	category: $cat_id,
+				// 			// 	style: $style,
+				// 			// 	abv: $abv,
+				// 			// 	country: $country_name,
+				// 			// 	action: 'getPreferredBeer'
+				// 			// };
+				// 			// $.ajax({
+				// 			// 	  type: "POST",
+				// 			// 	  url: '../model/DB.class.php',
+				// 			// 		data: $data2
+				// 			// }).done(function(msg) {
+				// 			// 	//console.log(msg);
+				// 			// 	alert(msg);
+				// 			// 	msg = JSON.parse(msg);
+				// 			// 	$("#preferredBeers").html(msg.reduce((prev,curr)=>{
+				// 			// 		return `${prev}<p> ${curr.id} ${curr.name}</p>`
+				// 			// 	},"")
+				// 			//   );
+				// 			// });
 							
 
-					  	// window.location.href = 'views/inbox.php';
-					  }
-					  else{
-					  	alert("Something broke");
-					  }
-				});
+				// 	  	// window.location.href = 'views/inbox.php';
+				// 	  }
+				// 	  else{
+				// 	  	alert("Something broke");
+				// 	  }
+				// });
 	    	});
 
 		$('#msg_send').click(function(){
