@@ -133,11 +133,11 @@ $( document ).ready(function(){
 					  url: '../model/DB.class.php',
 					  data: $data
 				}).done(function(data) {
-		  //             console.log(data);
+		               console.log(data);
 				 	  if(data){
-					  		$.each(data,function(key,value){
-					  			$("#results").append("hello");
-					  		});
+					  		// $.each(data,function(key,value){
+					  		// 	$("#results").append("hello");
+					  		// });
 				// 			// alert("success: you submitted preferences successfully");
 				// 			// var $data2 = {
 				// 			// 	category: $cat_id,
