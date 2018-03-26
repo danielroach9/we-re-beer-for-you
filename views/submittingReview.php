@@ -22,7 +22,7 @@ $beers = $db->getAllBeers();
 }
 
 .rating {
-    width: 90px;
+    width: 185px;
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: center;

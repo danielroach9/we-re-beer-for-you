@@ -91,6 +91,7 @@ class DB{
 	}
 
 	function performLogin($_email,$_pass){
+		session_start();
 		$user = $this->getUserByEmail($_email);
 
 		if($user){
