@@ -2,6 +2,7 @@
 require_once("../model/DB.class.php");
 $db = new DB();
 $beers = $db->getAllBeers();
+var_dump($beers);
 ?>
 
 <!DOCTYPE HTML> 
@@ -80,7 +81,7 @@ $beers = $db->getAllBeers();
                   <select name="beerName" id="beerName">
                   <?php
                     foreach ($beers as $beer) {
-                      var_dump($beer['name']);
+                      //var_dump($beer['name']);
                       //echo '<option value=' . $beer["name"] . '</option>';
                     }
                     ?>
