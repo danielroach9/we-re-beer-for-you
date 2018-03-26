@@ -73,29 +73,29 @@ function array_sort($array, $on, $order=SORT_ASC)
         <li class="tab"><a class="active" href="#breweries_a">A</a></li>
         <li class="tab "><a href="#breweries_b">B</a></li>
         <li class="tab"><a href="#breweries_c">C</a></li>
-        <li class="tab"><a href="#!">D</a></li>
-        <li class="tab"><a href="#!">E</a></li>
-        <li class="tab"><a href="#!">F</a></li>
-        <li class="tab"><a href="#!">G</a></li>
-        <li class="tab"><a href="#!">H</a></li>
-        <li class="tab"><a href="#!">I</a></li>
-        <li class="tab"><a href="#!">J</a></li>
-        <li class="tab"><a href="#!">K</a></li>
-        <li class="tab"><a href="#!">L</a></li>
-        <li class="tab"><a href="#!">M</a></li>
-        <li class="tab"><a href="#!">N</a></li>
-        <li class="tab"><a href="#!">O</a></li>
-        <li class="tab"><a href="#!">P</a></li>
-        <li class="tab"><a href="#!">Q</a></li>
-        <li class="tab"><a href="#!">R</a></li>
-        <li class="tab"><a href="#!">S</a></li>
-        <li class="tab"><a href="#!">T</a></li>
-        <li class="tab"><a href="#!">U</a></li>
-        <li class="tab"><a href="#!">V</a></li>
-        <li class="tab"><a href="#!">W</a></li>
-        <li class="tab"><a href="#!">Y</a></li>
-        <li class="tab"><a href="#!">Z</a></li>
-        <li class="tab"><a href="#!">0-9</a></li>
+        <li class="tab"><a href="#">D</a></li>
+        <li class="tab"><a href="#">E</a></li>
+        <li class="tab"><a href="#">F</a></li>
+        <li class="tab"><a href="#">G</a></li>
+        <li class="tab"><a href="#">H</a></li>
+        <li class="tab"><a href="#">I</a></li>
+        <li class="tab"><a href="#">J</a></li>
+        <li class="tab"><a href="#">K</a></li>
+        <li class="tab"><a href="#">L</a></li>
+        <li class="tab"><a href="#">M</a></li>
+        <li class="tab"><a href="#">N</a></li>
+        <li class="tab"><a href="#">O</a></li>
+        <li class="tab"><a href="#">P</a></li>
+        <li class="tab"><a href="#">Q</a></li>
+        <li class="tab"><a href="#">R</a></li>
+        <li class="tab"><a href="#">S</a></li>
+        <li class="tab"><a href="#">T</a></li>
+        <li class="tab"><a href="#">U</a></li>
+        <li class="tab"><a href="#">V</a></li>
+        <li class="tab"><a href="#">W</a></li>
+        <li class="tab"><a href="#">Y</a></li>
+        <li class="tab"><a href="#">Z</a></li>
+        <li class="tab"><a href="#">0-9</a></li>
       </ul>
       
         <?php
