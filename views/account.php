@@ -28,7 +28,7 @@
                 </div>
                 <div class="input-field col s12">
 				<label for="l_name">Last Name</label>
-				<input type="text" name="l_name" placeholder="<?php echo $_SESSION['accountFirstName'];?>">
+				<input type="text" name="l_name" placeholder="<?php echo $_SESSION['accountLastName'];?>">
                 </div>
 				<div class="input-field col s12">
 				<label for="email">Email</label>

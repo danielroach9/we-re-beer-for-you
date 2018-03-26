@@ -20,12 +20,7 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
         <div class="card hoverable col s6 offset-s3">
           <form id="preferenceForm">
             <div class="card-content">
-              <span class="card-title center-align">Preferences</span>
-              <p>Name:
-                <?php
-                echo $fname . " " . $lname;
-                 ?>
-               </p>
+              <span class="card-title center-align">Try a new Beer!</span>
               <div class="row">
                 <div class="input-field col s12">
                   <label for="preferred_abv_range">Preferred ABV</label>
@@ -70,12 +65,9 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
               </div>
             </div>
             <div class="card-action center-align">
-              <button class="btn brown waves-effect waves-light">Show me the beer!</button>
+              <button class="btn brown waves-effect waves-light">Show me some beers!</button>
             </div>
             </form>
-            <p>Preferred Beers</p>
-            <p id="preferredBeers">test</p>
-
         </div>
       </div>
     </div>
