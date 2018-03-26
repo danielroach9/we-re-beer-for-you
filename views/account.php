@@ -20,7 +20,7 @@
         <div class="card hoverable col s6 offset-s3">
           <form id="loginForm">
             <div class="card-content">
-              <span class="card-title center-align"><h4>Log in</h4></span>
+              <span class="card-title center-align"><h4>Account Info</h4></span>
               <div class="row">
                 <div class="input-field col s12">
                   <label for="f_name">First Name</label>
