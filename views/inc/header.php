@@ -5,7 +5,6 @@ if(!isset($_SESSION)){
 if(empty($_SESSION)){
 	header("Location: http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?bad=true");
 }
-var_dump($_SESSION);
  ?>
 <!DOCTYPE html>
 <html lang="en">
