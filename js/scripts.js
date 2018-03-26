@@ -79,9 +79,9 @@ $( document ).ready(function(){
 			}).done(function(msg) {
 	              console.log(msg);
 				  if(msg){
-				  	window.location.href = 'views/.php';
+				  	window.location.href = 'http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/index.php?register=true';
 				  }else{
-				  	alert("User/password incorrect!");
+				  	alert("An error occured trying to register a new user.");
 				  }
 			});
     	});

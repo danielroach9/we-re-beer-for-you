@@ -4,6 +4,7 @@
 <body>
   <?php if(isset($_GET['bad'])){ echo '<div style= "background: #ec6e6e;padding: 0.5%;text-align:  center; font-size:  1.25em">Please login for site access.</div>';} ?>
   <?php if(isset($_GET['signout'])){ echo '<div style="background: #6eec86;padding: 0.5%;text-align:  center;font-size:  1.25em;">Sucessfully Signed Out!</div>';} ?>
+    <?php if(isset($_GET['register'])){ echo '<div style="background: #6eec86;padding: 0.5%;text-align:  center;font-size:  1.25em;">New User was Sucessfully Registered.</div>';} ?>
   <div class="center-align">
     <img  src="img/logo.png" width="450px" height="300px">
   </div>
