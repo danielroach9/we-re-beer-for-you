@@ -137,9 +137,9 @@ $( document ).ready(function(){
 				 	  if(data){
 				 	  	var $beers = jQuery.parseJSON(data);
 				 	  	console.log($beers);
-					  		// $.each(data,function(key,value){
-					  		// 	$("#results").append("hello");
-					  		// });
+					  		$.each($beers,function(key,value){
+					  			$("#results").append("<p>"+key+" - "+value+"</p>");
+					  		});
 				// 			// alert("success: you submitted preferences successfully");
 				// 			// var $data2 = {
 				// 			// 	category: $cat_id,
