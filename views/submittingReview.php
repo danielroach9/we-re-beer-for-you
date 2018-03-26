@@ -80,7 +80,8 @@ $beers = $db->getAllBeers();
                   <select name="beerName" id="beerName">
                   <?php
                     foreach ($beers as $beer) {
-                      echo '<option value=' . $beer["name"] . '</option>';
+                      echo $beer['name'];
+                      //echo '<option value=' . $beer["name"] . '</option>';
                     }
                     ?>
                     </select>
