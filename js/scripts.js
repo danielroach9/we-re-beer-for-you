@@ -202,7 +202,7 @@ $( document ).ready(function(){
 			var $rating = $("input[name='star']:checked").val();
 			//if(!($("input[name='star']:checked"])){alert("Please select a rating");}
 			var $location = $('#beerRatingForm').find('#location').val();
-			var $uuid = 1; //HARDCODED
+			var $uuid = $('#beerRatingForm').find('#uuid').val();
 
 			var $data = {
 					beerID: $beerID,

@@ -70,7 +70,7 @@ $beers = $db->getAllBeers();
               <span class="card-title center-align">Submit Beer Review</span>
 	      <p><span class="error">* required field.</span></p>
               <div class="row">
-
+    <input type="text" id="uuid" value="<?php echo $_SESSION['accountID'];?>" style="display: none;" />
 		<div class="input-field col s12">
                   <select name="beer" id="beer">
                   <?php
