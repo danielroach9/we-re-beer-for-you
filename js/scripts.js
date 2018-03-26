@@ -133,8 +133,10 @@ $( document ).ready(function(){
 					  url: '../model/DB.class.php',
 					  data: $data
 				}).done(function(data) {
-		               console.log(data);
+		               //console.log(data);
 				 	  if(data){
+				 	  	var $beers = jQuery.parseJSON(data);
+				 	  	console.log($beers);
 					  		// $.each(data,function(key,value){
 					  		// 	$("#results").append("hello");
 					  		// });
