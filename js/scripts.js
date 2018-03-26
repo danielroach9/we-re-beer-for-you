@@ -128,16 +128,16 @@ $( document ).ready(function(){
 					action: 'getPreferredBeer'
 				};
 				console.log($data);
-				// $.ajax({
-				// 	  type: "POST",
-				// 	  url: '../model/DB.class.php',
-				// 	  data: $data
-				// }).done(function(data) {
+				$.ajax({
+					  type: "POST",
+					  url: '../model/DB.class.php',
+					  data: $data
+				}).done(function(data) {
 		  //             console.log(data);
-				// 	  if(data){
-				// 	  		$.each(data,function(key,value){
-				// 	  			$("#results").html(value);
-				// 	  		});
+				 	  if(data){
+					  		$.each(data,function(key,value){
+					  			$("#results").append(value);
+					  		});
 				// 			// alert("success: you submitted preferences successfully");
 				// 			// var $data2 = {
 				// 			// 	category: $cat_id,
@@ -161,12 +161,12 @@ $( document ).ready(function(){
 				// 			// });
 							
 
-				// 	  	// window.location.href = 'views/inbox.php';
-				// 	  }
-				// 	  else{
-				// 	  	alert("Something broke");
-				// 	  }
-				// });
+					  	// window.location.href = 'views/inbox.php';
+					  }
+					  else{
+					  	alert("Something broke");
+					  }
+				});
 	    	});
 
 		$('#msg_send').click(function(){
