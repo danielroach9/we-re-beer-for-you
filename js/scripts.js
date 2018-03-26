@@ -213,21 +213,19 @@ $( document ).ready(function(){
 					action: 'insertNewRating'
 			};
 
-			console.log($data);
-
-			// $.ajax({
-			// 	  type: "POST",
-			// 	  url: '../model/DB.class.php',
-			// 	  data: $data
-			// }).done(function(data) {
-	  //             		  console.log(data);
-			// 	  if(data){
-			// 	  	alert("Review was submitted!");
-			// 	  }
-			// 	  else{
-			// 	  	alert("Something went wrong submitting review..");
-			// 	  }
-			// });
+			$.ajax({
+				  type: "POST",
+				  url: '../model/DB.class.php',
+				  data: $data
+			}).done(function(data) {
+	              		  console.log(data);
+				  if(data){
+				  	alert("Review was submitted!");
+				  }
+				  else{
+				  	alert("Something went wrong submitting review..");
+				  }
+			});
 		});
 
 		$('#searchLink').click(function(e){
