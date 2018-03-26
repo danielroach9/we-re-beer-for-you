@@ -210,7 +210,7 @@ class DB{
 			$stmt = $this->db->prepare("SELECT * FROM beers ORDER BY name ASC");
 			$stmt->execute();
 
-			$data = $stmt->fetch(PDO::FETCH_ASSOC);
+			$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 			return $data;
 		}
