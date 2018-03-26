@@ -70,17 +70,12 @@ $beers = $db->getAllBeers();
               <span class="card-title center-align">Submit Beer Review</span>
 	      <p><span class="error">* required field.</span></p>
               <div class="row">
-                <div class="input-field col s12">
-                  <label for="first_name">Beer name</label>
-                  <input type="text" name="beerID" id="beerID" >
-		  <span class="error">*</span>
-                </div>
 
 		<div class="input-field col s12">
                   <select name="beerName" id="beerName">
                   <?php
                     foreach ($beers as $beer) {
-                      echo "<option value=".$beer['id'].">hello</option>";
+                      echo "<option name='beerID' class='beerID' value=".$beer['id'].">".$beer['name']."</option>";
                     }
                     ?>
                     </select>
