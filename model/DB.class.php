@@ -1,7 +1,4 @@
 <?php
-if(!isset($_SESSION)){
-    session_start(); 
-} 
 if(isset($_POST['action'])){
 	$action = $_POST['action'];
 	$db = new DB();
@@ -113,6 +110,7 @@ class DB{
 
 	function performLogOut(){
 		session_start();
+		$SESSION = array();
 		session_unset();
 		session_destroy();
 		session_write_close();
