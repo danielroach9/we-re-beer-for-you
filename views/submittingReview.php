@@ -75,7 +75,7 @@ $beers = $db->getAllBeers();
                   <select name="beerName" id="beerName">
                   <?php
                     foreach ($beers as $beer) {
-                      echo "<option name='beerID' class='beerID' value=".$beer['id'].">bpp</option>";
+                      echo "<option name='beerID' class='beerID' value=".$beer['id'].">".$beer['name']."</option>";
                     }
                     ?>
                     </select>
