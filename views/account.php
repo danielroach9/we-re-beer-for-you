@@ -32,7 +32,7 @@
                 </div>
 				<div class="input-field col s12">
 				<label for="email">Email</label>
-				<input type="text" name="email" placeholder="<?php echo $_SESSION['accountFirstName'];?>">
+				<input type="text" name="email" placeholder="<?php echo $_SESSION['email'];?>">
                 </div>
 				<div class="input-field col s12">
 				<label for="pass">Password</label>
