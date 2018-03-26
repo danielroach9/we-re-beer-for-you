@@ -68,6 +68,7 @@ $lname = isset($_SESSION['accountLastName']) ? $_SESSION['accountLastName'] : nu
               <button class="btn brown waves-effect waves-light">Show me some beers!</button>
             </div>
             </form>
+            <div>beers</div>
         </div>
       </div>
     </div>
