@@ -218,9 +218,9 @@ $( document ).ready(function(){
 				  url: '../model/DB.class.php',
 				  data: $data
 			}).done(function(data) {
-	              		  console.log(data);
 				  if(data){
 				  	alert("Review was submitted!");
+				  	window.location.href = "http://serenity.ist.rit.edu/~ajp8707/we-re-beer-for-you/views/beer-rating.php";
 				  }
 				  else{
 				  	alert("Something went wrong submitting review..");
