@@ -197,7 +197,7 @@ $( document ).ready(function(){
 
 		$('#beerRatingForm').submit(function(e){
 			e.preventDefault();
-			var $beerID = $('#beerRatingForm').find('#beerID').val();
+			var $beerID = $('#beerRatingForm').find('#beer').val();
 			var $comment = $('#beerRatingForm').find('#comment').val();
 			var $rating = $("input[name='star']:checked").val();
 			//if(!($("input[name='star']:checked"])){alert("Please select a rating");}

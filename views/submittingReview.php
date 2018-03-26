@@ -72,10 +72,10 @@ $beers = $db->getAllBeers();
               <div class="row">
 
 		<div class="input-field col s12">
-                  <select name="beerName" id="beerName">
+                  <select name="beer" id="beer">
                   <?php
                     foreach ($beers as $beer) {
-                      echo "<option name='beerID' class='beerID' value=".$beer['id'].">".$beer['name']."</option>";
+                      echo "<option value=".$beer['id'].">".$beer['name']."</option>";
                     }
                     ?>
                     </select>
@@ -104,8 +104,7 @@ $beers = $db->getAllBeers();
         	</div>
 		<label for="comment">Comment</label>
 		<div class="input-field col s12">		
-		    <textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" id="comment">
-	    	    </textarea>
+		    <textarea rows="4" cols="50" placeholder="Enter comment here..." name="comment" id="comment"></textarea>
 		</div>
               </div>
             </div>
