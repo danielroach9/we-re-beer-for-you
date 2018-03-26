@@ -8,7 +8,7 @@
       <li><a href="search.php">Search for beers</a></li>
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="beer-rating.php">Beer Ratings</a></li>
-      <li><a href="beer-rating.php">Submit Beer Review</a></li>
+      <li><a href="submittingReview.php">Submit Beer Review</a></li>
       <li><a href="account.php"><?php echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];?></a></li>
       <li><a id="signOut" href="#">Sign Out</a></li>
     </ul>
@@ -16,7 +16,7 @@
       <li><a href="beers.php">Beers</a></li>
       <li><a href="breweries.php">Breweries</a></li>
       <li><a href="beer-rating.php">Beer Ratings</a></li>
-      <li><a href="beer-rating.php">Submit Beer Review</a></li>
+      <li><a href="submittingReview.php">Submit Beer Review</a></li>
       <li><a href="account.php"><?php echo $_SESSION['accountFirstName']." ".$_SESSION['accountLastName'];?></a></li>
       <li><a id="signOut" href="#">Sign Out</a></li>
     </ul>
